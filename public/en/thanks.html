@@ -657,7 +657,7 @@
     var root = document.documentElement, btn = document.getElementById('theme-btn');
     function apply(t){
       root.setAttribute('data-theme', t);
-      btn.setAttribute('aria-label', t === 'light' ? 'Turn on dark mode' : 'Turn on light mode');
+      btn.setAttribute('aria-label', t === 'light' ? 'Activar modo oscuro' : 'Turn on light mode');
       try{ localStorage.setItem('mora-home-theme', t); }catch(e){}
     }
     apply(root.getAttribute('data-theme') === 'dark' ? 'dark' : 'light');

@@ -22,7 +22,7 @@
 <link rel="icon" type="image/png" sizes="64x64" href="/img/brand/favicon.png">
 <link rel="icon" type="image/png" sizes="512x512" href="/img/brand/icon-512.png">
 <link rel="apple-touch-icon" href="/img/brand/apple-touch-icon.png">
-<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "Person", "@id": "#andres", "name": "Andrés Felipe Mora Sarmiento", "alternateName": "Andrés Mora", "jobTitle": "Digital Product Designer (UX/UI) · Motion & Multimedia Engineer", "email": "mailto:andres.mora.sar@gmail.com", "address": {"@type": "PostalAddress", "addressRegion": "Cundinamarca", "addressCountry": "CO"}, "alumniOf": {"@type": "CollegeOrUniversity", "name": "Universidad Militar Nueva Granada"}, "knowsAbout": ["UX/UI design", "Digital product design", "Design Systems", "Web design", "Motion graphics", "3D Modeling", "Augmented and virtual reality"], "sameAs": ["https://www.linkedin.com/in/andres-felipe-mora-sarmiento/", "https://www.behance.net/andrsmora15", "https://sketchfab.com/AndresMora1"]}, {"@type": "WebSite", "name": "Andrés Mora · Portfolio", "inLanguage": "en", "author": {"@id": "#andres"}}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "Person", "@id": "#andres", "name": "Andrés Felipe Mora Sarmiento", "alternateName": "Andrés Mora", "jobTitle": "Digital Product Designer (UX/UI) · Motion & Multimedia Engineer", "email": "mailto:andres.mora.sar@gmail.com", "address": {"@type": "PostalAddress", "addressRegion": "Cundinamarca", "addressCountry": "CO"}, "alumniOf": {"@type": "CollegeOrUniversity", "name": "Universidad Militar Nueva Granada"}, "knowsAbout": ["UX/UI design", "Digital product design", "Design Systems", "Web design", "Motion graphics", "3D Modeling", "Augmented and virtual reality"], "sameAs": ["https://www.linkedin.com/in/andres-felipe-mora-sarmiento/", "https://www.behance.net/andrsmora15", "https://sketchfab.com/AndresMora1"]}, {"@type": "WebSite", "name": "Andrés Mora · Portfolio", "inLanguage": "es", "author": {"@id": "#andres"}}]}</script>
 <!-- /seo -->
 <script>
   try{ var t = localStorage.getItem('mora-home-theme'); if (t === 'dark' || t === 'light') document.documentElement.setAttribute('data-theme', t); }catch(e){}
@@ -4347,7 +4347,7 @@
     var btn = document.getElementById('theme-btn');
     function apply(t){
       root.setAttribute('data-theme', t);
-      btn.setAttribute('aria-label', t === 'light' ? 'Turn on dark mode' : 'Turn on light mode');
+      btn.setAttribute('aria-label', t === 'light' ? 'Activar modo oscuro' : 'Turn on light mode');
       try{ localStorage.setItem('mora-home-theme', t); }catch(e){}
     }
     apply(root.getAttribute('data-theme') === 'dark' ? 'dark' : 'light');
@@ -5235,12 +5235,12 @@
     var S = V.map(function(v){ return [v[0] + (C[0] - v[0]) * 0.2, v[1] + (C[1] - v[1]) * 0.2]; });
     var dIn = [door[0], door[1] - 30];
     path.setAttribute('d', 'M' + dIn + ' L' + S.map(function(s){ return s[0].toFixed(1) + ' ' + s[1].toFixed(1); }).join(' L') + ' Z');
-    var label = document.createElementNS(NS, 'text'); label.setAttribute('class', 'door'); label.setAttribute('x', door[0]); label.setAttribute('and', door[1] - 8); label.textContent = 'IN AND OUT'; svg.appendChild(label);
+    var label = document.createElementNS(NS, 'text'); label.setAttribute('class', 'door'); label.setAttribute('x', door[0]); label.setAttribute('y', door[1] - 8); label.textContent = 'IN AND OUT'; svg.appendChild(label);
     var items = cs.querySelectorAll('.mu-cycle-list li'), groups = [];
     S.forEach(function(s, i){
       var g = document.createElementNS(NS, 'g'); g.setAttribute('class', 'st');
       var c = document.createElementNS(NS, 'circle'); c.setAttribute('cx', s[0].toFixed(1)); c.setAttribute('cy', s[1].toFixed(1)); c.setAttribute('r', 17);
-      var t = document.createElementNS(NS, 'text'); t.setAttribute('x', s[0].toFixed(1)); t.setAttribute('and', s[1].toFixed(1)); t.textContent = i + 1;
+      var t = document.createElementNS(NS, 'text'); t.setAttribute('x', s[0].toFixed(1)); t.setAttribute('y', s[1].toFixed(1)); t.textContent = i + 1;
       g.appendChild(c); g.appendChild(t); svg.appendChild(g); groups.push(g);
     });
     function lit(i){
