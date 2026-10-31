@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html lang="es" data-theme="light">
 <head>
+<link rel="alternate" hreflang="es" href="/gracias">
+<link rel="alternate" hreflang="en" href="/en/thanks">
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Mensaje enviado · Andrés Mora</title>
@@ -915,8 +918,7 @@
     var b = document.getElementById('lang-btn'); if (!b) return;
     var tip = b.querySelector('.lang-tip'), t;
     b.addEventListener('click', function(){
-      tip.textContent = 'English version coming soon';
-      b.classList.add('is-tip'); clearTimeout(t); t = setTimeout(function(){ b.classList.remove('is-tip'); }, 2400);
+      location.href = '/en/thanks' + location.hash;
     });
   })();
 </script>
