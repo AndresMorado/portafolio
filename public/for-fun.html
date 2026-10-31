@@ -858,7 +858,7 @@
   var PAGES = [
     {"kind":"cover"},
     {"kind":"endpaper","label":"inside"},
-    {"items":[{"t":"doodle","k":"sparkle","x":76,"y":9,"w":11,"r":10}],"head":{"num":"Contenido","title":"Índice","text":"Lo que vas a encontrar en este cuaderno."},"toc":[{"label":"Render · Proyecto Casa Quinta","page":3},{"label":"Fotografía · Arquitectura","page":5},{"label":"Colección de gatos","page":13},{"label":"Colección de perros","page":17},{"label":"Colección de aves","page":19},{"label":"Fotografía · Varios","page":23},{"label":"Logotipos y marcas","page":31},{"label":"Stickers para despegar","page":34}]},
+    {"items":[{"t":"doodle","k":"sparkle","x":76,"y":9,"w":11,"r":10}],"head":{"num":"Contenido","title":"Índice","text":"Lo que vas a encontrar en este cuaderno."},"toc":[{"label":"Render · Proyecto Casa Quinta","page":3},{"label":"Fotografía · Arquitectura","page":5},{"label":"Logotipos y marcas","page":31},{"label":"Stickers para despegar","page":34}]},
     {"head":{"num":"01","title":"Proyecto Casa Quinta","text":"Render con historia"},"items":[{"t":"doodle","k":"arrow","x":65.5,"y":77.4,"w":10.8,"r":0,"z":5},{"t":"photo","src":"img/forfun/web/casa-original.webp","ar":"4096/3072","title":"Casa Original","meta":"2004","x":13.1,"y":23.1,"w":69.1,"r":-4.2,"tape":1,"z":6},{"t":"photo","src":"img/forfun/web/exterior.webp","ar":"1220/711","title":"Exterior","meta":"2008","x":49,"y":67.6,"w":39,"r":6.6,"tape":1,"z":7,"lock":1},{"t":"note","html":"Mi infancia la viví en esta casa, desafortunadamente ya no existe, así que la recree en 3D","x":6.9,"y":77.6,"w":35.3,"r":0,"z":8,"s":0.88},{"t":"doodle","k":"arrow","x":81.7,"y":41.4,"w":16,"r":-30.2,"z":9}]},
     {"items":[{"t":"photo","src":"img/forfun/web/casa-frente-1.webp","ar":"1920/1080","title":"CASA FRENTE 1","meta":"","x":13.4,"y":6,"w":69.9,"r":-0.6,"tape":1,"z":12},{"t":"doodle","k":"circle","x":1.8,"y":1.8,"w":68.6,"r":0,"z":4},{"t":"photo","src":"img/forfun/web/casa-lat-2.webp","ar":"1920/1080","title":"CASA LAT 2","meta":"","x":-0.4,"y":37.7,"w":56.5,"r":2.7,"tape":1,"z":6},{"t":"photo","src":"img/forfun/web/c3.webp","ar":"1920/1080","title":"SALA CASA","meta":"","x":40.7,"y":54.2,"w":57.2,"r":6.4,"tape":1,"z":9},{"t":"photo","src":"img/forfun/web/casa-lat-3.webp","ar":"1920/1080","title":"CASA LAT 3","meta":"","x":5.6,"y":71,"w":42.1,"r":2.9,"tape":1,"z":8}]},
     {"head":{"num":"02","title":"Fotografía","text":"Arquitectura"},"items":[{"t":"photo","src":"img/forfun/web/img-20200130-174430385-hdr-01-2.webp","ar":"3474/3072","title":"Hospital Antiguo San Rafael de Pacho","meta":"2016","x":11.7,"y":28.7,"w":82.1,"r":-1.1,"tape":1,"z":3},{"t":"sticker","k":"star","x":81.8,"y":20.5,"w":18,"r":0,"z":4}]},
@@ -902,7 +902,7 @@
     var mq = window.matchMedia('(max-width:760px), (pointer:coarse) and (max-height:520px) and (orientation:landscape)');
     var single = false, sheets = [], faces = [], state = 0, maxState = 0, zc = 0, uid = 0, inView = false, touched = false;
     // modo edición: se abre con ?editar en la dirección; el borrador vive en este navegador hasta guardarlo
-    var EDIT = /[?&#]editar/.test(location.search + location.hash), DRAFT = 'mora-nb-draft-6', URLS = {}, edRefresh = null;
+    var EDIT = /[?&#]editar/.test(location.search + location.hash), DRAFT = 'mora-nb-draft-7', URLS = {}, edRefresh = null;
     if (EDIT) { try { var d = JSON.parse(localStorage.getItem(DRAFT) || 'null'); if (d && d.length) { PAGES.length = 0; d.forEach(function(p){ PAGES.push(p); }); } } catch (e) {} }
     var N = PAGES.length;
 
