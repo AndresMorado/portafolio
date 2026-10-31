@@ -330,7 +330,7 @@
   .nb.is-single .face.is-enter .nb-it:not(.nb-doodle){animation-delay:calc(200ms + var(--i, 0) * 60ms);}
   .nb.is-single .nb-floor.l{display:none;} .nb.is-single .nb-floor.r{left:0; width:100%;}
   .nb.is-single .nb-count{display:block;}
-  @media (max-width:760px){
+  @media (max-width:760px), (pointer:coarse) and (max-height:520px) and (orientation:landscape){
     .nb{grid-template-columns:auto 1fr auto; grid-template-areas:"scene scene scene" "prev bar next"; row-gap:var(--space-3); padding-top:0; min-height:0;
       --pw:min(calc(100vw - 32px), 460px, calc((100svh - 200px) * .72));}
     .nb-scene{margin:0 auto;}
@@ -629,6 +629,16 @@
     .pt-display{font-size:24px !important;}
     .modal-section p, .modal-section li{font-size:15px;}
   }
+  /* mora-galeria: mientras llega la imagen siguiente */
+  .lb.is-wait #lb-img{opacity:.35; transition:opacity 200ms ease;}
+  .lb.is-wait::after{content:""; position:absolute; left:50%; top:50%; width:40px; height:40px; margin:-20px 0 0 -20px; pointer-events:none; background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Ccircle cx='20' cy='20' r='15' fill='none' stroke='%23FFFFFF' stroke-opacity='.25' stroke-width='4'/%3E%3Cpath d='M20 5a15 15 0 0 1 15 15' fill='none' stroke='%238B6CFF' stroke-width='4' stroke-linecap='round'%3E%3CanimateTransform attributeName='transform' type='rotate' from='0 20 20' to='360 20 20' dur='.8s' repeatCount='indefinite'/%3E%3C/path%3E%3C/svg%3E") center / contain no-repeat;}
+  /* mora-horizontal: celular acostado */
+  @media (pointer:coarse) and (max-height:520px) and (orientation:landscape){
+    .nb{--pw:min(460px, calc((100svh - 28px) * .72)); grid-template-columns:1fr auto 1fr; padding-top:var(--space-2);}
+    .nb.is-single{grid-template-areas:"prev scene next" ". count ." "dots dots dots"; column-gap:var(--space-4);}
+    .nb.is-single .nb-prev{justify-self:end;} .nb.is-single .nb-next{justify-self:start;}
+    .nb-hint{display:none;}
+  }
 </style>
 </head>
 <body>
@@ -683,7 +693,7 @@
 <div class="lb-backdrop" id="lb-backdrop"></div>
 <div class="lb" id="lb" role="dialog" aria-modal="true" aria-label="Pieza ampliada">
   <figure>
-    <img loading="lazy" decoding="async" id="lb-img" alt="">
+    <img decoding="async" id="lb-img" alt="">
     <figcaption>
       <span class="lb-meta" id="lb-meta"></span>
       <span class="lb-title" id="lb-title"></span>
@@ -777,24 +787,39 @@
     var title = document.getElementById('lb-title'), noteEl = document.getElementById('lb-note');
     var closeBtn = document.getElementById('lb-close');
     var idx = 0, lastFocused = null, isOpen = false;
-    function show(i, dir){
+    // mora-galeria: descarga y decodifica una imagen antes de mostrarla
+    function moraLoadImg(url, done){
+      var im = new Image(), ok = false, go = function(){ if (!ok) { ok = true; done(); } };
+      im.onload = im.onerror = function(){ if (!im.decode) go(); };
+      im.src = url;
+      if (im.decode) im.decode().then(go, go);
+    }
+    function show(i, dir, after){
       idx = (i + PIECES.length) % PIECES.length;
-      var p = PIECES[idx];
-      img.src = p.src; img.alt = p.title;
+      var k = idx, p = PIECES[k], n = PIECES.length;
+      var wait = setTimeout(function(){ lb.classList.add('is-wait'); }, 120);
+      moraLoadImg(p.src, function(){
+        clearTimeout(wait); if (k !== idx) return;
+        lb.classList.remove('is-wait');
+        img.src = p.src; img.alt = p.title;
+        if (after) after();
+        else if (!reduceMotion && dir) img.animate([{opacity:0, transform:'translateX(' + (dir * 30) + 'px)'}, {opacity:1, transform:'none'}], {duration:380, easing:'cubic-bezier(.2,1,.3,1)'});
+        [k + 1, k - 1].forEach(function(j){ (new Image()).src = PIECES[(j + n) % n].src; });
+      });
       meta.textContent = [pad(idx + 1) + ' / ' + pad(PIECES.length), p.cat, p.year].filter(Boolean).join(' · ');
       title.textContent = titleCase(p.title);
       noteEl.textContent = p.note || (p.real ? '' : '📌 pieza de relleno, pendiente de reemplazar');
-      if (!reduceMotion && dir) img.animate([{opacity:0, transform:'translateX(' + (dir * 30) + 'px)'}, {opacity:1, transform:'none'}], {duration:380, easing:'cubic-bezier(.2,1,.3,1)'});
     }
     function open(i, rect){
       lastFocused = document.activeElement; isOpen = true;
-      show(i);
-      lb.classList.add('is-open'); bd.classList.add('is-open');
-      document.body.classList.add('modal-open');
-      if (!reduceMotion) {
+      img.removeAttribute('src');
+      show(i, 0, function(){
+        if (reduceMotion) return;
         var from = rect ? 'translate(' + (rect.left + rect.width / 2 - innerWidth / 2) + 'px,' + (rect.top + rect.height / 2 - innerHeight / 2) + 'px) scale(0.4)' : 'scale(0.92)';
         img.animate([{opacity:0.3, transform:from}, {opacity:1, transform:'none'}], {duration:560, easing:'cubic-bezier(.2,1,.3,1)'});
-      }
+      });
+      lb.classList.add('is-open'); bd.classList.add('is-open');
+      document.body.classList.add('modal-open');
       closeBtn.focus();
     }
     function close(){
@@ -874,7 +899,7 @@
     var book = document.getElementById('nb-book'), scene = document.getElementById('nb-scene'), tilt = document.getElementById('nb-tilt');
     var dotsEl = document.getElementById('nb-dots'), countEl = document.getElementById('nb-count'), liveEl = document.getElementById('nb-live');
     var prevBtn = document.getElementById('nb-prev'), nextBtn = document.getElementById('nb-next'), hint = document.getElementById('nb-hint');
-    var mq = window.matchMedia('(max-width:760px)');
+    var mq = window.matchMedia('(max-width:760px), (pointer:coarse) and (max-height:520px) and (orientation:landscape)');
     var single = false, sheets = [], faces = [], state = 0, maxState = 0, zc = 0, uid = 0, inView = false, touched = false;
     // modo edición: se abre con ?editar en la dirección; el borrador vive en este navegador hasta guardarlo
     var EDIT = /[?&#]editar/.test(location.search + location.hash), DRAFT = 'mora-nb-draft-6', URLS = {}, edRefresh = null;
@@ -1771,6 +1796,16 @@
     if (m.type === 'attributes') { mark(m.target); return; }
     m.addedNodes.forEach(function(n){ if (n.nodeType !== 1) return; if (n.tagName === 'IMG') mark(n); else if (n.querySelectorAll) n.querySelectorAll('img').forEach(mark); });
   }); }).observe(document.documentElement, {subtree:true, childList:true, attributes:true, attributeFilter:['src']});
+})();
+</script>
+<script>
+/* mora-horizontal: al girar el celular a horizontal, la libreta se centra en la pantalla */
+(function(){
+  var land = window.matchMedia('(pointer:coarse) and (max-height:520px) and (orientation:landscape)');
+  function fit(){ if (!land.matches) return; var sc = document.getElementById('nb-scene'); if (!sc) return;
+    setTimeout(function(){ sc.scrollIntoView({block:'center', behavior:'auto'}); }, 250); }
+  if (land.addEventListener) land.addEventListener('change', fit); else land.addListener(fit);
+  if (land.matches) window.addEventListener('load', fit);
 })();
 </script>
 </body>

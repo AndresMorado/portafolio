@@ -1878,6 +1878,20 @@
     .pt-display{font-size:24px !important;}
     .modal-section p, .modal-section li{font-size:15px;}
   }
+  /* mora-galeria: mientras llega la imagen siguiente */
+  .co-lb.is-wait .co-lb-img{opacity:.35; transition:opacity 200ms ease;}
+  .co-lb.is-wait::after{content:""; position:absolute; left:50%; top:50%; width:40px; height:40px; margin:-20px 0 0 -20px; pointer-events:none; background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Ccircle cx='20' cy='20' r='15' fill='none' stroke='%23FFFFFF' stroke-opacity='.25' stroke-width='4'/%3E%3Cpath d='M20 5a15 15 0 0 1 15 15' fill='none' stroke='%238B6CFF' stroke-width='4' stroke-linecap='round'%3E%3CanimateTransform attributeName='transform' type='rotate' from='0 20 20' to='360 20 20' dur='.8s' repeatCount='indefinite'/%3E%3C/path%3E%3C/svg%3E") center / contain no-repeat;}
+  /* mora-subir: botón para volver al inicio del caso */
+  .modal-top{position:fixed; right:40px; bottom:calc(36px + env(safe-area-inset-bottom, 0px)); z-index:720; width:48px; height:48px; border-radius:50%;
+    display:grid; place-items:center; border:1px solid var(--line); background:var(--surface); color:var(--accent); cursor:pointer;
+    box-shadow:0 6px 20px rgba(0,0,0,0.25); opacity:0; pointer-events:none; transform:translateY(12px);
+    transition:opacity 260ms ease, transform 420ms var(--ease-out), background 220ms ease;}
+  .modal-top svg{width:20px; height:20px; fill:none; stroke:currentColor; stroke-width:2.2; stroke-linecap:round; stroke-linejoin:round;}
+  .modal-top.is-shown{opacity:1; pointer-events:auto; transform:none;}
+  .modal-top:focus-visible{outline:2px solid var(--accent); outline-offset:3px;}
+  @media (hover:hover){ .modal-top:hover{background:var(--accent); color:var(--on-accent, #fff); border-color:var(--accent);} }
+  @media (max-width:640px){ .modal-top{right:28px; bottom:calc(28px + env(safe-area-inset-bottom, 0px)); width:46px; height:46px;} }
+  @media (prefers-reduced-motion:reduce){ .modal-top{transition:none;} }
 </style>
 </head>
 <body>
@@ -2103,6 +2117,7 @@
 <div id="modal-root" role="dialog" aria-modal="true" aria-label="Caso de estudio: Café Pacundí">
 <!-- la X vive fuera de .project-modal: el transform del popup rompería su position:fixed -->
 <button type="button" class="modal-share" id="modal-share" aria-label="Copiar el enlace de este caso"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M10 14a4 4 0 0 0 5.7 0l3-3a4 4 0 0 0-5.7-5.7l-1 1"/><path d="M14 10a4 4 0 0 0-5.7 0l-3 3a4 4 0 0 0 5.7 5.7l1-1"/></svg><span>Copiar enlace</span></button>
+<button type="button" class="modal-top" id="modal-top" aria-label="Volver al inicio del caso" tabindex="-1"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 19V5M5 12l7-7 7 7"/></svg></button>
 <button type="button" class="btn-fill icon-btn modal-close" id="modal-close" aria-label="Cerrar caso de estudio" data-strength="30">
   <span class="btn-fill-bg"></span>
   <span class="btn-fill-label" data-strength-text="18"><svg viewBox="0 0 24 24"><path d="M18 6L6 18M6 6l12 12"/></svg></span>
@@ -4879,15 +4894,29 @@
     lb.className = 'co-lb'; lb.setAttribute('role', 'dialog'); lb.setAttribute('aria-modal', 'true'); lb.setAttribute('aria-label', 'Galería de renders');
     lb.innerHTML = '<button type="button" class="co-lb-btn co-lb-close" aria-label="Cerrar galería"><svg viewBox="0 0 24 24"><path d="M18 6L6 18M6 6l12 12"/></svg></button>' +
       '<button type="button" class="co-lb-btn co-lb-prev" aria-label="Render anterior"><svg viewBox="0 0 24 24"><path d="M15 6l-6 6 6 6"/></svg></button>' +
-      '<img loading="lazy" decoding="async" class="co-lb-img" alt=""><span class="co-lb-meta" aria-live="polite"></span>' +
+      '<img decoding="async" class="co-lb-img" alt=""><span class="co-lb-meta" aria-live="polite"></span>' +
       '<button type="button" class="co-lb-btn co-lb-next" aria-label="Render siguiente"><svg viewBox="0 0 24 24"><path d="M9 6l6 6-6 6"/></svg></button>';
     document.getElementById('modal-root').appendChild(lb);
     var lbImg = lb.querySelector('.co-lb-img'), lbMeta = lb.querySelector('.co-lb-meta'), lbList = [], lbI = 0, lbTitle = '', lbItem = 'render', lbBack = null;
+    // mora-galeria: descarga y decodifica una imagen antes de mostrarla
+    function moraLoadImg(url, done){
+      var im = new Image(), ok = false, go = function(){ if (!ok) { ok = true; done(); } };
+      im.onload = im.onerror = function(){ if (!im.decode) go(); };
+      im.src = url;
+      if (im.decode) im.decode().then(go, go);
+    }
     function lbShow(i, dir){
       lbI = (i + lbList.length) % lbList.length;
-      lbImg.src = lbList[lbI]; lbImg.alt = lbTitle + ', ' + lbItem + ' ' + (lbI + 1);
-      lbMeta.textContent = lbTitle + ' · ' + (lbI + 1) + ' / ' + lbList.length;
-      if (dir && !reduce && lbImg.animate) lbImg.animate([{opacity:0, transform:'translateX(' + dir * 24 + 'px)'}, {opacity:1, transform:'none'}], {duration:320, easing:'cubic-bezier(.2,1,.3,1)'});
+      var k = lbI, url = lbList[k], n = lbList.length;
+      lbMeta.textContent = lbTitle + ' · ' + (k + 1) + ' / ' + n;
+      var wait = setTimeout(function(){ lb.classList.add('is-wait'); }, 120);
+      moraLoadImg(url, function(){
+        clearTimeout(wait); if (k !== lbI) return;
+        lb.classList.remove('is-wait');
+        lbImg.src = url; lbImg.alt = lbTitle + ', ' + lbItem + ' ' + (k + 1);
+        if (dir && !reduce && lbImg.animate) lbImg.animate([{opacity:0, transform:'translateX(' + dir * 24 + 'px)'}, {opacity:1, transform:'none'}], {duration:320, easing:'cubic-bezier(.2,1,.3,1)'});
+        [k + 1, k - 1].forEach(function(j){ (new Image()).src = lbList[(j + n) % n]; });
+      });
     }
     function lbOpen(box, i, from){
       lbList = Array.prototype.map.call(box.querySelectorAll('.co-render'), function(b){ return b.dataset.src; });
@@ -5162,7 +5191,7 @@
     function go(i){
       cur = (i + steps.length) % steps.length;
       steps.forEach(function(b, k){ b.setAttribute('aria-selected', k === cur ? 'true' : 'false'); b.tabIndex = k === cur ? 0 : -1; });
-      shots.forEach(function(s, k){ s.classList.toggle('is-on', k === cur); if (k === cur + 1) s.loading = 'eager'; });
+      shots.forEach(function(s, k){ s.classList.toggle('is-on', k === cur); s.loading = 'eager'; });
       txts.forEach(function(t, k){ t.classList.toggle('is-on', k === cur); });
       num.textContent = '0' + (cur + 1) + ' / 0' + steps.length;
     }
@@ -5346,6 +5375,24 @@
     card.querySelectorAll('video[data-poster]').forEach(function(v){ v.poster = v.getAttribute('data-poster'); v.removeAttribute('data-poster'); });
   }
   document.addEventListener('mora:case', function(e){ show(e.detail); });
+})();
+</script>
+<script>
+/* mora-subir: aparece al bajar más de una pantalla dentro de un caso */
+(function(){
+  var modal = document.querySelector('.project-modal'), btn = document.getElementById('modal-top');
+  if (!modal || !btn) return;
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  function sync(){
+    var on = modal.classList.contains('is-open') && modal.scrollTop > window.innerHeight;
+    btn.classList.toggle('is-shown', on); btn.tabIndex = on ? 0 : -1;
+  }
+  modal.addEventListener('scroll', sync, {passive:true});
+  new MutationObserver(sync).observe(modal, {attributes:true, attributeFilter:['class']});
+  btn.addEventListener('click', function(){
+    modal.scrollTo({top:0, behavior:reduce ? 'auto' : 'smooth'});
+    var c = document.getElementById('modal-close'); if (c) setTimeout(function(){ c.focus({preventScroll:true}); }, reduce ? 0 : 500);
+  });
 })();
 </script>
 </body>
