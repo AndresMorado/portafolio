@@ -301,12 +301,12 @@
   }
 
   /* grano sobre toda la web: textura de papel impreso para alejarse del look "digital liso" */
-  .grain{position:fixed; inset:0; z-index:9000; pointer-events:none; background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  2.2 0 0 0 -0.95'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"); background-size:220px 220px; opacity:.11;}
-  :root[data-theme="dark"] .grain{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  2.2 0 0 0 -0.95'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"); opacity:.07;}
+  .grain{position:fixed; inset:0; z-index:9000; pointer-events:none; background-image:url("/img/brand/grano-claro.webp"); background-size:220px 220px; opacity:.11;}
+  :root[data-theme="dark"] .grain{background-image:url("/img/brand/grano-oscuro.webp"); opacity:.07;}
   @media print{ .grain{display:none;} }
 
   /* textura de papel en el fondo: relieve suave y fibras; queda debajo de todo (grilla, risografía, grano) */
-  body::before{content:''; position:fixed; inset:0; z-index:-1; pointer-events:none; background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='640' height='640'%3E%3Cfilter id='p' x='0' y='0' width='100%25' height='100%25'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.018 .022' numOctaves='5' seed='7' stitchTiles='stitch' result='t'/%3E%3CfeDiffuseLighting in='t' lighting-color='%23fff' surfaceScale='2.2' result='l'%3E%3CfeDistantLight azimuth='45' elevation='60'/%3E%3C/feDiffuseLighting%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.22 .5' numOctaves='2' seed='3' stitchTiles='stitch' result='f'/%3E%3CfeColorMatrix in='f' type='matrix' values='0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 -.9 .42' result='fa'/%3E%3CfeComposite in='fa' in2='l' operator='over' result='m'/%3E%3CfeColorMatrix in='m' type='matrix' values='.33 .33 .33 0 .02  .33 .33 .33 0 .02  .33 .33 .33 0 .02  0 0 0 0 1'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23p)'/%3E%3C/svg%3E"); background-size:640px 640px; mix-blend-mode:multiply; opacity:.42;}
+  body::before{content:''; position:fixed; inset:0; z-index:-1; pointer-events:none; background-image:url("/img/brand/papel.webp"); background-size:640px 640px; mix-blend-mode:multiply; opacity:.42;}
   :root[data-theme="dark"] body::before{filter:invert(1); mix-blend-mode:screen; opacity:.22;}
 
   /* ===== header del Home (pill arriba; al bajar, la pill aparece abajo) llevado a todas las páginas ===== */
@@ -456,6 +456,40 @@
   .lang-btn.is-tip .lang-tip{opacity:1; translate:0 0;}
   @media (prefers-reduced-motion:reduce){ .lang-tip{transition:none;} }
   /* /lang-btn */
+  /* carga: mientras una imagen llega se ve un círculo morado girando (mora-carga) */
+  img.is-ld{background:var(--surface-2, #ECECF0) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Ccircle cx='20' cy='20' r='15' fill='none' stroke='%23490FE5' stroke-opacity='.18' stroke-width='4'/%3E%3Cpath d='M20 5a15 15 0 0 1 15 15' fill='none' stroke='%23490FE5' stroke-width='4' stroke-linecap='round'%3E%3CanimateTransform attributeName='transform' type='rotate' from='0 20 20' to='360 20 20' dur='.8s' repeatCount='indefinite'/%3E%3C/path%3E%3C/svg%3E") center / 30px 30px no-repeat; color:transparent;}
+  .cs-ph:has(img):not(.is-loaded){border-style:solid; border-color:var(--line); background:var(--surface-2) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Ccircle cx='20' cy='20' r='15' fill='none' stroke='%23490FE5' stroke-opacity='.18' stroke-width='4'/%3E%3Cpath d='M20 5a15 15 0 0 1 15 15' fill='none' stroke='%23490FE5' stroke-width='4' stroke-linecap='round'%3E%3CanimateTransform attributeName='transform' type='rotate' from='0 20 20' to='360 20 20' dur='.8s' repeatCount='indefinite'/%3E%3C/path%3E%3C/svg%3E") center / 30px 30px no-repeat;}
+  .cs-ph:has(img):not(.is-loaded) figcaption{visibility:hidden;}
+  @media (prefers-reduced-motion:reduce){ img.is-ld, .cs-ph:has(img):not(.is-loaded){background-image:none;} }
+  /* mora-movil: escala de texto para celular */
+  @media (max-width:640px){
+    .hero-claim{font-size:clamp(25px, 7.2vw, 29px) !important; line-height:1.08 !important;}
+    .hero-name{font-size:clamp(28px, 8vw, 31px) !important;}
+    .hero .subtitle{font-size:15px !important; line-height:1.55 !important;}
+    .intro-name{font-size:clamp(28px, 8.2vw, 32px) !important;}
+    .intro-hi{font-size:17px !important;}
+    .sec-head h2{font-size:clamp(23px, 6.6vw, 26px) !important;}
+    .pitch-text{font-size:clamp(19px, 5.5vw, 21px) !important;}
+    .contact-close h2{font-size:clamp(20px, 5.8vw, 23px) !important;}
+    .pf-info h3, .pp h3{font-size:19px !important;}
+    .ab-sub, .cs-lead, .cs-hero-sub, .intro-role, .ab-quote, .ab-quote span{font-size:16px !important;}
+    h1:has(#total-count){font-size:clamp(30px, 8.4vw, 33px) !important;}
+    .contact-intro h1{font-size:clamp(32px, 9vw, 36px) !important;}
+    .th-text h1{font-size:clamp(27px, 7.6vw, 30px) !important;}
+    .e404-text h1{font-size:clamp(24px, 6.8vw, 27px) !important;}
+    /* casos */
+    .cs-hero-title{font-size:clamp(25px, 7.2vw, 29px) !important; line-height:1.1 !important;}
+    .modal-section h2{font-size:clamp(21px, 6vw, 23px) !important;}
+    .modal-next h2{font-size:20px !important;}
+    .cs-h3, .cs-reto-head h3{font-size:18px !important;}
+    .cs-insight p{font-size:17px !important;}
+    .cs-quote-line, .cs-learn b{font-size:17px !important;}
+    .cs-audit-head b{font-size:38px !important;}
+    .cs-stats b, .cs-data b{font-size:28px !important;}
+    .ps-year{font-size:22px !important;}
+    .pt-display{font-size:24px !important;}
+    .modal-section p, .modal-section li{font-size:15px;}
+  }
 </style>
 </head>
 <body>
@@ -496,7 +530,7 @@
       </svg>
       <figure class="e404-postal">
         <a class="e404-shots" href="/trabajo#cafe-pacundi" aria-label="Ver el caso Café Pacundí">
-          <img src="/img/pacundi/thumb-work.jpg" alt="Sitio de Café Pacundí en un celular junto a una taza" data-case="pacundi" data-name="Café Pacundí" class="is-on">
+          <img loading="lazy" decoding="async" src="/img/pacundi/thumb-work.jpg" alt="Sitio de Café Pacundí en un celular junto a una taza" data-case="pacundi" data-name="Café Pacundí" class="is-on">
           <img src="/img/museo/thumb-work.jpg" alt="Pieza anatómica del museo virtual de la UMNG" data-case="museo" data-name="Museo de Anatomía UMNG" loading="lazy">
           <img src="/img/motion/thumb-work.jpg" alt="Cuadro final del video de marca personal de Andrés Mora" data-case="motion" data-name="Motion graphics" loading="lazy">
           <img src="/img/redes/thumb-work.jpg" alt="Piezas para redes sociales en abanico" data-case="redes" data-name="Diseño para redes" loading="lazy">
@@ -860,6 +894,22 @@
       b.classList.add('is-tip'); clearTimeout(t); t = setTimeout(function(){ b.classList.remove('is-tip'); }, 2400);
     });
   })();
+</script>
+<script>
+/* mora-carga: marca las imágenes que todavía no llegan (también las que se crean o cambian después) */
+(function(){
+  function mark(im){
+    if (!im.getAttribute('src') || (im.complete && im.naturalWidth)) return;
+    im.classList.add('is-ld');
+    var off = function(){ im.classList.remove('is-ld'); };
+    im.addEventListener('load', off, {once:true}); im.addEventListener('error', off, {once:true});
+  }
+  document.querySelectorAll('img').forEach(mark);
+  new MutationObserver(function(ms){ ms.forEach(function(m){
+    if (m.type === 'attributes') { mark(m.target); return; }
+    m.addedNodes.forEach(function(n){ if (n.nodeType !== 1) return; if (n.tagName === 'IMG') mark(n); else if (n.querySelectorAll) n.querySelectorAll('img').forEach(mark); });
+  }); }).observe(document.documentElement, {subtree:true, childList:true, attributes:true, attributeFilter:['src']});
+})();
 </script>
 </body>
 </html>

@@ -317,6 +317,17 @@
   .nb.is-single .nb-book{transform:none;}
   .nb.is-single .sheet{left:0; width:100%;}
   .nb.is-single .sheet.is-flipped{visibility:hidden; transition:transform 1000ms cubic-bezier(.5,.08,.22,1), visibility 0s linear 1000ms;}
+  /* celular: nada de 3D (muchos teléfonos no dibujan 35 hojas en 3D). La hoja se va hacia la izquierda girando un poco
+     y la siguiente ya está debajo; las lejanas no se dibujan */
+  .nb.is-single .nb-scene, .nb.is-single .nb-book{perspective:none;}
+  .nb.is-single .nb-tilt{transform:none !important;}
+  .nb.is-single .sheet{transform-style:flat; transform-origin:50% 100%; transition:transform 560ms cubic-bezier(.5,.08,.22,1), opacity 460ms ease, visibility 0s;}
+  .nb.is-single .sheet .face.back{display:none;}
+  .nb.is-single .sheet.is-flipped{transform:translateX(-115%) rotate(-8deg); opacity:0; visibility:hidden;
+    transition:transform 560ms cubic-bezier(.5,.08,.22,1), opacity 140ms linear 420ms, visibility 0s linear 560ms;}
+  .nb.is-single .sheet.is-far{visibility:hidden;}
+  .nb.is-single .sheet.is-moving .nb-shade{animation:none;}
+  .nb.is-single .face.is-enter .nb-it:not(.nb-doodle){animation-delay:calc(200ms + var(--i, 0) * 60ms);}
   .nb.is-single .nb-floor.l{display:none;} .nb.is-single .nb-floor.r{left:0; width:100%;}
   .nb.is-single .nb-count{display:block;}
   @media (max-width:760px){
@@ -449,12 +460,12 @@
   }
 
   /* grano sobre toda la web: textura de papel impreso para alejarse del look "digital liso" */
-  .grain{position:fixed; inset:0; z-index:9000; pointer-events:none; background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  2.2 0 0 0 -0.95'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"); background-size:220px 220px; opacity:.11;}
-  :root[data-theme="dark"] .grain{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  2.2 0 0 0 -0.95'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"); opacity:.07;}
+  .grain{position:fixed; inset:0; z-index:9000; pointer-events:none; background-image:url("img/brand/grano-claro.webp"); background-size:220px 220px; opacity:.11;}
+  :root[data-theme="dark"] .grain{background-image:url("img/brand/grano-oscuro.webp"); opacity:.07;}
   @media print{ .grain{display:none;} }
 
   /* textura de papel en el fondo: relieve suave y fibras; queda debajo de todo (grilla, risografía, grano) */
-  body::before{content:''; position:fixed; inset:0; z-index:-1; pointer-events:none; background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='640' height='640'%3E%3Cfilter id='p' x='0' y='0' width='100%25' height='100%25'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.018 .022' numOctaves='5' seed='7' stitchTiles='stitch' result='t'/%3E%3CfeDiffuseLighting in='t' lighting-color='%23fff' surfaceScale='2.2' result='l'%3E%3CfeDistantLight azimuth='45' elevation='60'/%3E%3C/feDiffuseLighting%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.22 .5' numOctaves='2' seed='3' stitchTiles='stitch' result='f'/%3E%3CfeColorMatrix in='f' type='matrix' values='0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 -.9 .42' result='fa'/%3E%3CfeComposite in='fa' in2='l' operator='over' result='m'/%3E%3CfeColorMatrix in='m' type='matrix' values='.33 .33 .33 0 .02  .33 .33 .33 0 .02  .33 .33 .33 0 .02  0 0 0 0 1'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23p)'/%3E%3C/svg%3E"); background-size:640px 640px; mix-blend-mode:multiply; opacity:.42;}
+  body::before{content:''; position:fixed; inset:0; z-index:-1; pointer-events:none; background-image:url("img/brand/papel.webp"); background-size:640px 640px; mix-blend-mode:multiply; opacity:.42;}
   :root[data-theme="dark"] body::before{filter:invert(1); mix-blend-mode:screen; opacity:.22;}
 
   /* ===== header del Home (pill arriba; al bajar, la pill aparece abajo) llevado a todas las páginas ===== */
@@ -584,6 +595,40 @@
   :root{--grid-line:rgba(16,16,20,.075);}
   :root[data-theme="dark"]{--grid-line:rgba(255,255,255,.06);}
   @media (prefers-color-scheme: dark){ :root:not([data-theme="light"]){--grid-line:rgba(255,255,255,.06);} }
+  /* carga: mientras una imagen llega se ve un círculo morado girando (mora-carga) */
+  img.is-ld{background:var(--surface-2, #ECECF0) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Ccircle cx='20' cy='20' r='15' fill='none' stroke='%23490FE5' stroke-opacity='.18' stroke-width='4'/%3E%3Cpath d='M20 5a15 15 0 0 1 15 15' fill='none' stroke='%23490FE5' stroke-width='4' stroke-linecap='round'%3E%3CanimateTransform attributeName='transform' type='rotate' from='0 20 20' to='360 20 20' dur='.8s' repeatCount='indefinite'/%3E%3C/path%3E%3C/svg%3E") center / 30px 30px no-repeat; color:transparent;}
+  .cs-ph:has(img):not(.is-loaded){border-style:solid; border-color:var(--line); background:var(--surface-2) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Ccircle cx='20' cy='20' r='15' fill='none' stroke='%23490FE5' stroke-opacity='.18' stroke-width='4'/%3E%3Cpath d='M20 5a15 15 0 0 1 15 15' fill='none' stroke='%23490FE5' stroke-width='4' stroke-linecap='round'%3E%3CanimateTransform attributeName='transform' type='rotate' from='0 20 20' to='360 20 20' dur='.8s' repeatCount='indefinite'/%3E%3C/path%3E%3C/svg%3E") center / 30px 30px no-repeat;}
+  .cs-ph:has(img):not(.is-loaded) figcaption{visibility:hidden;}
+  @media (prefers-reduced-motion:reduce){ img.is-ld, .cs-ph:has(img):not(.is-loaded){background-image:none;} }
+  /* mora-movil: escala de texto para celular */
+  @media (max-width:640px){
+    .hero-claim{font-size:clamp(25px, 7.2vw, 29px) !important; line-height:1.08 !important;}
+    .hero-name{font-size:clamp(28px, 8vw, 31px) !important;}
+    .hero .subtitle{font-size:15px !important; line-height:1.55 !important;}
+    .intro-name{font-size:clamp(28px, 8.2vw, 32px) !important;}
+    .intro-hi{font-size:17px !important;}
+    .sec-head h2{font-size:clamp(23px, 6.6vw, 26px) !important;}
+    .pitch-text{font-size:clamp(19px, 5.5vw, 21px) !important;}
+    .contact-close h2{font-size:clamp(20px, 5.8vw, 23px) !important;}
+    .pf-info h3, .pp h3{font-size:19px !important;}
+    .ab-sub, .cs-lead, .cs-hero-sub, .intro-role, .ab-quote, .ab-quote span{font-size:16px !important;}
+    h1:has(#total-count){font-size:clamp(30px, 8.4vw, 33px) !important;}
+    .contact-intro h1{font-size:clamp(32px, 9vw, 36px) !important;}
+    .th-text h1{font-size:clamp(27px, 7.6vw, 30px) !important;}
+    .e404-text h1{font-size:clamp(24px, 6.8vw, 27px) !important;}
+    /* casos */
+    .cs-hero-title{font-size:clamp(25px, 7.2vw, 29px) !important; line-height:1.1 !important;}
+    .modal-section h2{font-size:clamp(21px, 6vw, 23px) !important;}
+    .modal-next h2{font-size:20px !important;}
+    .cs-h3, .cs-reto-head h3{font-size:18px !important;}
+    .cs-insight p{font-size:17px !important;}
+    .cs-quote-line, .cs-learn b{font-size:17px !important;}
+    .cs-audit-head b{font-size:38px !important;}
+    .cs-stats b, .cs-data b{font-size:28px !important;}
+    .ps-year{font-size:22px !important;}
+    .pt-display{font-size:24px !important;}
+    .modal-section p, .modal-section li{font-size:15px;}
+  }
 </style>
 </head>
 <body>
@@ -638,7 +683,7 @@
 <div class="lb-backdrop" id="lb-backdrop"></div>
 <div class="lb" id="lb" role="dialog" aria-modal="true" aria-label="Pieza ampliada">
   <figure>
-    <img id="lb-img" alt="">
+    <img loading="lazy" decoding="async" id="lb-img" alt="">
     <figcaption>
       <span class="lb-meta" id="lb-meta"></span>
       <span class="lb-title" id="lb-title"></span>
@@ -875,7 +920,7 @@
       var st = ' style="' + pos(it, i) + '"' + (pi != null ? ' data-ix="' + pi + ':' + i + '"' : '');
       if (it.t === 'photo') {
         // con candado (lock) la foto no es botón: no se amplía ni entra al visor
-        var inner = '<img src="' + (URLS[it.src] || it.src) + '" alt="' + esc(it.title) + '" draggable="false"><span class="cap"><span>' + esc(it.title) + '</span><span>' + esc(it.meta || '') + '</span></span>';
+        var inner = '<img loading="lazy" decoding="async" ' + (EDIT ? 'src' : 'data-src') + '="' + (URLS[it.src] || it.src) + '" alt="' + esc(it.title) + '" draggable="false"><span class="cap"><span>' + esc(it.title) + '</span><span>' + esc(it.meta || '') + '</span></span>';
         if (it.lock) return '<div class="nb-it nb-photo is-locked' + (it.tape ? ' nb-tape' : '') + '"' + st + '>' + inner + '</div>';
         return '<button type="button" class="nb-it nb-photo' + (it.tape ? ' nb-tape' : '') + '" data-piece="' + it.piece + '"' + st + ' aria-label="Ampliar ' + esc(it.title) + '">' + inner + '</button>';
       }
@@ -992,22 +1037,29 @@
         var sh = sheets[i];
         sh.flipped = i < state;
         if (animate && !reduceMotion) {
-          var delay = order * 110, z = 100 + (++zc);
+          var delay = order * (single ? 25 : 110), z = 100 + (++zc);
           // mientras espera su turno la hoja sigue en su pila con su altura de siempre; sube encima solo cuando arranca.
           // (si subía de una vez, al cerrar desde el final se veía encima la hoja más vieja de la pila)
           if (!sh.moving) sh.el.style.zIndex = restZ({flipped:!sh.flipped}, i);
           clearTimeout(sh.zt); sh.zt = setTimeout(function(){ sh.el.style.zIndex = z; }, delay);
           sh.moving = true;
-          sh.el.style.transitionDelay = delay + 'ms'; sh.el.style.setProperty('--dl', delay + 'ms');
+          sh.el.style.transitionDelay = single ? delay + 'ms, ' + (sh.flipped ? delay + 420 : delay) + 'ms, ' + (sh.flipped ? delay + 560 : delay) + 'ms' : delay + 'ms'; sh.el.style.setProperty('--dl', delay + 'ms');
           sh.el.classList.remove('is-moving'); void sh.el.offsetWidth; sh.el.classList.add('is-moving');
           clearTimeout(sh.t);
-          sh.t = setTimeout(function(){ sh.moving = false; sh.el.classList.remove('is-moving'); sh.el.style.transitionDelay = ''; sh.el.style.zIndex = restZ(sh, i); }, 1050 + delay);
+          sh.t = setTimeout(function(){ sh.moving = false; sh.el.classList.remove('is-moving'); sh.el.style.transitionDelay = ''; sh.el.style.zIndex = restZ(sh, i); }, (single ? 600 : 1050) + delay);
         }
         sh.el.classList.toggle('is-flipped', sh.flipped);
       });
       sheets.forEach(function(sh, i){ if (!sh.moving) { clearTimeout(sh.zt); sh.el.style.zIndex = restZ(sh, i); } });
 
       var vis = visible(state);
+      // carga las fotos de la página visible y de las vecinas (2 antes, 4 después)
+      var lo = Math.min.apply(null, vis) - 2, hi = Math.max.apply(null, vis) + 4;
+      faces.forEach(function(f, i){
+        if (i < lo || i > hi) return;
+        f.querySelectorAll('img[data-src]').forEach(function(im){ im.src = im.getAttribute('data-src'); im.removeAttribute('data-src'); });
+      });
+      if (single) sheets.forEach(function(sh, i){ sh.el.classList.toggle('is-far', i > state + 1); });
       faces.forEach(function(f, i){
         var on = vis.indexOf(i) > -1, was = f.classList.contains('is-live');
         f.classList.toggle('is-live', on);
@@ -1704,6 +1756,22 @@
       b.classList.add('is-tip'); clearTimeout(t); t = setTimeout(function(){ b.classList.remove('is-tip'); }, 2400);
     });
   })();
+</script>
+<script>
+/* mora-carga: marca las imágenes que todavía no llegan (también las que se crean o cambian después) */
+(function(){
+  function mark(im){
+    if (!im.getAttribute('src') || (im.complete && im.naturalWidth)) return;
+    im.classList.add('is-ld');
+    var off = function(){ im.classList.remove('is-ld'); };
+    im.addEventListener('load', off, {once:true}); im.addEventListener('error', off, {once:true});
+  }
+  document.querySelectorAll('img').forEach(mark);
+  new MutationObserver(function(ms){ ms.forEach(function(m){
+    if (m.type === 'attributes') { mark(m.target); return; }
+    m.addedNodes.forEach(function(n){ if (n.nodeType !== 1) return; if (n.tagName === 'IMG') mark(n); else if (n.querySelectorAll) n.querySelectorAll('img').forEach(mark); });
+  }); }).observe(document.documentElement, {subtree:true, childList:true, attributes:true, attributeFilter:['src']});
+})();
 </script>
 </body>
 </html>
