@@ -1,0 +1,17 @@
+# Portafolio de Andrés Mora: buscadores y asistentes de IA pueden leer todo el sitio.
+User-agent: *
+Allow: /
+
+# Asistentes y buscadores de IA (permitidos de forma explícita)
+User-agent: GPTBot
+User-agent: OAI-SearchBot
+User-agent: ChatGPT-User
+User-agent: ClaudeBot
+User-agent: Claude-SearchBot
+User-agent: Claude-User
+User-agent: PerplexityBot
+User-agent: Google-Extended
+User-agent: Applebot-Extended
+Allow: /
+
+# 📌 Con el dominio comprado: Sitemap: https://<dominio>/sitemap-index.xml

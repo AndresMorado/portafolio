@@ -1,0 +1,1709 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>For fun · Fotografía por hobby y proyectos personales de Andrés Mora</title>
+<!-- seo -->
+<meta name="description" content="Cuaderno digital de Andrés Mora con fotografía por hobby, renders 3D y proyectos personales hechos por pasión.">
+<meta name="theme-color" content="#490FE5">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="es_CO">
+<meta property="og:site_name" content="Andrés Mora · Portafolio">
+<meta property="og:title" content="For fun · Fotografía por hobby y proyectos personales de Andrés Mora">
+<meta property="og:description" content="Cuaderno digital de Andrés Mora con fotografía por hobby, renders 3D y proyectos personales hechos por pasión.">
+<meta property="og:image" content="img/brand/og.jpg">
+<meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Andrés Mora · Diseñador de producto digital UX/UI · Motion &amp; Multimedia">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/png" sizes="64x64" href="img/brand/favicon.png">
+<link rel="icon" type="image/png" sizes="512x512" href="img/brand/icon-512.png">
+<link rel="apple-touch-icon" href="img/brand/apple-touch-icon.png">
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "WebPage", "name": "For fun", "inLanguage": "es", "author": {"@type": "Person", "@id": "#andres", "name": "Andrés Felipe Mora Sarmiento", "alternateName": "Andrés Mora", "jobTitle": "Diseñador de Producto Digital (UX/UI) · Motion & Multimedia Engineer", "email": "mailto:andres.mora.sar@gmail.com", "address": {"@type": "PostalAddress", "addressRegion": "Cundinamarca", "addressCountry": "CO"}, "alumniOf": {"@type": "CollegeOrUniversity", "name": "Universidad Militar Nueva Granada"}, "knowsAbout": ["Diseño UX/UI", "Diseño de producto digital", "Design Systems", "Diseño web", "Motion graphics", "Modelado 3D", "Realidad aumentada y virtual"], "sameAs": ["https://www.linkedin.com/in/andres-felipe-mora-sarmiento/", "https://www.behance.net/andrsmora15", "https://sketchfab.com/AndresMora1"]}}]}</script>
+<!-- /seo -->
+<script>
+  try{ var t = localStorage.getItem('mora-home-theme'); if (t === 'dark' || t === 'light') document.documentElement.setAttribute('data-theme', t); }catch(e){}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Stack+Sans+Headline:wght@400;500;600;700&family=Stack+Sans+Text:wght@400;500;600&family=Stack+Sans+Notch:wght@400;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --g-0:#FFFFFF; --g-50:#F8F8F8; --g-100:#EEEEF1; --g-200:#E3E3E8; --g-300:#C9C9D1;
+    --g-400:#9C9CA8; --g-500:#6E6E7A; --g-600:#4B4B56; --g-700:#303038; --g-800:#1C1C22;
+    --g-900:#101014; --g-950:#0A0A0D;
+    --p-base:#490FE5; --p-deep:#33099E; --p-bright:#8B6CFF; --p-soft-light:#F0ECFE;
+    --font-display:'Stack Sans Headline',sans-serif; --font-sans:'Stack Sans Text',sans-serif;
+    --font-mono:'JetBrains Mono',monospace; --font-accent:'Stack Sans Notch',sans-serif;
+    --radius-sm:6px; --radius-md:10px; --radius-lg:16px; --radius-xl:24px; --radius-pill:100px;
+    --space-2:8px; --space-3:12px; --space-4:16px; --space-5:24px; --space-6:32px; --space-7:48px; --space-8:64px; --space-9:96px;
+    --dur-fast:120ms; --dur-base:220ms;
+    --ease-inout:cubic-bezier(.65,0,.35,1); --ease-out:cubic-bezier(.2,1,.3,1);
+  }
+  :root[data-theme="light"]{
+    --bg:var(--g-50); --surface:var(--g-0); --surface-2:var(--g-100);
+    --text-primary:var(--g-900); --text-secondary:var(--g-600); --text-muted:var(--g-400);
+    --line:var(--g-200); --line-strong:var(--g-300);
+    --accent:var(--p-base); --accent-hover:var(--p-deep); --accent-soft:var(--p-soft-light);
+    --on-accent:#FFFFFF;
+  }
+  :root[data-theme="dark"]{
+    --bg:var(--g-950); --surface:var(--g-900); --surface-2:var(--g-800);
+    --text-primary:#F5F5F7; --text-secondary:#9C9CA8; --text-muted:#5C5C68;
+    --line:var(--g-800); --line-strong:#303038;
+    --accent:var(--p-bright); --accent-hover:#A78BFA; --accent-soft:rgba(139,108,255,0.16);
+    --on-accent:#0A0A0D;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{-webkit-text-size-adjust:100%;}
+  body{
+    background:var(--bg); color:var(--text-primary); font-family:var(--font-sans); line-height:1.6;
+    transition:background var(--dur-base) ease, color var(--dur-base) ease;
+    padding:env(safe-area-inset-top,0px) 0 env(safe-area-inset-bottom,0px);
+    -webkit-tap-highlight-color:transparent; overflow-x:hidden;
+  }
+  body.modal-open{overflow:hidden;}
+  a{color:inherit;}
+  img{max-width:100%; display:block;}
+  .wrap{max-width:1120px; margin:0 auto; padding:0 var(--space-5);}
+  .eyebrow{font-family:var(--font-mono); font-size:12px; letter-spacing:0.06em; text-transform:uppercase; color:var(--accent); margin-bottom:var(--space-3);}
+
+  /* botones */
+  .btn-fill{
+    position:relative; display:inline-flex; align-items:center; justify-content:center; gap:8px; overflow:hidden; isolation:isolate;
+    padding:14px 30px; border-radius:var(--radius-pill); border:1.5px solid var(--line-strong); text-decoration:none;
+    background:transparent; cursor:pointer; font-family:var(--font-sans); font-weight:600; font-size:15px; color:var(--text-primary);
+    transition:border-color 420ms ease, transform 500ms var(--ease-out); will-change:transform;
+  }
+  .btn-fill-bg{position:absolute; inset:0; background:var(--accent); z-index:0; transform:scaleX(0); transform-origin:left; transition:transform 520ms var(--ease-inout);}
+  .btn-fill-label{position:relative; z-index:1; display:inline-flex; align-items:center; gap:8px; transition:color 380ms ease 40ms, transform 500ms var(--ease-out); will-change:transform;}
+  .icon-btn{width:44px; height:44px; padding:0; border-radius:50%; background:var(--surface); flex-shrink:0;}
+  .icon-btn .btn-fill-bg{transform:scaleY(0); transform-origin:bottom;}
+  .icon-btn .btn-fill-label{display:flex; align-items:center; justify-content:center; width:18px; height:18px;}
+  .icon-btn svg{width:18px; height:18px; stroke:currentColor; fill:none; stroke-width:1.8; stroke-linecap:round; stroke-linejoin:round; transition:transform 420ms var(--ease-out), opacity 260ms ease;}
+  @media (hover:hover){
+    .btn-fill:hover{border-color:var(--accent);}
+    .btn-fill:hover .btn-fill-bg{transform:scale(1);}
+    .btn-fill:hover .btn-fill-label{color:var(--on-accent);}
+  }
+  .theme-btn .ti{position:absolute; inset:0;}
+  :root[data-theme="light"] .theme-btn .ti-sun{opacity:0; transform:rotate(-90deg) scale(.5);}
+  :root[data-theme="dark"] .theme-btn .ti-moon{opacity:0; transform:rotate(90deg) scale(.5);}
+
+  /* nav */
+  .nav{display:grid; grid-template-columns:1fr auto 1fr; align-items:center; gap:var(--space-5); padding:var(--space-5) 0;}
+  .nav-logo{justify-self:start; font-family:var(--font-display); font-weight:700; font-size:21px; letter-spacing:-0.02em; text-decoration:none; color:var(--text-primary); white-space:nowrap;}
+  .nav-logo .logo-accent{color:var(--accent);}
+  /* efecto rodillo: cada letra sube y entra su copia morada desde abajo, en ola */
+  .nav-logo .lt{display:inline-block; overflow:hidden; height:1.3em; line-height:1.3em; vertical-align:bottom;}
+  .nav-logo .lt > span{display:block; text-shadow:0 1.3em 0 var(--accent); transition:transform 560ms cubic-bezier(.7,0,.2,1); transition-delay:calc(var(--i) * 28ms);}
+  .nav-logo .lt.logo-accent > span{text-shadow:0 1.3em 0 var(--text-primary);}
+  .nav-logo .sr{position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0 0 0 0); white-space:nowrap;}
+  @media (hover:hover){ .nav-logo:hover .lt > span{transform:translateY(-1.3em);} }
+  @media (prefers-reduced-motion:reduce){ .nav-logo .lt > span{transition:none;} }
+  .nav-links{display:flex; gap:var(--space-7); font-family:var(--font-sans); font-size:15px; color:var(--text-secondary);}
+  .nav-links a{text-decoration:none; transition:color var(--dur-fast) ease; position:relative; padding:4px 0;}
+  .nav-links a::after{content:''; position:absolute; left:0; right:0; bottom:-4px; height:2px; border-radius:2px; background:var(--accent); transform:scaleX(0); transform-origin:right; transition:transform 420ms var(--ease-out);}
+  .nav-links a[aria-current="page"]{color:var(--text-primary); font-weight:600;}
+  .nav-links a[aria-current="page"]::after{transform:scaleX(1);}
+  .nav-actions{justify-self:end; display:flex; align-items:center; gap:var(--space-3);}
+  .nav-cta{padding:11px 20px; font-size:14px;}
+  .nav-cta{background:var(--accent); border-color:var(--accent); color:var(--on-accent);}
+  .nav-cta .btn-fill-bg{background:var(--accent-hover);}
+  .nav-cta .btn-fill-label{display:inline-flex; align-items:center; gap:8px;}
+  .nav-cta .cta-arrow{width:16px; height:16px; fill:none; stroke:currentColor; stroke-width:2; stroke-linecap:round; stroke-linejoin:round; transition:transform 420ms var(--ease-out);}
+  .hamburger{display:none;}
+  @media (hover:hover){
+    .nav-links a:hover{color:var(--accent);}
+    .nav-links a:hover::after{transform:scaleX(1); transform-origin:left;}
+    .nav-cta:hover{border-color:var(--accent-hover);}
+    .nav-cta:hover .cta-arrow{transform:translateX(3px);}
+  }
+  @media (max-width:900px){
+    .nav{display:flex; justify-content:space-between;}
+    .nav-links, .nav-cta{display:none;}
+    .hamburger{display:inline-flex;}
+  }
+
+  /* drawer mobile */
+  .drawer-backdrop{position:fixed; inset:0; z-index:600; background:rgba(10,10,15,0.4); opacity:0; visibility:hidden; transition:opacity 320ms ease, visibility 0s linear 320ms;}
+  .drawer-backdrop.is-open{opacity:1; visibility:visible; transition-delay:0s;}
+  .mobile-drawer{
+    position:fixed; top:0; right:0; height:100%; width:min(82vw,320px); z-index:601;
+    background:var(--surface); border-left:1px solid var(--line); display:flex; flex-direction:column; gap:4px;
+    padding:calc(var(--space-5) + env(safe-area-inset-top,0px)) var(--space-5) var(--space-5);
+    transform:translateX(100%); visibility:hidden; transition:transform 420ms var(--ease-inout), visibility 0s linear 420ms;
+  }
+  .mobile-drawer.is-open{transform:translateX(0); visibility:visible; transition-delay:0s;}
+  .mobile-drawer .icon-btn{align-self:flex-end; margin-bottom:var(--space-5);}
+  .drawer-link{display:flex; align-items:center; justify-content:space-between; padding:14px; border-radius:var(--radius-sm); font-family:var(--font-display); font-weight:500; font-size:20px; color:var(--text-primary); text-decoration:none;}
+  .drawer-link:active, .drawer-link[aria-current="page"]{background:var(--accent-soft); color:var(--accent);}
+  .si-arrow{width:14px; height:14px; flex-shrink:0; stroke:var(--accent); fill:none; stroke-width:2; stroke-linecap:round; stroke-linejoin:round;}
+
+  /* encabezado */
+  .fun-head{padding:var(--space-8) 0 var(--space-6); display:flex; align-items:flex-end; justify-content:space-between; gap:var(--space-6); flex-wrap:wrap;}
+  .fun-head h1{font-family:var(--font-display); font-weight:600; font-size:clamp(40px,7vw,72px); line-height:1.02; letter-spacing:-0.02em;}
+  .fun-head h1 .accent{font-family:var(--font-accent); font-weight:700; color:var(--accent);}
+  .fun-intro{font-size:17px; color:var(--text-secondary); max-width:40ch;}
+
+  /* ===== libreta digital =====
+     Cada hoja es un .sheet con dos caras (.face.front = página derecha, .face.back = la izquierda de la siguiente).
+     Al pasar la hoja gira sobre el lomo (rotateY). En celular se ve una página a la vez. */
+  .sr-only{position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0 0 0 0); white-space:nowrap;}
+  /* la libreta se sale del ancho de .wrap para ocupar casi toda la pantalla */
+  .nb{position:relative; display:grid; grid-template-columns:1fr auto 1fr; grid-template-areas:"prev scene next" ". bar ."; align-items:center; align-content:center; row-gap:var(--space-4);
+    --nbw:min(calc(100vw - 32px), 1440px); width:var(--nbw); margin-left:calc(50% - var(--nbw) / 2);
+    min-height:calc(100svh - 96px); padding:var(--space-2) 0 var(--space-5);
+    --pr:.72; --pw:min(620px, calc((var(--nbw) - 200px) / 2), calc((100svh - 215px) * .72)); --ph:calc(var(--pw) / var(--pr));
+    --paper:#FDFCF8; --paper-2:#E9E6DE; --dot:rgba(16,16,20,.15); --ink:#101014; --ink-2:#4B4B56; --frame:#FFFFFF; --cap:#6E6E7A;
+    --tape:rgba(206,194,252,.78); --spine:rgba(16,16,20,.13); --floor:rgba(16,16,20,.42);}
+  :root[data-theme="dark"] .nb{--paper:#19191E; --paper-2:#0C0C10; --dot:rgba(255,255,255,.10); --ink:#F5F5F7; --ink-2:#9C9CA8; --frame:#EDEBE6;
+    --tape:rgba(139,108,255,.45); --spine:rgba(0,0,0,.45); --floor:rgba(0,0,0,.75);}
+  .nb-prev{grid-area:prev; justify-self:end;} .nb-next{grid-area:next; justify-self:start;}
+  .nb-scene{grid-area:scene; position:relative; width:calc(var(--pw) * 2); height:var(--ph); margin:0 clamp(8px, 2.4vw, 40px); perspective:2400px; touch-action:pan-y;}
+  .nb-tilt{position:absolute; inset:0; transform:rotateX(var(--tx, 0deg)) rotateY(var(--ty, 0deg)); transition:transform 700ms var(--ease-out);}
+  .nb-book{position:absolute; inset:0; perspective:2600px; transition:transform 900ms var(--ease-inout);}
+  .nb-book.at-start{transform:translateX(calc(var(--pw) * -.5));}
+  .nb-book.at-end{transform:translateX(calc(var(--pw) * .5));}
+  .nb-floor{position:absolute; top:3%; bottom:0; width:50%; z-index:0; border-radius:14px; pointer-events:none; opacity:0; transition:opacity 500ms ease;
+    box-shadow:0 36px 50px -24px var(--floor), 0 10px 20px -10px var(--floor);}
+  .nb-floor.l{left:0;} .nb-floor.r{left:50%;}
+  .nb-book.has-left .nb-floor.l, .nb-book.has-right .nb-floor.r{opacity:1;}
+
+  .sheet{position:absolute; top:0; left:50%; width:50%; height:100%; transform-style:preserve-3d; transform-origin:0 50%;
+    transition:transform 1000ms cubic-bezier(.5,.08,.22,1), visibility 0s;}
+  .sheet.is-flipped{transform:rotateY(-180deg);}
+  .face{position:absolute; inset:0; overflow:hidden; backface-visibility:hidden; -webkit-backface-visibility:hidden; container-type:size; color:var(--ink); border-radius:3px 14px 14px 3px;
+    box-shadow:1px 1px 0 var(--paper-2), 2px 2px 0 color-mix(in srgb, var(--paper-2) 70%, transparent);}
+  .face.back{transform:rotateY(180deg); border-radius:14px 3px 3px 14px; box-shadow:-1px 1px 0 var(--paper-2), -2px 2px 0 color-mix(in srgb, var(--paper-2) 70%, transparent);}
+  .pg{position:absolute; inset:0; background-color:var(--paper); background-image:radial-gradient(circle, var(--dot) 0 .9px, transparent 1.3px); background-size:5.4cqw 5.4cqw; background-position:2.7cqw 2.7cqw;}
+  .pg::before{content:''; position:absolute; top:0; bottom:0; left:0; width:12%; z-index:5; pointer-events:none; background:linear-gradient(90deg, var(--spine), transparent);}
+  .face.back .pg::before{left:auto; right:0; background:linear-gradient(270deg, var(--spine), transparent);}
+  .nb-shade{position:absolute; inset:0; z-index:8; pointer-events:none; opacity:0; background:linear-gradient(90deg, rgba(16,16,20,.34), rgba(16,16,20,0) 75%);}
+  .face.back .nb-shade{background:linear-gradient(270deg, rgba(16,16,20,.34), rgba(16,16,20,0) 75%);}
+  .sheet.is-moving .nb-shade{animation:nb-shade 1000ms ease-in-out var(--dl, 0ms) both;}
+  @keyframes nb-shade{0%,100%{opacity:0;} 50%{opacity:1;}}
+  /* esquina doblada: invita a pasar la hoja */
+  .nb-curl{position:absolute; bottom:0; right:0; z-index:9; width:0; height:0; pointer-events:none; transition:width 320ms var(--ease-out), height 320ms var(--ease-out);
+    background:linear-gradient(315deg, var(--bg) 0 50%, var(--paper-2) 50%, var(--paper) 100%); border-top-left-radius:3px;}
+  .face.back .nb-curl{right:auto; left:0; background:linear-gradient(45deg, var(--bg) 0 50%, var(--paper-2) 50%, var(--paper) 100%); border-radius:0 3px 0 0;}
+  @media (hover:hover) and (pointer:fine){
+    .face.is-live{cursor:pointer;}
+    .face.is-live:hover .nb-curl{width:7cqw; height:7cqw;}
+  }
+
+  /* contenido de las páginas: coordenadas en % de la página */
+  .nb-it{position:absolute; left:calc(var(--x) * 1%); top:calc(var(--y) * 1%); width:calc(var(--w) * 1%); rotate:calc(var(--r, 0) * 1deg); z-index:var(--z, 2);}
+  .nb-photo{display:block; padding:1.8cqw 1.8cqw 6.4cqw; background:var(--frame); border:0; font:inherit; color:inherit; text-align:left; cursor:zoom-in;
+    box-shadow:0 .7cqw 1.8cqw rgba(16,16,20,.18), 0 .2cqw .4cqw rgba(16,16,20,.08); transition:transform 420ms var(--ease-out), box-shadow 420ms ease;}
+  .nb-photo img{display:block; width:100%; aspect-ratio:var(--ar, 4/3); object-fit:cover; background:#E3E3E8;}
+  .nb-photo .cap{position:absolute; left:1.8cqw; right:1.8cqw; bottom:1.8cqw; display:flex; justify-content:space-between; gap:1.4cqw; font-family:var(--font-mono); font-size:2cqw; letter-spacing:.04em; text-transform:uppercase; color:var(--cap); white-space:nowrap;}
+  .nb-photo .cap span:first-child{min-width:0; overflow:hidden; text-overflow:ellipsis;}
+  .nb-photo .cap span:last-child{color:var(--p-base); flex-shrink:0;}
+  .nb-tape::before{content:''; position:absolute; left:50%; top:-2.4cqw; width:32%; height:4.8cqw; translate:-50% 0; rotate:-3deg; background:var(--tape);
+    clip-path:polygon(2% 0, 98% 4%, 100% 22%, 97% 42%, 100% 62%, 97% 82%, 99% 100%, 1% 96%, 3% 76%, 0 56%, 3% 36%, 0 16%);}
+  @media (hover:hover){
+    .face.is-live .nb-photo:not(.is-locked):hover{transform:translateY(-.9cqw) scale(1.03); box-shadow:0 2cqw 3.4cqw rgba(16,16,20,.24), 0 .4cqw .8cqw rgba(16,16,20,.1);}
+  }
+  .nb-ph{display:grid; place-items:center; aspect-ratio:var(--ar, 4/3); padding:2cqw; border:.35cqw dashed color-mix(in srgb, var(--accent) 50%, transparent); border-radius:1.2cqw;
+    background:color-mix(in srgb, var(--accent) 5%, transparent); font-family:var(--font-mono); font-size:2.3cqw; letter-spacing:.05em; text-transform:uppercase; color:var(--ink-2); text-align:center;}
+  .nb-head{position:absolute; left:9%; right:9%; top:7%; z-index:3;}
+  /* --fs escala el texto (lo ajusta el modo edición) */
+  .nb-num{display:block; margin-bottom:1.6cqw; font-family:var(--font-mono); font-size:calc(2.5cqw * var(--fs, 1)); letter-spacing:.08em; text-transform:uppercase; color:var(--accent);}
+  .nb-title{font-family:var(--font-display); font-weight:600; font-size:calc(8.4cqw * var(--fs, 1)); line-height:1.02; letter-spacing:-.02em;}
+  .nb-title.sm{font-size:calc(5.8cqw * var(--fs, 1));}
+  .nb-p{margin-top:2.2cqw; font-size:calc(3cqw * var(--fs, 1)); line-height:1.5; color:var(--ink-2); max-width:38ch;}
+  .nb-note{font-size:calc(2.7cqw * var(--fs, 1)); line-height:1.45; color:var(--ink-2);}
+  .nb-note b{display:block; font-family:var(--font-mono); font-weight:500; font-size:calc(2.2cqw * var(--fs, 1)); letter-spacing:.06em; text-transform:uppercase; color:var(--accent); margin-bottom:.6cqw;}
+  /* estilos de texto para ordenar la página: subtítulo y categoría */
+  .nb-note.is-sub{font-family:var(--font-display); font-weight:600; font-size:calc(4.6cqw * var(--fs, 1)); line-height:1.08; letter-spacing:-.015em; color:var(--ink);}
+  .nb-note.is-cat{font-family:var(--font-mono); font-weight:500; font-size:calc(2.3cqw * var(--fs, 1)); line-height:1.4; letter-spacing:.08em; text-transform:uppercase; color:var(--accent);}
+  .nb-folio{position:absolute; bottom:4.2%; right:7%; z-index:3; font-family:var(--font-mono); font-size:2.2cqw; letter-spacing:.06em; color:var(--ink-2); opacity:.75;}
+  .face.back .nb-folio{right:auto; left:7%;}
+
+  /* garabatos de crayón que se dibujan al abrir la página */
+  .nb-doodle{pointer-events:none;}
+  .nb-doodle svg{display:block; width:100%; height:auto; overflow:visible; filter:url(#nb-rough);}
+  .nb-doodle path{fill:none; stroke:var(--accent); stroke-width:3.4; stroke-linecap:round; stroke-linejoin:round; stroke-dasharray:1 1; stroke-dashoffset:1;}
+  .nb-doodle.light path{stroke:#F0ECFE;}
+  .face.is-live .nb-doodle path{animation:nb-draw 1100ms var(--ease-out) forwards; animation-delay:calc(700ms + var(--i, 0) * 90ms);}
+  @keyframes nb-draw{to{stroke-dashoffset:0;}}
+  /* las piezas caen en su sitio cuando la página aparece */
+  .face.is-enter .nb-it:not(.nb-doodle){animation:nb-in 700ms var(--ease-out) both; animation-delay:calc(520ms + var(--i, 0) * 80ms);}
+  @keyframes nb-in{from{opacity:0; transform:translateY(-3.5cqw) scale(1.06);}}
+
+  /* índice */
+  .nb-toc-list{position:absolute; left:9%; right:9%; top:27%; z-index:3; display:flex; flex-direction:column;}
+  .nb-toc{display:flex; align-items:baseline; gap:1.8cqw; padding:2.4cqw 0; background:none; border:0; border-bottom:1px solid color-mix(in srgb, var(--ink) 12%, transparent);
+    font-family:var(--font-display); font-weight:600; font-size:4.6cqw; color:var(--ink); text-align:left; cursor:pointer; transition:color 200ms ease, padding 420ms var(--ease-out);}
+  .nb-toc i{flex:1; border-bottom:.35cqw dotted color-mix(in srgb, var(--ink) 30%, transparent);}
+  .nb-toc b{font-family:var(--font-mono); font-weight:500; font-size:2.6cqw; color:var(--accent);}
+  @media (hover:hover){ .nb-toc:hover{color:var(--accent); padding-left:1.6cqw;} }
+
+  /* portada, guardas y contraportada */
+  .pg.cv{background:radial-gradient(130% 100% at 18% 8%, #7A52FF 0%, #490FE5 42%, #33099E 100%);}
+  .pg.ep{background-color:#3D0CC8; background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='28' height='28'%3E%3Cpath d='M14 9.5v9M9.5 14h9' stroke='%238B6CFF' stroke-width='1.6' stroke-linecap='round'/%3E%3C/svg%3E"); background-size:7cqw 7cqw; background-position:center;}
+  .pg.cv::after, .pg.ep::after{content:''; position:absolute; inset:0; z-index:1; pointer-events:none; background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='.33 .33 .33 0 0  .33 .33 .33 0 0  .33 .33 .33 0 0  0 0 0 0 1'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"); background-size:180px 180px; mix-blend-mode:hard-light; opacity:.42;}
+  .pg.cv::before, .pg.ep::before{--spine:rgba(10,4,40,.4);}
+  .cv-band{position:absolute; top:0; bottom:0; right:12%; width:3.6cqw; z-index:4; background:linear-gradient(90deg, #12053A, #2B0F88 50%, #12053A); box-shadow:.5cqw 0 1cqw rgba(0,0,0,.35);}
+  .face.back .cv-band{right:auto; left:12%; box-shadow:-.5cqw 0 1cqw rgba(0,0,0,.35);}
+  .nb-card{position:absolute; z-index:3; padding:5cqw 5.5cqw 5.5cqw; background:#FDFCF8; color:#101014; border-radius:1cqw; box-shadow:0 1.2cqw 2.6cqw rgba(10,4,40,.4);}
+  .nb-card .k{display:block; font-family:var(--font-mono); font-size:2.5cqw; letter-spacing:.08em; text-transform:uppercase; color:#490FE5;}
+  .nb-card strong{display:block; margin:1.4cqw 0 0; font-family:var(--font-display); font-weight:700; font-size:11cqw; line-height:.98; letter-spacing:-.03em;}
+  .nb-card .nm{display:block; margin-top:2cqw; font-family:var(--font-display); font-weight:600; font-size:4.6cqw;}
+  .nb-card .tg{display:block; margin-top:4cqw; padding-top:2.4cqw; border-top:1px dashed #C9C9D1; font-family:var(--font-mono); font-size:2.2cqw; letter-spacing:.06em; text-transform:uppercase; color:#6E6E7A;}
+  .nb-card p{margin-top:2.4cqw; font-size:3cqw; line-height:1.5; color:#4B4B56;}
+  .nb-card.cv-label{left:13%; top:15%; width:63%; rotate:-2deg;}
+  .nb-card.ep-label{left:11%; top:11%; width:70%; rotate:1.4deg;}
+  .nb-card.ep-label strong{font-size:7.4cqw;}
+  .nb-card.st-label{left:9%; top:8%; width:62%; rotate:-1.5deg; padding:4cqw 4.5cqw;}
+  .nb-card.st-label strong{font-size:7cqw;}
+  .nb-card.bc-label{left:22%; top:40%; width:56%; rotate:1.5deg; text-align:center;}
+  .nb-card.bc-label strong{font-size:6.4cqw;}
+  .bc-meta{position:absolute; left:0; right:0; bottom:6%; z-index:3; text-align:center; font-family:var(--font-mono); font-size:2.2cqw; letter-spacing:.08em; text-transform:uppercase; color:#F0ECFE; opacity:.8;}
+  .nb-tape-card::before{content:''; position:absolute; left:50%; top:-2.4cqw; width:30%; height:4.8cqw; translate:-50% 0; rotate:3deg; background:rgba(206,194,252,.85);
+    clip-path:polygon(2% 0, 98% 4%, 100% 22%, 97% 42%, 100% 62%, 97% 82%, 99% 100%, 1% 96%, 3% 76%, 0 56%, 3% 36%, 0 16%);}
+  .nb-cta{position:absolute; left:9%; right:9%; top:48%; z-index:3; display:flex; flex-wrap:wrap; gap:2.4cqw;}
+  .nb-cta .btn-fill{padding:2.6cqw 4.6cqw; font-size:3cqw; background:var(--paper);}
+  .nb-cta .btn-fill.is-solid{background:var(--accent);}
+
+  /* stickers: se pueden despegar y mover dentro de su página */
+  .nb-stk{z-index:4; cursor:grab; touch-action:none; user-select:none; -webkit-user-select:none; filter:drop-shadow(0 .5cqw .7cqw rgba(16,16,20,.25)); transition:scale 220ms var(--ease-out), filter 220ms ease;}
+  .nb-stk.is-drag{cursor:grabbing; scale:1.1; filter:drop-shadow(0 1.8cqw 2cqw rgba(16,16,20,.32)); z-index:20;}
+  .nb-stk svg{display:block; width:100%; height:auto; overflow:visible;}
+  .nb-stk .spin{transform-origin:50px 50px; animation:nb-spin 16s linear infinite;}
+  .nb-stk text{font-family:var(--font-mono); font-size:9.6px; font-weight:500; letter-spacing:.12em; fill:#490FE5;}
+  .stk-pill, .stk-mora{width:max-content; padding:1.8cqw 3.4cqw; background:#FFFFFF; border-radius:100px; font-family:var(--font-display); font-weight:700; font-size:4.6cqw; line-height:1; color:#490FE5; box-shadow:inset 0 0 0 .5cqw #FFFFFF;}
+  .stk-mora{border-radius:1.4cqw; color:#101014; padding:2.4cqw 3.6cqw;}
+  .stk-mora span{position:relative; display:inline-block; padding:0 .8cqw; color:#490FE5;}
+  .stk-mora span::before{content:''; position:absolute; inset:.2cqw 0 -.2cqw; border:.35cqw solid #490FE5;}
+  .stk-mora i{position:absolute; width:1.4cqw; height:1.4cqw; background:#fff; border:.35cqw solid #490FE5;}
+  .stk-mora i:nth-of-type(1){left:0; top:.2cqw; translate:-50% -50%;} .stk-mora i:nth-of-type(2){right:0; top:.2cqw; translate:50% -50%;}
+  .stk-mora i:nth-of-type(3){left:0; bottom:-.2cqw; translate:-50% 50%;} .stk-mora i:nth-of-type(4){right:0; bottom:-.2cqw; translate:50% 50%;}
+  @keyframes nb-spin{to{rotate:360deg;}}
+
+  /* flechas dibujadas a mano */
+  .nb-arrow{width:76px; height:48px; padding:6px; border:0; border-radius:var(--radius-md); background:none; color:var(--text-primary); cursor:pointer; transition:opacity 300ms ease, color 200ms ease, translate 420ms var(--ease-out);}
+  .nb-arrow svg{display:block; width:100%; height:100%; overflow:visible; filter:url(#nb-rough);}
+  .nb-arrow path{fill:none; stroke:currentColor; stroke-width:2.4; stroke-linecap:round; stroke-linejoin:round; stroke-dasharray:1 1; stroke-dashoffset:0;}
+  .nb-next svg{scale:-1 1;}
+  .nb-arrow:disabled{opacity:.2; cursor:default;}
+  @media (hover:hover){
+    .nb-arrow:not(:disabled):hover{color:var(--accent);}
+    .nb-prev:not(:disabled):hover{translate:-5px 0;} .nb-next:not(:disabled):hover{translate:5px 0;}
+    .nb-arrow:not(:disabled):hover path{animation:nb-redraw 700ms var(--ease-out);}
+  }
+  @keyframes nb-redraw{from{stroke-dashoffset:1;} to{stroke-dashoffset:0;}}
+
+  /* barra inferior: un punto por pliego; el activo muestra su miniatura con texto girando alrededor */
+  .nb-bar{grid-area:bar; display:flex; align-items:center; justify-content:center; gap:var(--space-4); min-height:76px;}
+  .nb-dots{display:flex; align-items:center; gap:4px;}
+  .nb-dot{position:relative; display:grid; place-items:center; width:22px; height:22px; padding:0; border:0; background:none; cursor:pointer; transition:width 560ms var(--ease-out), height 560ms var(--ease-out);}
+  .nb-dot .th{width:9px; height:9px; border-radius:50%; background:var(--line-strong) center/cover no-repeat; transition:width 560ms var(--ease-out), height 560ms var(--ease-out), box-shadow 300ms ease, scale 300ms var(--ease-out);}
+  .nb-dot .ring{position:absolute; inset:0; width:100%; height:100%; opacity:0; transition:opacity 400ms ease; animation:nb-spin 18s linear infinite;}
+  .nb-dot .ring text{font-family:var(--font-mono); font-size:8.6px; letter-spacing:.14em; fill:var(--text-secondary);}
+  .nb-dot.is-active{width:76px; height:76px;}
+  .nb-dot.is-active .th{width:46px; height:46px; box-shadow:0 0 0 2px var(--bg), 0 0 0 3.5px var(--accent);}
+  .nb-dot.is-active .ring{opacity:1;}
+  @media (hover:hover){ .nb-dot:not(.is-active):hover .th{scale:1.5; box-shadow:0 0 0 1.5px var(--accent);} }
+  .nb-count{display:none; font-family:var(--font-mono); font-size:12px; letter-spacing:.06em; color:var(--text-secondary);}
+  .nb-count b{color:var(--accent); font-weight:500;}
+  .nb-hint{grid-column:1 / -1; justify-self:center; margin-top:calc(var(--space-3) * -1); font-family:var(--font-mono); font-size:11px; letter-spacing:.06em; text-transform:uppercase; color:var(--text-muted); text-align:center;}
+  .nb-sr{position:absolute; width:1px; height:1px; overflow:hidden; clip-path:inset(50%); white-space:nowrap;}
+
+  /* celular: una página a la vez; la hoja que pasa sale por la izquierda */
+  .nb.is-single{overflow-x:clip;}
+  .nb.is-single .nb-scene{width:var(--pw);}
+  .nb.is-single .nb-book{transform:none;}
+  .nb.is-single .sheet{left:0; width:100%;}
+  .nb.is-single .sheet.is-flipped{visibility:hidden; transition:transform 1000ms cubic-bezier(.5,.08,.22,1), visibility 0s linear 1000ms;}
+  .nb.is-single .nb-floor.l{display:none;} .nb.is-single .nb-floor.r{left:0; width:100%;}
+  .nb.is-single .nb-count{display:block;}
+  @media (max-width:760px){
+    .nb{grid-template-columns:auto 1fr auto; grid-template-areas:"scene scene scene" "prev bar next"; row-gap:var(--space-3); padding-top:0; min-height:0;
+      --pw:min(calc(100vw - 32px), 460px, calc((100svh - 200px) * .72));}
+    .nb-scene{margin:0 auto;}
+    .nb-arrow{width:60px; height:42px;}
+    .nb-prev{justify-self:start;} .nb-next{justify-self:end;}
+    .nb-dot.is-active{width:64px; height:64px;} .nb-dot.is-active .th{width:38px; height:38px;}
+    /* celular: contador entre las flechas y debajo una tira de puntos (uno por página) que se desliza y centra el activo */
+    .nb.is-single{grid-template-areas:"scene scene scene" "prev count next" "dots dots dots";}
+    .nb.is-single .nb-bar{display:contents;}
+    .nb.is-single .nb-count{grid-area:count; justify-self:center; align-self:center;}
+    .nb.is-single .nb-dots{grid-area:dots; position:relative; justify-self:stretch; min-width:0; overflow-x:auto; overscroll-behavior-x:contain; scrollbar-width:none; gap:0; padding:0 50%;
+      -webkit-mask-image:linear-gradient(90deg, transparent, #000 14%, #000 86%, transparent); mask-image:linear-gradient(90deg, transparent, #000 14%, #000 86%, transparent);}
+    .nb.is-single .nb-dots::-webkit-scrollbar{display:none;}
+    .nb.is-single .nb-dot{flex:none;}
+    .nb.is-single .nb-dot:not(.is-active){width:18px; height:64px;}
+    .nb.is-single .nb-dot:not(.is-active) .th{width:7px; height:7px;}
+  }
+  @media (prefers-reduced-motion:reduce){
+    .sheet, .nb-book, .nb-tilt, .nb-floor{transition:none !important;}
+    .nb-shade, .face.is-enter .nb-it, .nb-stk .spin, .nb-dot .ring{animation:none !important;}
+    .nb-doodle path{stroke-dashoffset:0; animation:none !important;}
+  }
+
+  /* ===== modo edición (abrir con ?editar): Andrés diseña cada página aquí y guarda el resultado ===== */
+  .nb.is-edit{padding-top:40px;}
+  .nb.is-edit .nb-it{cursor:move; touch-action:none; animation:none !important;}
+  .nb.is-edit .nb-doodle{pointer-events:auto;}
+  .nb.is-edit .face.is-live .nb-it:hover{outline:1px dashed color-mix(in srgb, var(--accent) 60%, transparent); outline-offset:3px;}
+  .nb.is-edit .face.is-live .nb-photo:hover{transform:none;}
+  /* foto con candado: no se amplía; el candado solo se ve en el modo edición */
+  .nb-photo.is-locked{cursor:inherit;}
+  .nb.is-edit .nb-photo.is-locked::after{content:''; position:absolute; top:-1.6cqw; right:-1.6cqw; z-index:4; width:5.2cqw; height:5.2cqw; border-radius:50%;
+    background:#490FE5 url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23fff' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'%3E%3Crect x='5' y='11' width='14' height='10' rx='2'/%3E%3Cpath d='M8 11V8a4 4 0 0 1 8 0v3'/%3E%3C/svg%3E") center / 58% no-repeat;
+    box-shadow:0 0 0 .5cqw #FFFFFF;}
+  .ed-btn.is-on{background:var(--accent-soft); border-color:var(--accent); color:var(--accent);}
+  .nb.is-edit .nb-it.is-sel{outline:1.5px solid var(--accent) !important; outline-offset:3px;}
+  .nb.is-edit .face.is-live .nb-head:hover{outline:1px dashed color-mix(in srgb, var(--accent) 60%, transparent); outline-offset:6px;}
+  .nb.is-edit .nb-head.is-sel{outline:1.5px solid var(--accent) !important; outline-offset:6px;}
+  /* orden de las páginas: los puntos de abajo se arrastran (portada y contraportada quedan fijas) */
+  .nb.is-edit .nb-dots{flex-wrap:wrap; justify-content:center; gap:8px; padding-bottom:16px;}
+  .nb.is-edit .nb-dot{cursor:grab; touch-action:none;}
+  .nb.is-edit .nb-dot.is-fixed{cursor:pointer;}
+  .nb.is-edit .nb-dot:not(.is-active){width:40px; height:40px;}
+  .nb.is-edit .nb-dot:not(.is-active) .th{width:32px; height:32px; border-radius:7px;}
+  .nb.is-edit.is-single .nb-dot:not(.is-active){display:grid;}
+  .nb.is-edit .nb-dot::after{content:attr(data-n); position:absolute; top:100%; left:50%; translate:-50% 0; white-space:nowrap; font:9px/1 var(--font-mono); color:var(--text-secondary);}
+  .nb.is-edit .nb-dot.is-drag{z-index:5; cursor:grabbing; opacity:.8; transition:none;}
+  .nb.is-edit .nb-dot.is-drop-l::before, .nb.is-edit .nb-dot.is-drop-r::before{content:''; position:absolute; top:4px; bottom:4px; width:3px; border-radius:2px; background:var(--accent);}
+  .nb.is-edit .nb-dot.is-drop-l::before{left:-6px;}
+  .nb.is-edit .nb-dot.is-drop-r::before{right:-6px;}
+  .ed-h{position:absolute; z-index:5; width:14px; height:14px; background:#FFFFFF; border:2px solid var(--accent); border-radius:50%;}
+  .ed-rs{right:-11px; bottom:-11px; border-radius:3px;}
+  .ed-rot{left:50%; top:-30px; translate:-50% 0;}
+  .ed-rot::after{content:''; position:absolute; left:50%; top:12px; width:2px; height:15px; background:var(--accent); translate:-50% 0;}
+  /* barra fija arriba, encima del menú (mientras se edita no hace falta) */
+  .ed-panel{position:fixed; left:0; right:0; top:0; z-index:800; min-height:88px; padding:10px 16px; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:6px;
+    background:var(--surface); border-bottom:1px solid var(--line-strong); box-shadow:0 10px 30px rgba(16,16,20,.10); font-size:13px; color:var(--text-primary);}
+  .ed-main{display:flex; flex-wrap:wrap; align-items:center; justify-content:center; gap:6px 14px;}
+  .ed-top{display:flex; flex-direction:column; line-height:1.2;}
+  .ed-top b{font-family:var(--font-display); font-weight:600; font-size:15px;}
+  .ed-pg, .ed-help, .ed-msg{font-family:var(--font-mono); font-size:10.5px; letter-spacing:.03em; color:var(--text-secondary); line-height:1.5; text-align:center;}
+  .ed-pg{color:var(--accent);}
+  .ed-msg{color:var(--accent);}
+  .ed-msg:empty{display:none;}
+  .ed-msg:not(:empty) + .ed-help{display:none;}
+  .ed-row{display:flex; flex-wrap:wrap; gap:5px; padding-left:10px; border-left:1px solid var(--line);}
+  .ed-main{gap:6px 10px;}
+  .ed-btn{display:inline-flex; align-items:center; height:32px; padding:0 10px; border:1px solid var(--line-strong); border-radius:var(--radius-pill); background:var(--surface);
+    font:inherit; font-size:12.5px; font-weight:500; color:var(--text-primary);}
+  .ed-btn:hover{border-color:var(--accent); color:var(--accent);}
+  .ed-btn.is-main{background:var(--accent); border-color:var(--accent); color:#FFFFFF;}
+  .ed-btn:disabled{opacity:.4; pointer-events:none;}
+  select.ed-btn{padding-right:8px;}
+  .ed-out{width:100%; height:140px; font-family:var(--font-mono); font-size:10px; border:1px solid var(--line-strong); border-radius:var(--radius-sm); background:var(--surface-2); color:var(--text-primary);}
+
+  /* ===== lightbox ===== */
+  .lb-backdrop{position:fixed; inset:0; z-index:700; background:rgba(6,6,10,0.94); opacity:0; visibility:hidden; transition:opacity 320ms ease, visibility 0s linear 320ms;}
+  .lb-backdrop.is-open{opacity:1; visibility:visible; transition-delay:0s;}
+  .lb{position:fixed; inset:0; z-index:701; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:var(--space-4); padding:var(--space-8) var(--space-5); pointer-events:none; visibility:hidden;}
+  .lb.is-open{visibility:visible;}
+  .lb figure{pointer-events:auto; display:flex; flex-direction:column; align-items:center; gap:var(--space-4); max-width:min(92vw, 1100px);}
+  .lb img{max-height:72vh; max-width:100%; width:auto; border-radius:var(--radius-lg); box-shadow:0 30px 80px rgba(0,0,0,0.5);}
+  .lb figcaption{display:flex; flex-direction:column; align-items:center; gap:4px; text-align:center; color:#F5F5F7;}
+  .lb-meta{font-family:var(--font-mono); font-size:11px; letter-spacing:0.06em; text-transform:uppercase; color:var(--p-bright);}
+  .lb-title{font-family:var(--font-display); font-weight:600; font-size:20px;}
+  .lb-note{font-family:var(--font-mono); font-size:11px; color:#9C9CA8;}
+  .lb-close{position:fixed; top:var(--space-5); right:var(--space-5); z-index:702; width:48px; height:48px; border-color:transparent; box-shadow:0 6px 20px rgba(0,0,0,0.3);}
+  .lb-nav{position:fixed; top:50%; z-index:702; transform:translateY(-50%);}
+  .lb-nav.prev{left:var(--space-5);} .lb-nav.next{right:var(--space-5);}
+  .lb-close, .lb-nav{opacity:0; pointer-events:none; transition:opacity 320ms ease, border-color 420ms ease;}
+  .lb.is-open ~ .lb-close, .lb.is-open ~ .lb-nav{opacity:1; pointer-events:auto;}
+  @media (hover:hover){ .lb-close:hover svg{transform:rotate(90deg);} }
+
+  :focus{outline:none;}
+  a:focus-visible, button:focus-visible{outline:2px solid var(--accent); outline-offset:3px;}
+
+  /* cursor custom */
+  .cursor-dot, .cursor-ring{display:none;}
+  @media (pointer:fine){
+    body{cursor:none;} a, button{cursor:none !important;}
+    .cursor-dot{display:block; position:fixed; top:0; left:0; width:16px; height:16px; pointer-events:none; z-index:9999; transform:translate(-3px,-2px);}
+    .cursor-dot svg{width:100%; height:100%; fill:var(--accent); filter:drop-shadow(0 1px 2px rgba(16,16,20,0.25));}
+    .cursor-ring{display:block; position:fixed; top:0; left:0; width:30px; height:30px; border-radius:50%; border:1.5px solid var(--accent); pointer-events:none; z-index:9998; transform:translate(-50%,-50%); opacity:0.55; transition:width 150ms ease,height 150ms ease,opacity 150ms ease,background 150ms ease;}
+    .cursor-ring.is-hover{width:46px; height:46px; background:var(--accent-soft); opacity:0.9;}
+    .cursor-dot.is-hidden, .cursor-ring.is-hidden{opacity:0;}
+  }
+  .click-ripple{position:fixed; top:0; left:0; width:0; height:0; border-radius:50%; background:var(--accent); opacity:0.4; pointer-events:none; z-index:9997; transform:translate(-50%,-50%); animation:ripple-anim 550ms ease-out forwards;}
+  @keyframes ripple-anim{from{width:0; height:0; opacity:0.4;} to{width:130px; height:130px; opacity:0;}}
+  @media (prefers-reduced-motion:reduce){
+    body, a, button{cursor:auto !important;}
+    .cursor-dot, .cursor-ring{display:none !important;}
+  }
+
+  @media (max-width:640px){
+    .wrap{padding:0 var(--space-4);}
+    .nav{padding:var(--space-4) 0;}
+    .nav-links{display:none;}
+    .hamburger{display:inline-flex;}
+    .icon-btn{width:40px; height:40px;}
+    .fun-head{padding:var(--space-7) 0 var(--space-5);}
+    .fun-intro{font-size:16px;}
+    .lb{padding:var(--space-8) var(--space-3) var(--space-9);}
+    .lb img{max-height:60vh;}
+    .lb-close{top:var(--space-4); right:var(--space-4); width:44px; height:44px;}
+    .lb-nav{top:auto; bottom:var(--space-5); transform:none;}
+    .lb-nav.prev{left:calc(50% - 56px);} .lb-nav.next{right:calc(50% - 56px);}
+  }
+
+  /* grano sobre toda la web: textura de papel impreso para alejarse del look "digital liso" */
+  .grain{position:fixed; inset:0; z-index:9000; pointer-events:none; background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  2.2 0 0 0 -0.95'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"); background-size:220px 220px; opacity:.11;}
+  :root[data-theme="dark"] .grain{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  2.2 0 0 0 -0.95'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"); opacity:.07;}
+  @media print{ .grain{display:none;} }
+
+  /* textura de papel en el fondo: relieve suave y fibras; queda debajo de todo (grilla, risografía, grano) */
+  body::before{content:''; position:fixed; inset:0; z-index:-1; pointer-events:none; background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='640' height='640'%3E%3Cfilter id='p' x='0' y='0' width='100%25' height='100%25'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.018 .022' numOctaves='5' seed='7' stitchTiles='stitch' result='t'/%3E%3CfeDiffuseLighting in='t' lighting-color='%23fff' surfaceScale='2.2' result='l'%3E%3CfeDistantLight azimuth='45' elevation='60'/%3E%3C/feDiffuseLighting%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.22 .5' numOctaves='2' seed='3' stitchTiles='stitch' result='f'/%3E%3CfeColorMatrix in='f' type='matrix' values='0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 -.9 .42' result='fa'/%3E%3CfeComposite in='fa' in2='l' operator='over' result='m'/%3E%3CfeColorMatrix in='m' type='matrix' values='.33 .33 .33 0 .02  .33 .33 .33 0 .02  .33 .33 .33 0 .02  0 0 0 0 1'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23p)'/%3E%3C/svg%3E"); background-size:640px 640px; mix-blend-mode:multiply; opacity:.42;}
+  :root[data-theme="dark"] body::before{filter:invert(1); mix-blend-mode:screen; opacity:.22;}
+
+  /* ===== header del Home (pill arriba; al bajar, la pill aparece abajo) llevado a todas las páginas ===== */
+  .dock{position:fixed; left:50%; bottom:var(--dock-bottom, 54px); translate:-50% 0; z-index:640; display:flex; align-items:center; gap:2px; padding:6px; border-radius:var(--radius-pill);
+    background:color-mix(in srgb, var(--surface) 88%, transparent); -webkit-backdrop-filter:blur(16px) saturate(1.4); backdrop-filter:blur(16px) saturate(1.4);
+    border:1px solid color-mix(in srgb, var(--accent) 55%, transparent); box-shadow:0 10px 26px -14px rgba(16,16,20,.35);
+    transition:bottom 520ms var(--ease-out), box-shadow 520ms ease, opacity 320ms ease, translate 520ms var(--ease-out);}
+  .dock.is-docked{bottom:20px; box-shadow:0 14px 30px -16px rgba(16,16,20,.4), 0 2px 6px rgba(16,16,20,.08);}
+  body.modal-open .dock, body.is-loading .dock{opacity:0; pointer-events:none; translate:-50% 20px;}
+  .dock a{position:relative; display:inline-flex; align-items:center; gap:8px; padding:10px 18px; border-radius:var(--radius-pill); font-family:var(--font-display); font-weight:600; font-size:16px; color:var(--text-primary); text-decoration:none; white-space:nowrap; transition:background var(--dur-fast) ease, color var(--dur-fast) ease;}
+  .dock a[aria-current="page"]{color:var(--accent);}
+  .dock a[aria-current="page"]::after{content:''; position:absolute; left:50%; bottom:5px; width:4px; height:4px; margin-left:-2px; border-radius:50%; background:var(--accent);}
+  @media (hover:hover){ .dock a:not(.dock-cta):hover{background:var(--accent-soft); color:var(--accent);} }
+  .dock .dock-cta{background:var(--accent); color:var(--on-accent); margin-left:6px; padding:10px 16px 10px 18px;}
+  .dock .dock-cta svg{width:16px; height:16px; fill:none; stroke:currentColor; stroke-width:2; stroke-linecap:round; stroke-linejoin:round; transition:transform 420ms var(--ease-out);}
+  @media (hover:hover){ .dock .dock-cta:hover{background:var(--accent-hover);} .dock .dock-cta:hover svg{transform:translateX(3px);} }
+  .dock .dock-cta .dock-cta-short{display:none;}
+  .top-nav{display:flex; align-items:center; justify-content:center; gap:12px; padding:22px var(--space-5) 20px;}
+  .top-pill{display:flex; align-items:center; gap:2px; padding:5px; border-radius:var(--radius-pill); background:color-mix(in srgb, var(--surface) 90%, transparent); border:1px solid var(--line-strong); box-shadow:0 6px 20px -12px rgba(16,16,20,.25);}
+  .top-pill a{position:relative; padding:9px 18px; border-radius:var(--radius-pill); font-family:var(--font-display); font-weight:600; font-size:15px; color:var(--text-primary); text-decoration:none; white-space:nowrap; transition:background var(--dur-fast) ease, color var(--dur-fast) ease;}
+  .top-pill a[aria-current="page"]{color:var(--accent);}
+  .top-pill a[aria-current="page"]::after{content:''; position:absolute; left:50%; bottom:4px; width:4px; height:4px; margin-left:-2px; border-radius:50%; background:var(--accent);}
+  @media (hover:hover){ .top-pill a:hover{background:var(--accent-soft); color:var(--accent);} }
+  .top-nav .theme-btn{background:var(--accent-soft); border-color:transparent; color:var(--accent);}
+  .btn-fill.is-solid{background:var(--accent); border-color:var(--accent);}
+  .btn-fill.is-solid .btn-fill-label{color:var(--on-accent);}
+  .btn-fill.is-solid .btn-fill-bg{background:var(--accent-hover);}
+  .top-cta{padding:12px 22px;}
+  .top-cta .btn-fill-label{display:inline-flex; align-items:center; gap:8px;}
+  .top-cta svg{width:16px; height:16px; fill:none; stroke:currentColor; stroke-width:2; stroke-linecap:round; stroke-linejoin:round;}
+  .dock{bottom:20px; translate:-50% calc(100% + 40px); opacity:0; pointer-events:none;
+    transition:translate 620ms var(--ease-out), opacity 320ms ease;}
+  .dock.is-shown{translate:-50% 0; opacity:1; pointer-events:auto;}
+  body.modal-open .dock.is-shown{opacity:0; pointer-events:none; translate:-50% calc(100% + 40px);}
+  .top-nav{display:grid; grid-template-columns:1fr auto 1fr; align-items:center; gap:12px; max-width:calc(var(--fold-w, 1120px) + 48px); margin:0 auto; padding:22px 24px 20px;}
+  .top-logo{justify-self:start; font-size:24px; position:relative;}
+  .top-mid{justify-self:center;}
+  .top-end{justify-self:end; display:flex; align-items:center; gap:12px;}
+  .logo-sel{position:relative; display:inline-block; padding:0 3px; margin-left:3px;}
+  .logo-sel::before{content:''; position:absolute; inset:2px 0 0; border:1.5px solid var(--accent); pointer-events:none;}
+  .logo-sel > i{position:absolute; width:6px; height:6px; background:var(--surface); border:1.5px solid var(--accent);}
+  .logo-sel > i:nth-of-type(1){left:0; top:2px; translate:-50% -50%;} .logo-sel > i:nth-of-type(2){right:0; top:2px; translate:50% -50%;}
+  .logo-sel > i:nth-of-type(3){left:0; bottom:0; translate:-50% 50%;} .logo-sel > i:nth-of-type(4){right:0; bottom:0; translate:50% 50%;}
+  .wrap > .top-nav{max-width:none; padding:22px 0 20px;}
+  @media (max-width:900px){ .top-cta{display:none;} .top-nav{grid-template-columns:auto 1fr auto;} }
+  @media (max-width:640px){
+    .wrap > .top-nav{display:flex; justify-content:center; gap:8px; padding:14px 0;}
+    .top-logo{display:none;}
+    .top-pill a{padding:8px 11px; font-size:14px;}
+    .top-nav .theme-btn{width:40px; height:40px;}
+    .dock{padding:5px;}
+    .dock a{padding:9px 11px; font-size:14px;}
+    .dock .dock-cta{padding:9px 12px; margin-left:3px;}
+    .dock .dock-cta .dock-cta-long{display:none;}
+  }
+  @media (prefers-reduced-motion:reduce){ .dock{transition:none;} }
+
+  /* ===== footer: "mora" gigante en puntos de semitono, cortado por el borde inferior.
+     Los puntos se apartan del cursor con resortes y cambian de tono al moverse; un clic lanza una onda. ===== */
+  .hwf{--hwf-bg:#E7E7EC; --hwf-ink:#490FE5; --hwf-warm:#0A0A0D;
+    position:relative; z-index:1; width:100%; height:560px; overflow:hidden; isolation:isolate; background:var(--hwf-bg); color:var(--text-primary); margin-top:var(--space-8); touch-action:pan-y;}
+  :root[data-theme="dark"] .hwf{--hwf-bg:#111116; --hwf-ink:#8B6CFF; --hwf-warm:#F0ECFE;}
+  .dock.is-shown.is-footer, .dock.is-footer{opacity:0; pointer-events:none; translate:-50% calc(100% + 40px);}
+  .hwf-canvas{position:absolute; inset:0; width:100%; height:100%; display:block;}
+  .hwf-top{position:relative; z-index:1; display:grid; grid-template-columns:minmax(0,1.3fr) repeat(3, minmax(0,1fr)); gap:24px;
+    max-width:calc(var(--fold-w, 1120px) + 48px); margin:0 auto; padding:clamp(28px,3.6vw,48px) 24px 0;
+    font-family:var(--font-mono); font-size:11px; letter-spacing:.16em; text-transform:uppercase; line-height:1.9;}
+  .hwf-brand strong{display:block; font-family:var(--font-display); font-weight:700; font-size:20px; letter-spacing:-.01em; text-transform:none; margin-bottom:6px;}
+  .hwf-brand span{display:block; color:var(--text-secondary);}
+  .hwf-col h3{margin:0 0 4px; font:inherit; font-weight:500; color:var(--accent);}
+  .hwf-col ul{list-style:none; margin:0; padding:0;}
+  .hwf-col a, .hwf-up{color:inherit; text-decoration:none; opacity:.8; background:none; border:0; padding:0; font:inherit; letter-spacing:inherit; text-transform:inherit; cursor:pointer;
+    background-image:linear-gradient(currentColor, currentColor); background-size:0% 1px; background-repeat:no-repeat; background-position:0 100%;
+    transition:opacity .25s ease, background-size .35s cubic-bezier(.2,.7,.1,1), color .25s ease;}
+  .hwf-col a[aria-current="page"]{color:var(--accent); opacity:1;}
+  .hwf-col a[href^="mailto"]{text-transform:none; letter-spacing:.04em;}
+  @media (hover:hover){ .hwf-col a:hover, .hwf-up:hover{opacity:1; background-size:100% 1px; color:var(--accent);} }
+  .hwf-col a:focus-visible, .hwf-up:focus-visible{outline:1px solid currentColor; outline-offset:3px; opacity:1;}
+  .hwf-rule{position:relative; z-index:1; display:flex; justify-content:flex-end; max-width:calc(var(--fold-w, 1120px) + 48px); margin:clamp(18px,2.4vw,28px) auto 0; padding:12px 24px 0;
+    font-family:var(--font-mono); font-size:11px; letter-spacing:.16em; text-transform:uppercase;}
+  .hwf-rule::before{content:''; position:absolute; left:24px; right:24px; top:0; border-top:1px solid var(--line-strong);}
+  .hwf-sr{position:absolute; width:1px; height:1px; overflow:hidden; clip-path:inset(50%); white-space:nowrap;}
+  @media (max-width:720px){
+    .hwf-top{grid-template-columns:minmax(0,1fr) minmax(0,1fr); row-gap:22px; padding-left:16px; padding-right:16px;}
+    .hwf-brand{grid-column:1 / -1;}
+    .hwf-col:last-child{grid-column:1 / -1;}
+    .hwf-rule{padding-left:16px; padding-right:16px;} .hwf-rule::before{left:16px; right:16px;}
+  }
+  @media (prefers-reduced-motion:reduce){ .hwf-col a, .hwf-up{transition:none;} }
+
+  /* footer del ancho de la carpeta, como una carpeta más: más contenido y con esquinas redondeadas */
+  .hwf{width:min(var(--fold-w, 1072px), calc(100% - 32px)); margin:var(--space-8) auto 24px; border-radius:22px; border:1px solid var(--line);}
+  :root[data-theme="dark"] .hwf{border-color:var(--line-strong);}
+  .hwf-top, .hwf-rule{max-width:none; padding-left:32px; padding-right:32px;}
+  .hwf-rule::before{left:32px; right:32px;}
+  @media (max-width:720px){ .hwf{width:calc(100% - 24px); border-radius:18px;} .hwf-top, .hwf-rule{padding-left:20px; padding-right:20px;} .hwf-rule::before{left:20px; right:20px;} }
+  /* nav-hover: sin fondo en hover; solo el texto se mueve (magnetismo elástico). Morado = página actual o al presionar */
+  .top-pill a, .dock a:not(.dock-cta){transition:color 220ms ease;}
+  .top-pill a .nl, .dock a .nl{display:inline-block; transition:transform 500ms var(--ease-out); will-change:transform;}
+  @media (hover:hover){
+    .top-pill a:hover, .dock a:not(.dock-cta):hover{background:transparent; color:var(--text-primary);}
+    .top-pill a[aria-current="page"]:hover, .dock a[aria-current="page"]:hover{color:var(--accent);}
+  }
+  .top-pill a:active, .dock a:not(.dock-cta):active{color:var(--accent);}
+  /* scroll-reveal: los bloques suben y aparecen al entrar en pantalla (la clase la pone el JS, sin JS todo se ve) */
+  .rv{opacity:0; translate:0 36px; transition:opacity 900ms cubic-bezier(.16,1,.3,1), translate 1100ms cubic-bezier(.16,1,.3,1); transition-delay:var(--rv-d, 0ms);}
+  .rv.is-in{opacity:1; translate:0 0;}
+  .mora-sr{position:absolute !important; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0 0 0 0); white-space:nowrap; border:0;}  /* mora-sr */
+  /* lang-btn: cambio de idioma junto al de tema (la versión en inglés se publica con Astro en /en) */
+  .lang-btn{position:relative; overflow:visible;}
+  .lang-btn .btn-fill-bg{border-radius:50%;}   /* con overflow visible (para el aviso) el relleno del hover se veía cuadrado */
+  .top-nav .lang-btn, .top-end .lang-btn{background:var(--accent-soft); border-color:transparent; color:var(--accent);}
+  @media (max-width:640px){ .top-nav .lang-btn, .top-end .lang-btn{width:40px; height:40px;} }
+  .lang-k{font-family:var(--font-mono); font-size:12px; font-weight:600; letter-spacing:.04em; line-height:1;}
+  .lang-tip{position:absolute; top:calc(100% + 10px); right:-8px; z-index:5; white-space:nowrap; font-family:var(--font-sans); font-size:12px; font-weight:500; color:#fff; background:var(--g-900, #16161C);
+    padding:7px 12px; border-radius:var(--radius-md); opacity:0; translate:0 -4px; pointer-events:none; transition:opacity 200ms ease, translate 260ms var(--ease-out);}
+  .lang-btn.is-tip .lang-tip{opacity:1; translate:0 0;}
+  @media (prefers-reduced-motion:reduce){ .lang-tip{transition:none;} }
+  /* /lang-btn */
+  /* grilla del Inicio bajo la libreta: celdas de 44 px centradas en el lomo, se desvanece hacia los bordes */
+  .nb{isolation:isolate;}
+  .nb::before{content:''; position:absolute; z-index:-1; pointer-events:none; top:-120px; bottom:-48px; left:50%; width:100vw; transform:translateX(-50%);
+    background-image:linear-gradient(var(--grid-line) 1px, transparent 1px), linear-gradient(90deg, var(--grid-line) 1px, transparent 1px);
+    background-size:44px 44px; background-position:calc(50% + 22px) calc(50% + 22px);
+    -webkit-mask-image:radial-gradient(75% 70% at 50% 48%, #000 35%, rgba(0,0,0,.6) 65%, transparent 100%);
+    mask-image:radial-gradient(75% 70% at 50% 48%, #000 35%, rgba(0,0,0,.6) 65%, transparent 100%);}
+  :root{--grid-line:rgba(16,16,20,.075);}
+  :root[data-theme="dark"]{--grid-line:rgba(255,255,255,.06);}
+  @media (prefers-color-scheme: dark){ :root:not([data-theme="light"]){--grid-line:rgba(255,255,255,.06);} }
+</style>
+</head>
+<body>
+<div class="grain" aria-hidden="true"></div>
+
+<div class="wrap">
+  <header class="top-nav" id="top-nav">
+    <a href="/" class="nav-logo top-logo" aria-label="Andrés Mora, ir al inicio">Andrés <span class="logo-accent">Mora</span></a>
+    <div class="top-mid">
+      <nav class="top-pill" aria-label="Principal">
+        <a href="/">Inicio</a>
+        <a href="/trabajo">Trabajo</a>
+        <a href="/for-fun" aria-current="page">For fun</a>
+      </nav>
+    </div>
+    <div class="top-end">
+      <button type="button" class="btn-fill icon-btn lang-btn" id="lang-btn" data-strength="30" aria-label="Ver el sitio en inglés" lang="en"><span class="btn-fill-bg"></span><span class="btn-fill-label" data-strength-text="18"><span class="lang-k">EN</span></span><span class="lang-tip" role="status" aria-live="polite"></span></button>
+      <button type="button" class="btn-fill icon-btn theme-btn" id="theme-btn" data-strength="30" aria-label="Activar modo oscuro">
+        <span class="btn-fill-bg"></span>
+        <span class="btn-fill-label" data-strength-text="18">
+          <svg class="ti ti-moon" viewBox="0 0 24 24"><path d="M20 14.5A8 8 0 1 1 9.5 4a6.5 6.5 0 0 0 10.5 10.5z"/></svg>
+          <svg class="ti ti-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+        </span>
+      </button>
+      <a href="/contacto" class="btn-fill is-solid top-cta" data-strength="20"><span class="btn-fill-bg"></span><span class="btn-fill-label" data-strength-text="12">Trabajemos juntos <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
+      <button type="button" class="btn-fill icon-btn hamburger" style="display:none" id="hamburger" aria-label="Abrir menú" aria-expanded="false" aria-controls="mobile-drawer">
+        <span class="btn-fill-bg"></span>
+        <span class="btn-fill-label"><svg viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></svg></span>
+      </button>
+    </div>
+  </header>
+
+  <h1 class="sr-only">For fun: cuaderno de fotografía, ilustración y renders de Andrés Mora</h1>
+
+  <section class="nb" id="nb" aria-label="Libreta de For fun: pasa las hojas con las flechas">
+    <button type="button" class="nb-arrow nb-prev" id="nb-prev" aria-label="Página anterior"><svg viewBox="0 0 90 44" aria-hidden="true"><path pathLength="1" d="M85 23C67 17 45 16 27 20C18 22 11 25 6 27"/><path pathLength="1" d="M21 11C16 17 11 22 6 27C12 29 17 33 22 39"/></svg></button>
+    <div class="nb-scene" id="nb-scene">
+<h2 class="mora-sr">Páginas del cuaderno</h2>
+      <div class="nb-tilt" id="nb-tilt"><div class="nb-book" id="nb-book"></div></div>
+    </div>
+    <button type="button" class="nb-arrow nb-next" id="nb-next" aria-label="Página siguiente"><svg viewBox="0 0 90 44" aria-hidden="true"><path pathLength="1" d="M85 23C67 17 45 16 27 20C18 22 11 25 6 27"/><path pathLength="1" d="M21 11C16 17 11 22 6 27C12 29 17 33 22 39"/></svg></button>
+    <div class="nb-bar">
+      <div class="nb-dots" id="nb-dots"></div>
+      <span class="nb-count" id="nb-count"></span>
+    </div>
+    <p class="nb-hint" id="nb-hint">Usa las flechas, el teclado o toca una página</p>
+    <p class="nb-sr" id="nb-live" aria-live="polite"></p>
+    <svg width="0" height="0" style="position:absolute" aria-hidden="true"><filter id="nb-rough" x="-10%" y="-10%" width="120%" height="120%"><feTurbulence type="fractalNoise" baseFrequency=".9" numOctaves="2" seed="4" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="2.4"/></filter></svg>
+  </section>
+</div>
+
+<div class="lb-backdrop" id="lb-backdrop"></div>
+<div class="lb" id="lb" role="dialog" aria-modal="true" aria-label="Pieza ampliada">
+  <figure>
+    <img id="lb-img" alt="">
+    <figcaption>
+      <span class="lb-meta" id="lb-meta"></span>
+      <span class="lb-title" id="lb-title"></span>
+      <span class="lb-note" id="lb-note"></span>
+    </figcaption>
+  </figure>
+</div>
+<button type="button" class="btn-fill icon-btn lb-nav prev" id="lb-prev" aria-label="Pieza anterior"><span class="btn-fill-bg"></span><span class="btn-fill-label"><svg viewBox="0 0 24 24"><path d="M15 6l-6 6 6 6"/></svg></span></button>
+<button type="button" class="btn-fill icon-btn lb-nav next" id="lb-next" aria-label="Pieza siguiente"><span class="btn-fill-bg"></span><span class="btn-fill-label"><svg viewBox="0 0 24 24"><path d="M9 6l6 6-6 6"/></svg></span></button>
+<button type="button" class="btn-fill icon-btn lb-close" id="lb-close" aria-label="Cerrar" data-strength="30"><span class="btn-fill-bg"></span><span class="btn-fill-label" data-strength-text="18"><svg viewBox="0 0 24 24"><path d="M18 6L6 18M6 6l12 12"/></svg></span></button>
+
+<footer class="hwf" id="site-footer">
+<h2 class="mora-sr">Pie de página</h2>
+  <canvas class="hwf-canvas" aria-hidden="true"></canvas>
+  <span class="hwf-sr">Mora</span>
+  <div class="hwf-top">
+    <div class="hwf-brand">
+      <strong>Andrés Mora</strong>
+      <span>Product Designer UX/UI · Motion &amp; Multimedia</span>
+      <span>Cundinamarca, Colombia · ©2026</span>
+    </div>
+    <nav class="hwf-col" aria-label="Sitio">
+      <h3>Sitio</h3>
+      <ul><li><a href="/">Inicio</a></li><li><a href="/trabajo">Trabajo</a></li><li><a href="/#sobre-mi">Sobre mí</a></li><li><a href="/for-fun" aria-current="page">For fun</a></li><li><a href="/contacto">Contacto</a></li></ul>
+    </nav>
+    <nav class="hwf-col" aria-label="Proyectos">
+      <h3>Proyectos</h3>
+      <ul><li><a href="/trabajo#cafe-pacundi">Café Pacundí</a></li><li><a href="/trabajo#rediseno-dafiti">Rediseño Dafiti</a></li><li><a href="/trabajo#museo-anatomia-umng">Museo UMNG</a></li><li><a href="/trabajo#modelado-3d">Modelado 3D</a></li><li><a href="/trabajo#motion-graphics">Motion</a></li><li><a href="/trabajo#pinauto">Pinauto</a></li><li><a href="/trabajo#transdipacho">Transdipacho</a></li><li><a href="/trabajo#portafolio-web">Este portafolio</a></li></ul>
+    </nav>
+    <nav class="hwf-col" aria-label="Contacto">
+      <h3>Contacto</h3>
+      <ul><li><a href="mailto:andres.mora.sar@gmail.com">andres.mora.sar@gmail.com</a></li><li><a href="https://www.linkedin.com/in/andres-felipe-mora-sarmiento/" target="_blank" rel="noopener">LinkedIn</a></li><li><a href="https://www.behance.net/andrsmora15" target="_blank" rel="noopener">Behance</a></li><li><a href="https://sketchfab.com/AndresMora1" target="_blank" rel="noopener">Sketchfab</a></li></ul>
+    </nav>
+  </div>
+  <div class="hwf-rule"><button type="button" class="hwf-up">Volver arriba ↑</button></div>
+</footer>
+
+<nav class="dock" id="dock" aria-label="Navegación rápida">
+  <a href="/">Inicio</a>
+  <a href="/trabajo">Trabajo</a>
+  <a href="/for-fun" aria-current="page">For fun</a>
+  <a href="/contacto" class="dock-cta" aria-label="Trabajemos juntos"><span class="dock-cta-long">Trabajemos juntos</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+</nav>
+
+<div class="drawer-backdrop" id="drawer-backdrop"></div>
+<nav class="mobile-drawer" id="mobile-drawer" aria-label="Menú principal">
+  <button type="button" class="btn-fill icon-btn" id="drawer-close" aria-label="Cerrar menú">
+    <span class="btn-fill-bg"></span>
+    <span class="btn-fill-label"><svg viewBox="0 0 24 24"><path d="M18 6L6 18M6 6l12 12"/></svg></span>
+  </button>
+  <a href="/" class="drawer-link">Inicio<svg class="si-arrow" viewBox="0 0 24 24"><path d="M9 6l6 6-6 6"/></svg></a>
+  <a href="/trabajo" class="drawer-link">Trabajo<svg class="si-arrow" viewBox="0 0 24 24"><path d="M9 6l6 6-6 6"/></svg></a>
+  <a href="/for-fun" class="drawer-link" aria-current="page">For fun<svg class="si-arrow" viewBox="0 0 24 24"><path d="M9 6l6 6-6 6"/></svg></a>
+  <a href="/contacto" class="drawer-link">Contacto<svg class="si-arrow" viewBox="0 0 24 24"><path d="M9 6l6 6-6 6"/></svg></a>
+</nav>
+
+<div class="cursor-dot is-hidden"><svg viewBox="0 0 24 24"><path d="M4 3l7 18 2-7 7-2z"/></svg></div>
+<div class="cursor-ring is-hidden"></div>
+
+<script>
+  var reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion:reduce)').matches;
+  var hasFinePointer = window.matchMedia && window.matchMedia('(pointer:fine)').matches;
+
+  var PIECES = [];   // se llena con las fotos de la libreta
+  function pad(n){ return (n < 10 ? '0' : '') + n; }
+
+  // === tema ===
+  (function(){
+    var root = document.documentElement, btn = document.getElementById('theme-btn');
+    function apply(t){
+      root.setAttribute('data-theme', t);
+      btn.setAttribute('aria-label', t === 'light' ? 'Activar modo oscuro' : 'Activar modo claro');
+      try{ localStorage.setItem('mora-home-theme', t); }catch(e){}
+    }
+    apply(root.getAttribute('data-theme') === 'dark' ? 'dark' : 'light');
+    btn.addEventListener('click', function(){ apply(root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark'); });
+  })();
+
+  // títulos del visor: cada palabra con mayúscula inicial, menos los conectores (de, la, y…); la primera siempre va en mayúscula
+  var CONECTORES = /^(a|al|ante|con|de|del|desde|e|el|en|entre|la|las|lo|los|o|para|por|sin|sobre|su|sus|tras|u|un|una|unos|unas|y)$/;
+  function titleCase(t){
+    return String(t || '').trim().toLowerCase().split(/\s+/).map(function(w, i){
+      return i && CONECTORES.test(w) ? w : w.charAt(0).toUpperCase() + w.slice(1);
+    }).join(' ');
+  }
+
+  // === lightbox ===
+  var lightbox = (function(){
+    var lb = document.getElementById('lb'), bd = document.getElementById('lb-backdrop');
+    var img = document.getElementById('lb-img'), meta = document.getElementById('lb-meta');
+    var title = document.getElementById('lb-title'), noteEl = document.getElementById('lb-note');
+    var closeBtn = document.getElementById('lb-close');
+    var idx = 0, lastFocused = null, isOpen = false;
+    function show(i, dir){
+      idx = (i + PIECES.length) % PIECES.length;
+      var p = PIECES[idx];
+      img.src = p.src; img.alt = p.title;
+      meta.textContent = [pad(idx + 1) + ' / ' + pad(PIECES.length), p.cat, p.year].filter(Boolean).join(' · ');
+      title.textContent = titleCase(p.title);
+      noteEl.textContent = p.note || (p.real ? '' : '📌 pieza de relleno, pendiente de reemplazar');
+      if (!reduceMotion && dir) img.animate([{opacity:0, transform:'translateX(' + (dir * 30) + 'px)'}, {opacity:1, transform:'none'}], {duration:380, easing:'cubic-bezier(.2,1,.3,1)'});
+    }
+    function open(i, rect){
+      lastFocused = document.activeElement; isOpen = true;
+      show(i);
+      lb.classList.add('is-open'); bd.classList.add('is-open');
+      document.body.classList.add('modal-open');
+      if (!reduceMotion) {
+        var from = rect ? 'translate(' + (rect.left + rect.width / 2 - innerWidth / 2) + 'px,' + (rect.top + rect.height / 2 - innerHeight / 2) + 'px) scale(0.4)' : 'scale(0.92)';
+        img.animate([{opacity:0.3, transform:from}, {opacity:1, transform:'none'}], {duration:560, easing:'cubic-bezier(.2,1,.3,1)'});
+      }
+      closeBtn.focus();
+    }
+    function close(){
+      if (!isOpen) return;
+      isOpen = false;
+      lb.classList.remove('is-open'); bd.classList.remove('is-open');
+      document.body.classList.remove('modal-open');
+      if (lastFocused) lastFocused.focus({preventScroll:true});
+    }
+    closeBtn.addEventListener('click', close);
+    bd.addEventListener('click', close);
+    lb.addEventListener('click', function(e){ if (e.target === lb) close(); });
+    document.getElementById('lb-prev').addEventListener('click', function(){ show(idx - 1, -1); });
+    document.getElementById('lb-next').addEventListener('click', function(){ show(idx + 1, 1); });
+    document.addEventListener('keydown', function(e){
+      if (!isOpen) return;
+      if (e.key === 'Escape') close();
+      else if (e.key === 'ArrowRight') show(idx + 1, 1);
+      else if (e.key === 'ArrowLeft') show(idx - 1, -1);
+      else if (e.key === 'Tab') {
+        var f = [closeBtn, document.getElementById('lb-prev'), document.getElementById('lb-next')];
+        var i = f.indexOf(document.activeElement);
+        e.preventDefault();
+        f[(i + (e.shiftKey ? -1 : 1) + f.length) % f.length].focus();
+      }
+    });
+    return {open:open, isOpen:function(){ return isOpen; }};
+  })();
+
+  // === libreta digital ===
+  // Cada objeto de PAGES es una página, en el orden en que se hojea (portada, guarda, páginas..., contraportada).
+  // Para sumar piezas: agrega un item a una página o una página nueva (mejor de a dos, para no descuadrar los pliegos).
+  // Coordenadas en % de la página: x, y (esquina superior izquierda), w (ancho); r = giro en grados; ar = proporción de la foto.
+  // Tipos de item: photo (src, title, meta, note, tape) · ph (espacio 📌 para una foto) · note (html) · doodle (k) · sticker (k).
+  var R3 = 'img/3d/renders/';
+  var PAGES = [
+    {"kind":"cover"},
+    {"kind":"endpaper","label":"inside"},
+    {"items":[{"t":"doodle","k":"sparkle","x":76,"y":9,"w":11,"r":10}],"head":{"num":"Contenido","title":"Índice","text":"Lo que vas a encontrar en este cuaderno."},"toc":[{"label":"Render · Proyecto Casa Quinta","page":3},{"label":"Fotografía · Arquitectura","page":5},{"label":"Colección de gatos","page":13},{"label":"Colección de perros","page":17},{"label":"Colección de aves","page":19},{"label":"Fotografía · Varios","page":23},{"label":"Logotipos y marcas","page":31},{"label":"Stickers para despegar","page":34}]},
+    {"head":{"num":"01","title":"Proyecto Casa Quinta","text":"Render con historia"},"items":[{"t":"doodle","k":"arrow","x":65.5,"y":77.4,"w":10.8,"r":0,"z":5},{"t":"photo","src":"img/forfun/web/casa-original.webp","ar":"4096/3072","title":"Casa Original","meta":"2004","x":13.1,"y":23.1,"w":69.1,"r":-4.2,"tape":1,"z":6},{"t":"photo","src":"img/forfun/web/exterior.webp","ar":"1220/711","title":"Exterior","meta":"2008","x":49,"y":67.6,"w":39,"r":6.6,"tape":1,"z":7,"lock":1},{"t":"note","html":"Mi infancia la viví en esta casa, desafortunadamente ya no existe, así que la recree en 3D","x":6.9,"y":77.6,"w":35.3,"r":0,"z":8,"s":0.88},{"t":"doodle","k":"arrow","x":81.7,"y":41.4,"w":16,"r":-30.2,"z":9}]},
+    {"items":[{"t":"photo","src":"img/forfun/web/casa-frente-1.webp","ar":"1920/1080","title":"CASA FRENTE 1","meta":"","x":13.4,"y":6,"w":69.9,"r":-0.6,"tape":1,"z":12},{"t":"doodle","k":"circle","x":1.8,"y":1.8,"w":68.6,"r":0,"z":4},{"t":"photo","src":"img/forfun/web/casa-lat-2.webp","ar":"1920/1080","title":"CASA LAT 2","meta":"","x":-0.4,"y":37.7,"w":56.5,"r":2.7,"tape":1,"z":6},{"t":"photo","src":"img/forfun/web/c3.webp","ar":"1920/1080","title":"SALA CASA","meta":"","x":40.7,"y":54.2,"w":57.2,"r":6.4,"tape":1,"z":9},{"t":"photo","src":"img/forfun/web/casa-lat-3.webp","ar":"1920/1080","title":"CASA LAT 3","meta":"","x":5.6,"y":71,"w":42.1,"r":2.9,"tape":1,"z":8}]},
+    {"head":{"num":"02","title":"Fotografía","text":"Arquitectura"},"items":[{"t":"photo","src":"img/forfun/web/img-20200130-174430385-hdr-01-2.webp","ar":"3474/3072","title":"Hospital Antiguo San Rafael de Pacho","meta":"2016","x":11.7,"y":28.7,"w":82.1,"r":-1.1,"tape":1,"z":3},{"t":"sticker","k":"star","x":81.8,"y":20.5,"w":18,"r":0,"z":4}]},
+    {"items":[{"t":"doodle","k":"star","x":80,"y":70,"w":12,"r":-10},{"t":"photo","src":"img/forfun/web/img-20230110-101643311-1.webp","ar":"3072/4096","title":"Basilica el señor de los Milagros de Buga","meta":"2019","x":6.1,"y":3.4,"w":43.6,"r":-1.8,"tape":1,"z":3},{"t":"photo","src":"img/forfun/web/img-20181020-110624512-hdr-2.webp","ar":"4096/3072","title":"Reloj · Alcaldía Municipal de Pacho","meta":"2015","x":15.4,"y":56.6,"w":57.3,"r":-2.2,"tape":1,"z":4,"note":"5"},{"t":"photo","src":"img/forfun/web/chapinero.webp","ar":"3072/4096","title":"Chapinero","meta":"2024","x":50.7,"y":11.2,"w":44.4,"r":0.9,"tape":1,"z":5}]},
+    {"items":[{"t":"photo","src":"img/forfun/web/espiral-jaime-duque.webp","ar":"3072/4096","title":"Espiral Jaime Duque","meta":"","x":6.7,"y":6.2,"w":86,"r":0,"tape":1,"z":3}]},
+    {"items":[{"t":"photo","src":"img/forfun/web/vista-perpendicular-a-una-vida-laboral.webp","ar":"3044/4058","title":"Vista perpendicular a una vida laboral","meta":"","x":4.6,"y":6.1,"w":85.9,"r":0,"tape":1,"z":3}]},
+    {"items":[{"t":"photo","src":"img/forfun/web/sombra-de-una-estudiante.webp","ar":"5698/3799","title":"Sombra de una estudiante","meta":"2023","x":5.2,"y":3.2,"w":86.6,"r":0,"tape":1,"z":3},{"t":"photo","src":"img/forfun/web/horizonte-verde.webp","ar":"5760/3840","title":"Horizonte Verde","meta":"2023","x":5.2,"y":50.2,"w":86.8,"r":0,"tape":1,"z":4}]},
+    {"items":[{"t":"photo","src":"img/forfun/web/centro-de-flores.webp","ar":"5760/3840","title":"Centro de flores","meta":"2023","x":-0.6,"y":3.3,"w":86.1,"r":0,"tape":1,"z":3},{"t":"photo","src":"img/forfun/web/fuera-de-foco.webp","ar":"5760/3840","title":"Fuera de foco","meta":"2023","x":1.3,"y":50.4,"w":84.7,"r":-0.7,"tape":1,"z":4}]},
+    {"items":[{"t":"doodle","k":"spiral","x":76,"y":20,"w":14},{"t":"photo","src":"img/forfun/web/20261017-130107.webp","ar":"2707/3610","title":"Feroza en Chicalá","meta":"2026","x":6.8,"y":4.3,"w":60,"r":0,"tape":1,"z":3},{"t":"photo","src":"img/forfun/web/img-20210728-164316150-2-1.webp","ar":"2824/2824","title":"Clasico en llamas","meta":"2019","x":46.4,"y":53.9,"w":50.6,"r":1.3,"tape":1,"z":4}]},
+    {"items":[{"t":"doodle","k":"arrow","x":8,"y":72,"w":26,"r":-14,"z":3},{"t":"photo","src":"img/forfun/web/atardecer.webp","ar":"2722/4000","title":"Atardecer de tulipan","meta":"2026","x":7.5,"y":3.1,"w":55.2,"r":-1.2,"tape":1,"z":4},{"t":"photo","src":"img/forfun/web/20260324-140504.webp","ar":"3000/4000","title":"Dahihatsu paso","meta":"2026","x":48.5,"y":50.1,"w":43.1,"r":-0.1,"tape":1,"z":5},{"t":"doodle","k":"spiral","x":-83.4,"y":71.7,"w":16,"r":0,"z":6},{"t":"doodle","k":"star","x":51.7,"y":29.8,"w":35.2,"r":20.3,"z":2}]},
+    {"items":[{"t":"photo","src":"img/forfun/web/img-20200317-140709051-hdr-1.webp","ar":"4096/3072","title":"Cat Aesthetic","meta":"2016","x":17.7,"y":22,"w":62.7,"r":-6.3,"tape":1,"z":3},{"t":"photo","src":"img/forfun/web/img-20201127-152932896-hdr-1.webp","ar":"4096/3072","title":"Morza","meta":"2019","x":40.7,"y":58.1,"w":51.5,"r":3.4,"tape":1,"z":4},{"t":"photo","src":"img/forfun/web/dorito-romeo.webp","ar":"3000/4000","title":"Dorito Romeo","meta":"2026","x":8.1,"y":53.7,"w":37.4,"r":-6.4,"tape":1,"z":5},{"t":"sticker","k":"star","x":78.4,"y":48.4,"w":18,"r":22.7,"z":7}],"head":{"num":"Fotografía","title":"Colección de Gatos","text":"Michis del camino"}},
+    {"items":[{"t":"photo","src":"img/forfun/web/img-20191121-110414667-hdr-1.webp","ar":"4096/3072","title":"Bigotes","meta":"2017","x":9.5,"y":3.5,"w":72.1,"r":0.5,"tape":1,"z":3},{"t":"photo","src":"img/forfun/web/whatsapp-image-2026-10-28-at-11-36-09-am.webp","ar":"960/1280","title":"Abrazao","meta":"","x":8.7,"y":49.9,"w":36.3,"r":1.7,"tape":1,"z":4},{"t":"photo","src":"img/forfun/web/img-20240406-114226611.webp","ar":"6144/8192","title":"Patron","meta":"2000","x":49.3,"y":55,"w":36.1,"r":0.1,"tape":1,"z":5},{"t":"sticker","k":"cursor","x":53.4,"y":43.8,"w":13.3,"r":0,"z":6}]},
+    {"items":[{"t":"photo","src":"img/forfun/web/gato-tejado.webp","ar":"3000/4000","title":"Gato tejado","meta":"","x":5.2,"y":3.2,"w":54.8,"r":0,"tape":1,"z":3},{"t":"photo","src":"img/forfun/web/img-20260110-132005122-hdr.webp","ar":"3072/4096","title":"Wild Cat","meta":"2025","x":54.9,"y":15.9,"w":43.4,"r":-2.5,"tape":1,"z":7},{"t":"photo","src":"img/forfun/web/img-20190301-110753778-hdr.webp","ar":"4096/3072","title":"Nojao","meta":"2023","x":21.3,"y":59.7,"w":60,"r":-2.3,"tape":1,"z":5},{"t":"doodle","k":"spiral","x":79.7,"y":72.1,"w":19.9,"r":0,"z":6}]},
+    {"items":[{"t":"photo","src":"img/forfun/web/img-20240330-141121601-hdr.webp","ar":"3072/4096","title":"Sentado elegante","meta":"2025","x":3.6,"y":3.4,"w":40.9,"r":-0.2,"tape":1,"z":3},{"t":"photo","src":"img/forfun/web/20260915-160054-1.webp","ar":"3000/4000","title":"Farm queen","meta":"2026","x":47.2,"y":9.5,"w":41.5,"r":0.5,"tape":1,"z":4},{"t":"photo","src":"img/forfun/web/img-20191223-163403747-hdr.webp","ar":"3072/4096","title":"Bigotes","meta":"2022","x":5.6,"y":47.6,"w":39.6,"r":-1.5,"tape":1,"z":5},{"t":"photo","src":"img/forfun/web/que-mira.webp","ar":"3000/4000","title":"Que mira","meta":"","x":49.5,"y":55.9,"w":39.5,"r":0.9,"tape":1,"z":6}]},
+    {"items":[{"t":"photo","src":"img/forfun/web/img-20250427-094203982-hdr.webp","ar":"3072/4096","title":"Gala","meta":"2025","x":5.6,"y":20.2,"w":49.9,"r":-1.9,"tape":1,"z":3},{"t":"photo","src":"img/forfun/web/20260418-091323-1-1.webp","ar":"3000/4000","title":"Pixel","meta":"2026","x":46.6,"y":44.4,"w":51.5,"r":1.1,"tape":1,"z":4},{"t":"doodle","k":"sparkle","x":67.6,"y":23.5,"w":16,"r":0,"z":5},{"t":"doodle","k":"underline","x":8.1,"y":68.2,"w":40,"r":0,"z":6}],"head":{"num":"Fotografía","title":"Colección de Perros"}},
+    {"items":[{"t":"photo","src":"img/forfun/web/feli.webp","ar":"2241/3138","title":"Feli","meta":"","x":9.3,"y":4.7,"w":36.3,"r":1.6,"tape":1,"z":3},{"t":"photo","src":"img/forfun/web/20260817-145215-1.webp","ar":"3000/4000","title":"Paw","meta":"2026","x":52.4,"y":15.4,"w":37.2,"r":-0.5,"tape":1,"z":4},{"t":"photo","src":"img/forfun/web/20260905-130746.webp","ar":"3000/4000","title":"Perro tendero","meta":"2026","x":8.3,"y":46.4,"w":38.1,"r":-2.5,"tape":1,"z":5},{"t":"photo","src":"img/forfun/web/img-20210728-171606374-1.webp","ar":"3072/4096","title":"Nose","meta":"2021","x":50.6,"y":55.8,"w":39.6,"r":0.5,"tape":1,"z":6}]},
+    {"items":[{"t":"photo","src":"img/forfun/web/20260902-164617-1.webp","ar":"3000/4000","title":"Ave en reposo","meta":"2026","x":7.1,"y":18.7,"w":47,"r":0.8,"tape":1,"z":3},{"t":"photo","src":"img/forfun/web/20260424-083944-1-1.webp","ar":"3000/4000","title":"Familia Real","meta":"2026","x":50.6,"y":49,"w":43.5,"r":0.9,"tape":1,"z":4},{"t":"doodle","k":"star","x":62.4,"y":22.7,"w":22.5,"r":0,"z":5}],"head":{"num":"Fotografía","title":"Colección de Aves"}},
+    {"items":[{"t":"photo","src":"img/forfun/web/20260721-124046-1.webp","ar":"3000/4000","title":"Observadora pasiva","meta":"2025","x":6.2,"y":3.3,"w":38,"r":0,"tape":1,"z":3},{"t":"photo","src":"img/forfun/web/img-20190209-145355770.webp","ar":"4096/3072","title":"Ave blureada","meta":"2012","x":7.6,"y":56.3,"w":60,"r":1.5,"tape":1,"z":7},{"t":"doodle","k":"circle","x":61.8,"y":20.4,"w":16,"r":0,"z":5},{"t":"photo","src":"img/forfun/web/20260712-121141-1.webp","ar":"3000/4000","title":"Nojado real","meta":"2025","x":47.5,"y":17.4,"w":50,"r":0.3,"tape":1,"z":6},{"t":"doodle","k":"sparkle","x":19.5,"y":45.1,"w":10.4,"r":0,"z":8}]},
+    {"items":[{"t":"photo","src":"img/forfun/web/real.webp","ar":"3000/4000","title":"Real","meta":"","x":13.1,"y":5.5,"w":50.7,"r":1.5,"tape":1,"z":6},{"t":"photo","src":"img/forfun/web/20260326-145014-1.webp","ar":"3000/4000","title":"Vuelta de temporada de lluvias","meta":"2026","x":48.4,"y":46.5,"w":47.2,"r":-0.9,"tape":1,"z":4},{"t":"doodle","k":"arrow","x":71.6,"y":30.3,"w":16,"r":51.1,"z":7},{"t":"doodle","k":"spiral","x":20.1,"y":69.1,"w":16,"r":0,"z":8}]},
+    {"items":[{"t":"photo","src":"img/forfun/web/zentrao.webp","ar":"3064/4080","title":"Zentrao","meta":"","x":4.3,"y":3.9,"w":47,"r":-1.8,"tape":1,"z":3},{"t":"photo","src":"img/forfun/web/pavito.webp","ar":"3000/4000","title":"Pavito","meta":"","x":23.9,"y":39,"w":51.8,"r":1,"tape":1,"z":4},{"t":"photo","src":"img/forfun/web/img-20190209-145057059.webp","ar":"3072/4096","title":"Ave blureada","meta":"","x":52.1,"y":2.6,"w":33.7,"r":-2.3,"tape":1,"z":5},{"t":"doodle","k":"arrow","x":-4.2,"y":49.7,"w":27.5,"r":48.9,"z":6},{"t":"doodle","k":"arrow","x":6.8,"y":64.7,"w":16,"r":0,"z":7}]},
+    {"items":[{"t":"photo","src":"img/forfun/web/img-20191121-110134598-1.webp","ar":"3072/4096","title":"Color pop","meta":"2016","x":44.3,"y":7.8,"w":50.7,"r":0.3,"tape":1,"z":5},{"t":"photo","src":"img/forfun/web/img-20190630-125428670.webp","ar":"3072/4096","title":"Centrao","meta":"","x":1.8,"y":28.4,"w":47.7,"r":-2.5,"tape":1,"z":4},{"t":"photo","src":"img/forfun/web/img-20190706-182341853.webp","ar":"4096/3072","title":"CIELO COLOR ARCOIRIS","meta":"2015","x":43.8,"y":62.1,"w":50.4,"r":0.5,"tape":1,"z":6}],"head":{"num":"Fotografía","title":"Varios"}},
+    {"items":[{"t":"photo","src":"img/forfun/web/img-20190418-115154604.webp","ar":"3072/4096","title":"Mosca posando","meta":"","x":4.7,"y":7.7,"w":44.6,"r":1.8,"tape":1,"z":3},{"t":"photo","src":"img/forfun/web/img-20190922-142811312.webp","ar":"4096/3072","title":"Water drop","meta":"2027","x":16.6,"y":54.6,"w":68.4,"r":-2.4,"tape":1,"z":4},{"t":"photo","src":"img/forfun/web/whatsapp-image-2026-10-28-at-11-36-10-am.webp","ar":"960/1280","title":"La vaquita artistica","meta":"2017","x":52,"y":8.7,"w":46.4,"r":2.4,"tape":1,"z":5}]},
+    {"items":[{"t":"photo","src":"img/forfun/web/img-20231228-152443475.webp","ar":"6144/8192","title":"CENTRO DE PACHO","meta":"2023","x":5.3,"y":3.9,"w":45.4,"r":-1.9,"tape":1,"z":4},{"t":"photo","src":"img/forfun/web/20260803-114831.webp","ar":"2959/3946","title":"PROTAGONISTA DE VIAJE","meta":"2026","x":53.7,"y":29.4,"w":43.6,"r":0.3,"tape":1,"z":5},{"t":"doodle","k":"circle","x":64.6,"y":41.2,"w":22.5,"r":0,"z":6},{"t":"photo","src":"img/forfun/web/img-20191007-174816363.webp","ar":"3072/4096","title":"HORIZONTES BOGOTANOS","meta":"2024","x":9.9,"y":47.2,"w":47.4,"r":-2.8,"tape":1,"z":2}]},
+    {"items":[{"t":"photo","src":"img/forfun/web/20260705-054510-1.webp","ar":"3000/4000","title":"Un cuarto metido en el cielo","meta":"2026","x":5.2,"y":2.1,"w":45.3,"r":-0.8,"tape":1,"z":3},{"t":"photo","src":"img/forfun/web/img-20230925-173340781-mp.webp","ar":"3072/4096","title":"Horizonte Pachuno","meta":"2023","x":49,"y":28.8,"w":44,"r":-0.1,"tape":1,"z":8},{"t":"doodle","k":"sparkle","x":66.5,"y":13.7,"w":16,"r":0,"z":5},{"t":"doodle","k":"spiral","x":5.3,"y":84.4,"w":16,"r":0,"z":6},{"t":"photo","src":"img/forfun/web/img-20230223-174925101.webp","ar":"2879/3125","title":"CIELO DE JUEGO","meta":"2024","x":9.2,"y":55.8,"w":45.7,"r":2.1,"tape":1,"z":7}]},
+    {"items":[{"t":"photo","src":"img/forfun/web/20260718-111338.webp","ar":"2458/3278","title":"LLAMANDO AL CIELO","meta":"2026","x":11,"y":6.1,"w":82.5,"r":0,"tape":1,"z":3}]},
+    {"items":[{"t":"photo","src":"img/forfun/web/choque-deco.webp","ar":"3000/4000","title":"RESPONDIENDO DESDE LA TIERRA","meta":"2026","x":7.1,"y":6.7,"w":82.4,"r":1.2,"tape":1,"z":3}]},
+    {"items":[{"t":"photo","src":"img/forfun/web/luna-siendo-devorada-por-una-planta.webp","ar":"2508/3806","title":"Luna siendo devorada por una planta","meta":"","x":5.8,"y":2.5,"w":40.9,"r":-0.4,"tape":1,"z":4},{"t":"photo","src":"img/forfun/web/giro.webp","ar":"3000/4000","title":"Giro","meta":"","x":47.9,"y":24,"w":43.4,"r":-0.4,"tape":1,"z":2},{"t":"doodle","k":"star","x":64.9,"y":5.9,"w":16,"r":0,"z":5},{"t":"photo","src":"img/forfun/web/img-20241129-194040762-hdr.webp","ar":"3072/4096","title":"Fiestas cotenses","meta":"2025","x":10.6,"y":51.2,"w":43.2,"r":1.5,"tape":1,"z":6},{"t":"doodle","k":"arrow","x":68.5,"y":78.9,"w":16,"r":0,"z":7}]},
+    {"items":[{"t":"photo","src":"img/forfun/web/20260917-175054-1.webp","ar":"3000/4000","title":"Media Luna","meta":"","x":54.1,"y":2.9,"w":42.5,"r":1,"tape":1,"z":6},{"t":"photo","src":"img/forfun/web/20260615-185451.webp","ar":"3000/4000","title":"Iluminación fotovoltaica","meta":"2027","x":37.2,"y":44.4,"w":53.4,"r":2.2,"tape":1,"z":4},{"t":"photo","src":"img/forfun/web/fogataza.webp","ar":"3072/4096","title":"Fogataza","meta":"","x":5.1,"y":15.7,"w":46.5,"r":0.1,"tape":1,"z":5},{"t":"doodle","k":"spiral","x":13.3,"y":69.4,"w":16,"r":0,"z":7}]},
+    {"items":[{"t":"photo","src":"img/forfun/web/higueron.webp","ar":"5692/3200","title":"Higuerón · Logotipo","meta":"","x":10.2,"y":30.7,"w":72.6,"r":-2.8,"tape":1,"z":3},{"t":"photo","src":"img/forfun/web/higueron-icon0.webp","ar":"3334/3334","title":"Higuerón · Ícono","meta":"","x":13.3,"y":66.1,"w":33.2,"r":-8.1,"tape":1,"z":4},{"t":"note","html":"Logo para una marca de aceite natural, extraído de la planta de ricino o higuerilla.","x":52.1,"y":74.1,"w":40,"r":0,"z":5},{"t":"doodle","k":"sparkle","x":53.4,"y":17.4,"w":8,"r":0,"z":6}],"head":{"num":"Logofolio","title":"Logotipos y marcas","text":"Un poco de trabajos extra."}},
+    {"items":[{"t":"photo","src":"img/forfun/web/cd-logo.webp","ar":"3301/2551","title":"Creatividad Digital · Logotipo","meta":"","x":4.6,"y":5.8,"w":55.7,"r":-4.8,"tape":1,"z":3},{"t":"photo","src":"img/forfun/web/cd-explicacion.webp","ar":"1245/698","title":"Creatividad Digital · Construcción del logo","meta":"","x":13,"y":54.2,"w":75.5,"r":0,"tape":1,"z":4},{"t":"note","html":"Creatividad Digital es un emprendimiento que busca formar a personas apasionadas por el diseño, con curiosidad por crear assets online para diversos fines.","x":67.1,"y":29.9,"w":30.4,"r":0,"z":5,"s":0.76},{"t":"sticker","k":"cursor","x":4.8,"y":45.4,"w":18,"r":77.4,"z":6},{"t":"doodle","k":"underline","x":65.4,"y":45.5,"w":28.8,"r":0,"z":7}]},
+    {"kind":"end","head":{"num":"Hasta aquí, por ahora","title":"¡Próximamente, nuevas actualizaciones!","text":"Esta mezcla de curiosidad y oficio es la que llevo a cada proyecto. ¡Te invito a ver el detalle de los demás!"},"items":[{"t":"doodle","k":"sparkle","x":72,"y":68,"w":16,"r":8},{"t":"doodle","k":"underline","x":16.5,"y":59.5,"w":44}]},
+    {"kind":"endpaper","label":"stickers","items":[{"t":"sticker","k":"star","x":26.9,"y":39.9,"w":22,"r":-8},{"t":"sticker","k":"mora","x":53.5,"y":35.2,"r":4},{"t":"sticker","k":"cursor","x":77.2,"y":45.4,"w":14,"r":-12},{"t":"sticker","k":"ring","x":12,"y":68.5,"w":30,"r":0},{"t":"sticker","k":"plus","x":50.9,"y":68,"w":15,"r":10},{"t":"sticker","k":"hola","x":56,"y":84.7,"r":-6}]},
+    {"kind":"back"}
+  ];
+
+  (function(){
+    var nb = document.getElementById('nb'); if (!nb) return;
+    var book = document.getElementById('nb-book'), scene = document.getElementById('nb-scene'), tilt = document.getElementById('nb-tilt');
+    var dotsEl = document.getElementById('nb-dots'), countEl = document.getElementById('nb-count'), liveEl = document.getElementById('nb-live');
+    var prevBtn = document.getElementById('nb-prev'), nextBtn = document.getElementById('nb-next'), hint = document.getElementById('nb-hint');
+    var mq = window.matchMedia('(max-width:760px)');
+    var single = false, sheets = [], faces = [], state = 0, maxState = 0, zc = 0, uid = 0, inView = false, touched = false;
+    // modo edición: se abre con ?editar en la dirección; el borrador vive en este navegador hasta guardarlo
+    var EDIT = /[?&#]editar/.test(location.search + location.hash), DRAFT = 'mora-nb-draft-6', URLS = {}, edRefresh = null;
+    if (EDIT) { try { var d = JSON.parse(localStorage.getItem(DRAFT) || 'null'); if (d && d.length) { PAGES.length = 0; d.forEach(function(p){ PAGES.push(p); }); } } catch (e) {} }
+    var N = PAGES.length;
+
+    // las fotos de la libreta alimentan el visor
+    PAGES.forEach(function(p){ (p.items || []).forEach(function(it){
+      if (it.t !== 'photo' || it.lock) return;
+      it.piece = PIECES.length;
+      PIECES.push({src:it.src, title:it.title + (it.meta && /^\d+$/.test(it.meta) && it.meta.length < 3 ? ' ' + it.meta : ''), cat:it.cat || '', year:/^\d{4}$/.test(it.meta) ? it.meta : '', note:it.note || '', real:true});
+    }); });
+
+    var DOODLE = {
+      star:'M50 7C54 22 58 33 63 39C74 40 84 40 94 41C85 49 77 56 70 62C73 74 76 84 79 94C69 88 60 82 50 76C40 82 31 88 21 94C24 84 27 74 30 62C23 56 15 49 6 41C16 40 26 40 37 39C42 33 46 22 50 7Z',
+      sparkle:'M50 6C52 34 62 47 94 50C62 53 52 64 50 94C48 64 38 53 6 50C38 47 48 34 50 6Z',
+      spiral:'M52 50C50 46 57 44 59 49C62 57 52 63 45 59C35 53 39 38 51 36C66 34 75 48 71 61C66 77 44 81 32 70C17 57 20 31 38 22C55 13 78 20 88 36',
+      arrow:'M6 64C26 44 50 36 84 40M70 27C76 32 81 36 86 40C80 45 75 50 71 56',
+      underline:'M4 40C30 33 62 31 96 35',
+      circle:'M54 10C78 8 95 28 93 52C91 78 66 95 43 92C19 89 5 68 8 44C11 22 30 9 60 14'
+    };
+    var VB = {underline:'0 26 100 20', arrow:'0 20 100 50'};
+    function esc(t){ return String(t).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/"/g,'&quot;'); }
+    function ringSVG(text, center){
+      var id = 'nbr' + (++uid);
+      return '<svg viewBox="0 0 100 100" aria-hidden="true"><defs><path id="' + id + '" d="M50 50m-37 0a37 37 0 1 1 74 0a37 37 0 1 1-74 0"/></defs>' +
+        '<circle cx="50" cy="50" r="48" fill="#FFFFFF"/><g class="spin"><text><textPath href="#' + id + '" textLength="228" lengthAdjust="spacing">' + text + '</textPath></text></g>' + center + '</svg>';
+    }
+    var STICKER = {
+      star:function(){ return '<svg viewBox="0 0 100 100" aria-hidden="true"><path d="' + DOODLE.star + '" fill="#490FE5" stroke="#FFFFFF" stroke-width="7" stroke-linejoin="round" paint-order="stroke"/></svg>'; },
+      plus:function(){ return '<svg viewBox="0 0 100 100" aria-hidden="true"><rect x="6" y="6" width="88" height="88" rx="22" fill="#490FE5" stroke="#FFFFFF" stroke-width="7"/><path d="M50 28v44M28 50h44" stroke="#FFFFFF" stroke-width="10" stroke-linecap="round"/></svg>'; },
+      cursor:function(){ return '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 3l7 18 2-7 7-2z" fill="#490FE5" stroke="#FFFFFF" stroke-width="2.4" stroke-linejoin="round" paint-order="stroke"/></svg>'; },
+      ring:function(){ return ringSVG('FOR FUN · HECHO CON CURIOSIDAD · ', '<path d="M50 38v24M38 50h24" stroke="#490FE5" stroke-width="5" stroke-linecap="round"/>'); },
+      abreme:function(){ return ringSVG('ÁBREME · ÁBREME · ÁBREME · ', '<path d="M37 50h25M52 40l11 10-11 10" fill="none" stroke="#490FE5" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>'); },
+      mora:function(){ return 'Andrés <span>Mora<i></i><i></i><i></i><i></i></span>'; },
+      hola:function(){ return '¡Hola!'; }
+    };
+    function pos(it, i){
+      return '--x:' + it.x + ';--y:' + it.y + (it.w ? ';--w:' + it.w : '') + ';--r:' + (it.r || 0) + ';--i:' + i + (it.ar ? ';--ar:' + it.ar : '') + (it.z ? ';--z:' + it.z : '') + (it.s ? ';--fs:' + it.s : '');
+    }
+    // pi = índice de la página (solo para los items de PAGES; el modo edición los ubica con data-ix)
+    function itemHTML(it, i, pi){
+      var st = ' style="' + pos(it, i) + '"' + (pi != null ? ' data-ix="' + pi + ':' + i + '"' : '');
+      if (it.t === 'photo') {
+        // con candado (lock) la foto no es botón: no se amplía ni entra al visor
+        var inner = '<img src="' + (URLS[it.src] || it.src) + '" alt="' + esc(it.title) + '" draggable="false"><span class="cap"><span>' + esc(it.title) + '</span><span>' + esc(it.meta || '') + '</span></span>';
+        if (it.lock) return '<div class="nb-it nb-photo is-locked' + (it.tape ? ' nb-tape' : '') + '"' + st + '>' + inner + '</div>';
+        return '<button type="button" class="nb-it nb-photo' + (it.tape ? ' nb-tape' : '') + '" data-piece="' + it.piece + '"' + st + ' aria-label="Ampliar ' + esc(it.title) + '">' + inner + '</button>';
+      }
+      if (it.t === 'ph') return '<div class="nb-it nb-ph"' + st + '>' + esc(it.label) + '</div>';
+      if (it.t === 'note') return '<p class="nb-it nb-note' + (it.st ? ' is-' + it.st : '') + '"' + st + '>' + it.html + '</p>';
+      if (it.t === 'doodle') return '<span class="nb-it nb-doodle' + (it.light ? ' light' : '') + '"' + st + ' aria-hidden="true"><svg viewBox="' + (VB[it.k] || '0 0 100 100') + '"><path pathLength="1" d="' + DOODLE[it.k] + '"/></svg></span>';
+      if (it.t === 'sticker') {
+        var cls = it.k === 'mora' ? ' stk-mora' : it.k === 'hola' ? ' stk-pill' : '';
+        return '<span class="nb-it nb-stk' + cls + '" data-k="' + it.k + '"' + st + ' aria-hidden="true">' + STICKER[it.k]() + '</span>';
+      }
+      return '';
+    }
+    function headHTML(h, pi){
+      if (!h) return '';
+      return '<div class="nb-head" data-head="' + pi + '"' + (h.s ? ' style="--fs:' + h.s + '"' : '') + '>' + (h.num ? '<span class="nb-num">' + esc(h.num) + '</span>' : '') + (h.title ? '<h3 class="nb-title' + (h.sm ? ' sm' : '') + '">' + esc(h.title) + '</h3>' : '') + (h.text ? '<p class="nb-p">' + esc(h.text) + '</p>' : '') + '</div>';
+    }
+    function pad2(n){ return (n < 10 ? '0' : '') + n; }
+    function pageHTML(p, i){
+      var items = (p.items || []).map(function(it, j){ return itemHTML(it, j, i); }).join('');
+      if (p.kind === 'cover') return '<div class="pg cv"><i class="cv-band"></i>' +
+        '<div class="nb-card cv-label nb-tape-card"><span class="k">For fun</span><strong>Cuaderno</strong><span class="nm">Andrés Mora</span><span class="tg">Foto · Ilustración · 3D</span></div>' +
+        itemHTML({t:'sticker', k:'abreme', x:56, y:64, w:28, r:-8}, 0) + '</div>';
+      if (p.kind === 'back') return '<div class="pg cv"><i class="cv-band"></i><div class="nb-card bc-label nb-tape-card"><span class="k">Fin</span><strong>Gracias por hojear.</strong></div><span class="bc-meta">Andrés Mora · Cundinamarca, Colombia</span></div>';
+      if (p.kind === 'endpaper') {
+        var card = p.label === 'inside'
+          ? '<div class="nb-card ep-label nb-tape-card"><span class="k">Este cuaderno es de</span><strong>Andrés Mora</strong><p>Fotos, ilustraciones, renders y cosas que hago porque sí.</p><span class="tg">Pasa las hojas con las flechas, el teclado o deslizando</span></div>' +
+            itemHTML({t:'doodle', k:'arrow', light:1, x:52, y:72, w:38, r:-10}, 0)
+          : '<div class="nb-card st-label nb-tape-card"><span class="k">Stickers</span><strong>Despega uno.</strong><p>Arrástralo y pégalo donde quieras dentro de esta página.</p></div>';
+        return '<div class="pg ep">' + card + items + '</div>';
+      }
+      var extra = '';
+      if (p.toc) extra = '<div class="nb-toc-list">' + p.toc.map(function(t){ return '<button type="button" class="nb-toc" data-goto="' + t.page + '"><span>' + t.label + '</span><i></i><b>' + pad2(t.page) + '</b></button>'; }).join('') + '</div>';
+      if (p.kind === 'end') extra = '<div class="nb-cta"><a href="/trabajo" class="btn-fill is-solid"><span class="btn-fill-bg"></span><span class="btn-fill-label">Ver proyectos</span></a>' +
+        '<a href="/contacto" class="btn-fill"><span class="btn-fill-bg"></span><span class="btn-fill-label">Hablemos</span></a></div>';
+      return '<div class="pg">' + headHTML(p.head, i) + extra + items + '<span class="nb-folio">' + pad2(i) + '</span></div>';
+    }
+    function makeFace(i, side){
+      var f = document.createElement('div');
+      f.className = 'face ' + side;
+      f.innerHTML = (i < 0 ? '<div class="pg"></div>' : pageHTML(PAGES[i], i)) + '<i class="nb-shade"></i><i class="nb-curl"></i>';
+      if (i >= 0) faces[i] = f;
+      f.inert = true; f.setAttribute('aria-hidden', 'true');
+      return f;
+    }
+
+    // "+ Fotos" guarda solo el nombre del archivo: si la foto no aparece, se busca en las subcarpetas de img/forfun/fotos/
+    var FOTOS = 'img/forfun/fotos/', SUB = ['Aves', 'Gatos', 'LogoFolio-Redes', 'Noche y en movimiento', 'Perros', 'Plantas', 'Proyectos', 'Sitios'], edFixed = null;
+    book.addEventListener('error', function(e){
+      var im = e.target; if (im.tagName !== 'IMG') return;
+      var el = im.closest('[data-ix]'); if (!el) return;
+      var ix = el.dataset.ix.split(':'), it = (PAGES[+ix[0]].items || [])[+ix[1]];
+      if (!it || it.src.indexOf(FOTOS) !== 0 || it.src.slice(FOTOS.length).indexOf('/') > -1) return;
+      var k = +(im.dataset.try || 0); if (k >= SUB.length) return;
+      var src = FOTOS + SUB[k] + '/' + it.src.slice(FOTOS.length);
+      im.dataset.try = k + 1;
+      im.onload = function(){ im.onload = null; it.src = src; if (it.piece != null) PIECES[it.piece].src = src; if (edFixed) edFixed(); };
+      im.src = src;
+    }, true);
+
+    function build(){
+      single = mq.matches;
+      nb.classList.toggle('is-single', single);
+      book.innerHTML = '<i class="nb-floor l"></i><i class="nb-floor r"></i>';
+      sheets = []; faces = [];
+      for (var i = 0; i < N; i += single ? 1 : 2) {
+        var el = document.createElement('div'); el.className = 'sheet';
+        el.appendChild(makeFace(i, 'front'));
+        el.appendChild(makeFace(single ? -1 : i + 1, 'back'));
+        book.appendChild(el);
+        sheets.push({el:el, flipped:false, moving:false, t:0});
+      }
+      maxState = single ? N - 1 : sheets.length;
+      dotsEl.innerHTML = '';
+      for (var s = 0; s <= maxState; s++) {
+        var b = document.createElement('button'); b.type = 'button'; b.className = 'nb-dot';
+        b.setAttribute('aria-label', label(s));
+        var th = thumb(s);
+        b.innerHTML = '<span class="th"' + (th ? ' style="background-image:url(\'' + th + '\')"' : ' style="background-color:var(--accent)"') + '></span>' +
+          '<svg class="ring" viewBox="0 0 100 100" aria-hidden="true"><defs><path id="nbd' + s + '" d="M50 50m-41 0a41 41 0 1 1 82 0a41 41 0 1 1-82 0"/></defs><text><textPath href="#nbd' + s + '" textLength="254" lengthAdjust="spacing">FOR FUN · CUADERNO · ' + pad2(s + 1) + ' · </textPath></text></svg>';
+        if (EDIT) { var vs = visible(s); b.dataset.n = vs.map(pad2).join(' · '); if (vs.indexOf(0) > -1 || vs.indexOf(N - 1) > -1) b.classList.add('is-fixed'); else b.title = 'Arrastra para cambiar el orden'; }
+        b.addEventListener('click', (function(k){ return function(){ go(k); }; })(s));
+        dotsEl.appendChild(b);
+      }
+      render(false);
+    }
+    function visible(s){
+      if (single) return [s];
+      var v = []; if (s > 0) v.push(2 * s - 1); if (s < sheets.length) v.push(2 * s); return v;
+    }
+    function label(s){
+      var v = visible(s);
+      if (v[0] === 0) return 'Portada';
+      if (v[v.length - 1] === N - 1 && v.length === 1) return 'Contraportada';
+      return v.length > 1 ? 'Páginas ' + v[0] + ' y ' + v[1] : 'Página ' + v[0];
+    }
+    function thumb(s){
+      var v = visible(s);
+      for (var k = 0; k < v.length; k++) {
+        var it = (PAGES[v[k]].items || []).filter(function(x){ return x.t === 'photo'; })[0];
+        if (it && URLS[it.src]) return URLS[it.src];
+        if (it) return it.src.indexOf(R3) === 0 ? it.src.replace(/\.jpg$/, '-t.jpg') : it.src.indexOf('img/forfun/web/') === 0 ? it.src.replace(/\.webp$/, '-t.webp') : it.src;
+      }
+      return '';
+    }
+    function restZ(sh, i){ return sh.flipped ? i + 1 : sheets.length - i + 1; }
+
+    function render(animate){
+      // hojas que cambian: hacia adelante se pasan de la primera a la última; hacia atrás, al revés.
+      // La que se mueve después queda encima, como en un cuaderno de verdad.
+      var change = [];
+      sheets.forEach(function(sh, i){ if (sh.flipped !== (i < state)) change.push(i); });
+      if (change.length && !(change[0] < state)) change.reverse();
+      change.forEach(function(i, order){
+        var sh = sheets[i];
+        sh.flipped = i < state;
+        if (animate && !reduceMotion) {
+          var delay = order * 110, z = 100 + (++zc);
+          // mientras espera su turno la hoja sigue en su pila con su altura de siempre; sube encima solo cuando arranca.
+          // (si subía de una vez, al cerrar desde el final se veía encima la hoja más vieja de la pila)
+          if (!sh.moving) sh.el.style.zIndex = restZ({flipped:!sh.flipped}, i);
+          clearTimeout(sh.zt); sh.zt = setTimeout(function(){ sh.el.style.zIndex = z; }, delay);
+          sh.moving = true;
+          sh.el.style.transitionDelay = delay + 'ms'; sh.el.style.setProperty('--dl', delay + 'ms');
+          sh.el.classList.remove('is-moving'); void sh.el.offsetWidth; sh.el.classList.add('is-moving');
+          clearTimeout(sh.t);
+          sh.t = setTimeout(function(){ sh.moving = false; sh.el.classList.remove('is-moving'); sh.el.style.transitionDelay = ''; sh.el.style.zIndex = restZ(sh, i); }, 1050 + delay);
+        }
+        sh.el.classList.toggle('is-flipped', sh.flipped);
+      });
+      sheets.forEach(function(sh, i){ if (!sh.moving) { clearTimeout(sh.zt); sh.el.style.zIndex = restZ(sh, i); } });
+
+      var vis = visible(state);
+      faces.forEach(function(f, i){
+        var on = vis.indexOf(i) > -1, was = f.classList.contains('is-live');
+        f.classList.toggle('is-live', on);
+        f.inert = !on; f.setAttribute('aria-hidden', on ? 'false' : 'true');
+        if (on && !was && animate && !reduceMotion) {
+          f.classList.remove('is-enter'); void f.offsetWidth; f.classList.add('is-enter');
+          clearTimeout(f._t); f._t = setTimeout(function(){ f.classList.remove('is-enter'); }, 2200);
+        }
+      });
+      book.classList.toggle('at-start', !single && state === 0);
+      book.classList.toggle('at-end', !single && state === maxState);
+      book.classList.toggle('has-left', !single && state > 0);
+      book.classList.toggle('has-right', single || state < maxState);
+      prevBtn.disabled = state === 0; nextBtn.disabled = state === maxState;
+      Array.prototype.forEach.call(dotsEl.children, function(d, i){ d.classList.toggle('is-active', i === state); d.setAttribute('aria-current', i === state ? 'true' : 'false'); });
+      if (single) { centerDot(animate); clearTimeout(centerDot.t); centerDot.t = setTimeout(function(){ centerDot(true); }, 600); }
+      // en celular el contador usa el mismo número que el folio de la página
+      countEl.innerHTML = single ? (state === 0 ? '<b>Portada</b>' : state === maxState ? '<b>Contraportada</b>' : '<b>' + pad2(state) + '</b> / ' + pad2(N - 2)) : '<b>' + pad2(state + 1) + '</b> / ' + pad2(maxState + 1);
+      liveEl.textContent = label(state);
+      if (edRefresh) edRefresh();
+    }
+    // celular: la tira de puntos se desliza para dejar el activo en el centro
+    function centerDot(smooth){
+      var d = dotsEl.children[state]; if (!d) return;
+      dotsEl.scrollTo({left:d.offsetLeft + d.offsetWidth / 2 - dotsEl.clientWidth / 2, behavior:smooth && !reduceMotion ? 'smooth' : 'auto'});
+    }
+    function go(s){
+      s = Math.max(0, Math.min(maxState, s));
+      if (s === state) return;
+      state = s; render(true);
+      if (!touched) { touched = true; hint.style.opacity = '0'; }
+    }
+    function goPage(p){ go(single ? p : Math.ceil(p / 2)); }
+
+    prevBtn.addEventListener('click', function(){ go(state - 1); });
+    nextBtn.addEventListener('click', function(){ go(state + 1); });
+
+    // clic en una página: foto → visor; índice → salta; resto de la página derecha → siguiente, izquierda → anterior
+    var swiped = false;
+    book.addEventListener('click', function(e){
+      if (swiped || EDIT) return;
+      var t = e.target, f = t.closest('.face');
+      if (!f || !f.classList.contains('is-live')) return;
+      var ph = t.closest('.nb-photo:not(.is-locked)');
+      if (ph) { lightbox.open(+ph.dataset.piece, ph.querySelector('img').getBoundingClientRect()); return; }
+      var g = t.closest('[data-goto]'); if (g) { goPage(+g.dataset.goto); return; }
+      var stk = t.closest('.nb-stk');
+      if (stk && stk.dataset.k !== 'abreme') return;
+      if (t.closest('a, button')) return;
+      if (f.classList.contains('back')) { go(state - 1); return; }
+      if (single) { var r = f.getBoundingClientRect(); if (e.clientX - r.left < r.width * 0.3 && state > 0) { go(state - 1); return; } }
+      go(state + 1);
+    });
+
+    // stickers: se despegan y se mueven dentro de su página
+    book.addEventListener('pointerdown', function(e){
+      if (EDIT) return;
+      var s = e.target.closest('.nb-stk'); if (!s) return;
+      var face = s.closest('.face'); if (!face.classList.contains('is-live')) return;
+      e.preventDefault(); e.stopPropagation();
+      var r = face.getBoundingClientRect(), sx = e.clientX, sy = e.clientY;
+      var ox = parseFloat(s.style.getPropertyValue('--x')), oy = parseFloat(s.style.getPropertyValue('--y')), moved = false;
+      s.setPointerCapture(e.pointerId); s.classList.add('is-drag'); s.style.zIndex = 10 + (++zc);
+      function mv(ev){
+        var dx = (ev.clientX - sx) / r.width * 100, dy = (ev.clientY - sy) / r.height * 100;
+        if (Math.abs(dx) + Math.abs(dy) > 0.8) moved = true;
+        s.style.setProperty('--x', Math.max(-8, Math.min(92, ox + dx)).toFixed(2));
+        s.style.setProperty('--y', Math.max(-4, Math.min(94, oy + dy)).toFixed(2));
+      }
+      function up(){
+        s.classList.remove('is-drag');
+        s.removeEventListener('pointermove', mv); s.removeEventListener('pointerup', up); s.removeEventListener('pointercancel', up);
+        if (moved) { swiped = true; setTimeout(function(){ swiped = false; }, 60); }
+      }
+      s.addEventListener('pointermove', mv); s.addEventListener('pointerup', up); s.addEventListener('pointercancel', up);
+    });
+
+    // deslizar en táctil
+    var sw = null;
+    scene.addEventListener('pointerdown', function(e){ if (e.pointerType !== 'mouse') sw = {x:e.clientX, y:e.clientY}; });
+    scene.addEventListener('pointerup', function(e){
+      if (!sw) return;
+      var dx = e.clientX - sw.x, dy = e.clientY - sw.y; sw = null;
+      if (Math.abs(dx) > 45 && Math.abs(dx) > Math.abs(dy) * 1.2) {
+        go(state + (dx < 0 ? 1 : -1));
+        swiped = true; setTimeout(function(){ swiped = false; }, 80);
+      }
+    });
+    scene.addEventListener('pointercancel', function(){ sw = null; });
+
+    // teclado: flechas cuando la libreta está a la vista
+    if ('IntersectionObserver' in window) new IntersectionObserver(function(en){ inView = en[0].intersectionRatio > 0.35; }, {threshold:[0, 0.35, 0.6]}).observe(scene);
+    else inView = true;
+    document.addEventListener('keydown', function(e){
+      if (!inView || lightbox.isOpen() || document.body.classList.contains('modal-open')) return;
+      if (e.target.closest && e.target.closest('input, textarea, select')) return;
+      if (e.key === 'ArrowRight') { e.preventDefault(); go(state + 1); }
+      else if (e.key === 'ArrowLeft') { e.preventDefault(); go(state - 1); }
+    });
+
+    // la libreta se inclina un poco siguiendo el cursor
+    if (hasFinePointer && !reduceMotion && !EDIT) {
+      nb.addEventListener('pointermove', function(e){
+        if (e.pointerType !== 'mouse') return;
+        var r = scene.getBoundingClientRect();
+        var x = (e.clientX - (r.left + r.width / 2)) / r.width, y = (e.clientY - (r.top + r.height / 2)) / r.height;
+        tilt.style.setProperty('--ty', (Math.max(-1, Math.min(1, x)) * 5).toFixed(2) + 'deg');
+        tilt.style.setProperty('--tx', (Math.max(-1, Math.min(1, y)) * -4).toFixed(2) + 'deg');
+      });
+      nb.addEventListener('pointerleave', function(){ tilt.style.setProperty('--ty', '0deg'); tilt.style.setProperty('--tx', '0deg'); });
+    }
+
+    // al cambiar entre escritorio y celular se reconstruye conservando la página
+    function onMQ(){
+      var wasSingle = single, vis = visible(state);
+      if (mq.matches === wasSingle) return;
+      var page = vis[0];
+      build();
+      state = single ? page : Math.ceil(page / 2);
+      render(false);
+    }
+    if (mq.addEventListener) mq.addEventListener('change', onMQ); else mq.addListener(onMQ);
+
+    // ===== modo edición =====
+    // Arrastrar mueve, la esquina cambia el tamaño, el punto de arriba gira, doble clic edita textos.
+    // Cada cambio queda como borrador en este navegador; "Guardar archivo" baja libreta-diseno.json para pasarlo a Claude.
+    function initEditor(){
+      nb.classList.add('is-edit');
+      var sel = null, hsel = -1, target = -1; // hsel = página cuyo título está seleccionado
+      var DN = {star:'Estrella', sparkle:'Destello', spiral:'Espiral', arrow:'Flecha', underline:'Subrayado', circle:'Círculo'};
+      var SN = {star:'Estrella', plus:'Más', cursor:'Cursor', ring:'Sello For fun', mora:'Andrés Mora', hola:'¡Hola!'};
+      function opts(o){ return Object.keys(o).map(function(k){ return '<option value="' + k + '">' + o[k] + '</option>'; }).join(''); }
+      var panel = document.createElement('div'); panel.className = 'ed-panel';
+      panel.innerHTML = '<div class="ed-main"><div class="ed-top"><b>Modo edición</b><span class="ed-pg"></span></div>' +
+        '<div class="ed-row"><label class="ed-btn is-main">+ Fotos<input type="file" accept="image/*" multiple hidden></label>' +
+        '<label class="ed-btn" title="Elige una de tus carpetas dentro de img/forfun/fotos/">+ Carpeta<input type="file" webkitdirectory multiple hidden></label>' +
+        '<button type="button" class="ed-btn" data-a="title">+ Título</button>' +
+        '<select class="ed-btn" data-a="text" aria-label="Agregar texto"><option value="">+ Texto</option><option value="sub">Subtítulo</option><option value="cat">Categoría</option><option value="note">Nota</option></select>' +
+        '<select class="ed-btn" data-a="doodle" aria-label="Agregar garabato"><option value="">+ Garabato</option>' + opts(DN) + '</select>' +
+        '<select class="ed-btn" data-a="sticker" aria-label="Agregar sticker"><option value="">+ Sticker</option>' + opts(SN) + '</select></div>' +
+        '<div class="ed-row"><button type="button" class="ed-btn" data-a="edit" data-s title="Título, año y nota de la foto, o el texto seleccionado">Editar texto</button><button type="button" class="ed-btn" data-a="front" data-s>Al frente</button><button type="button" class="ed-btn" data-a="back" data-s>Atrás</button>' +
+        '<button type="button" class="ed-btn" data-a="straight" data-s>Enderezar</button><button type="button" class="ed-btn" data-a="tape" data-s>Cinta</button>' +
+        '<button type="button" class="ed-btn" data-a="lock" data-s title="Con candado la foto no se puede ver en tamaño completo">Candado</button>' +
+        '<select class="ed-btn" data-a="style" aria-label="Estilo del texto"><option value="sub">Subtítulo</option><option value="cat">Categoría</option><option value="note">Nota</option></select>' +
+        '<button type="button" class="ed-btn" data-a="smaller" title="Texto más pequeño">Achicar</button><button type="button" class="ed-btn" data-a="bigger" title="Texto más grande">Agrandar</button>' +
+        '<button type="button" class="ed-btn" data-a="hsize" title="Cambia el título entre grande y pequeño">Tamaño</button><button type="button" class="ed-btn" data-a="del">Borrar</button></div>' +
+        '<div class="ed-row"><button type="button" class="ed-btn" data-a="pages">+ 2 páginas</button><button type="button" class="ed-btn is-main" data-a="save">Guardar archivo</button>' +
+        '<button type="button" class="ed-btn" data-a="copy">Copiar</button><button type="button" class="ed-btn" data-a="reset">Descartar</button></div></div>' +
+        '<p class="ed-msg" aria-live="polite"></p>' +
+        '<p class="ed-help">Arrastra para mover · esquina para el tamaño · punto de arriba para girar · doble clic para editar el texto · Supr borra · flechas mueven fino (Shift, más) · arrastra las miniaturas de abajo para cambiar el orden de las páginas</p>';
+      document.body.appendChild(panel);
+      var msgEl = panel.querySelector('.ed-msg'), pgEl = panel.querySelector('.ed-pg');
+      hint.textContent = 'Modo edición: las flechas pasan las hojas; los cambios se guardan solos como borrador';
+
+      function msg(t){ msgEl.textContent = t; clearTimeout(msg.t); msg.t = setTimeout(function(){ msgEl.textContent = ''; }, 6000); }
+      function save(){ try { localStorage.setItem(DRAFT, data()); } catch (e) { msg('No se pudo guardar el borrador en este navegador'); } }
+      function data(){ return JSON.stringify(PAGES, function(k, v){ return k === 'piece' ? undefined : v; }, 1); }
+      function tp(){ var v = visible(state); return v.indexOf(target) > -1 ? target : v[v.length - 1]; }
+      function cur(){ return sel ? PAGES[sel.pi].items[sel.j] : null; }
+      function elOf(s){ return s ? book.querySelector('.face.is-live [data-ix="' + s.pi + ':' + s.j + '"]') : null; }
+      function select(s){
+        var old = book.querySelector('.nb-it.is-sel');
+        if (old) { old.classList.remove('is-sel'); old.querySelectorAll('.ed-h').forEach(function(h){ h.remove(); }); }
+        var oh = book.querySelector('.nb-head.is-sel'); if (oh) oh.classList.remove('is-sel');
+        hsel = -1;
+        sel = s; var el = elOf(s);
+        if (el) { el.classList.add('is-sel'); el.insertAdjacentHTML('beforeend', '<i class="ed-h ed-rs"></i><i class="ed-h ed-rot"></i>'); } else sel = null;
+        refresh();
+      }
+      function refresh(){
+        var p = tp(); pgEl.textContent = 'Agregando en: ' + (p === 0 ? 'portada' : p === N - 1 ? 'contraportada' : 'página ' + pad2(p));
+        panel.querySelectorAll('[data-s]').forEach(function(b){ b.disabled = !sel; });
+        var isPhoto = !!(cur() && cur().t === 'photo'), lk = panel.querySelector('[data-a="lock"]');
+        panel.querySelector('[data-a="tape"]').disabled = !isPhoto;
+        panel.querySelector('[data-a="edit"]').disabled = !(isPhoto || (cur() && cur().t === 'note'));
+        lk.disabled = !isPhoto; lk.classList.toggle('is-on', isPhoto && !!cur().lock);
+        lk.textContent = isPhoto && cur().lock ? 'Quitar candado' : 'Candado';
+        panel.querySelector('[data-a="hsize"]').disabled = hsel < 0;
+        var isText = cur() && cur().t === 'note', sty = panel.querySelector('[data-a="style"]');
+        sty.disabled = !isText; sty.value = isText ? (cur().st || 'note') : 'note';
+        panel.querySelector('[data-a="smaller"]').disabled = panel.querySelector('[data-a="bigger"]').disabled = !isText && hsel < 0;
+        panel.querySelector('[data-a="del"]').disabled = !sel && hsel < 0;
+        var tb = panel.querySelector('[data-a="title"]'), tk = PAGES[p].kind;
+        tb.textContent = PAGES[p].head ? 'Editar título' : '+ Título';
+        tb.disabled = tk === 'cover' || tk === 'back' || tk === 'endpaper';
+      }
+      function headEl(pi){ return book.querySelector('.face.is-live [data-head="' + pi + '"]'); }
+      function selectHead(pi){
+        select(null);
+        var el = headEl(pi); if (!el) return;
+        hsel = pi; el.classList.add('is-sel'); refresh();
+      }
+      // título de la página: etiqueta morada, título y texto; si se dejan los tres vacíos el título se borra
+      function editHead(pi){
+        var p = PAGES[pi], h = p.head || {}, v, nh = {};
+        if (/cover|back|endpaper/.test(p.kind || '')) { msg('Esta página no lleva título'); return; }
+        v = window.prompt('Etiqueta pequeña en morado (ej. 02 o Fan art · 2023). Vacío = sin etiqueta', h.num || ''); if (v === null) return; nh.num = v.trim();
+        v = window.prompt('Título', h.title || ''); if (v === null) return; nh.title = v.trim();
+        v = window.prompt('Texto debajo del título (opcional)', h.text || ''); if (v === null) return; nh.text = v.trim();
+        if (!nh.num && !nh.title && !nh.text) { delHead(pi); return; }
+        if (h.sm) nh.sm = 1;
+        Object.keys(nh).forEach(function(k){ if (nh[k] === '') delete nh[k]; });
+        // si el índice apunta a esta página con el título viejo, se actualiza también
+        if (h.title && nh.title && h.title !== nh.title) PAGES.forEach(function(q){ (q.toc || []).forEach(function(t){ if (t.page === pi && t.label === h.title) t.label = nh.title; }); });
+        p.head = nh; save(); rebuild(); selectHead(pi);
+      }
+      function delHead(pi){ delete PAGES[pi].head; save(); rebuild(); msg('Título borrado'); }
+      edRefresh = function(){ if (sel && !elOf(sel)) select(null); else if (hsel > -1 && !headEl(hsel)) select(null); else refresh(); };
+      function apply(el, it){
+        el.style.setProperty('--x', it.x); el.style.setProperty('--y', it.y); el.style.setProperty('--r', it.r || 0);
+        if (it.w) el.style.setProperty('--w', it.w);
+        if (it.z) el.style.setProperty('--z', it.z);
+        if (it.s) el.style.setProperty('--fs', it.s);
+      }
+      function rebuild(){
+        var page = visible(state)[0], s = sel, hs = hsel;
+        N = PAGES.length; build();
+        state = Math.min(maxState, single ? page : Math.ceil(page / 2)); render(false);
+        if (hs > -1 && PAGES[hs] && PAGES[hs].head) selectHead(hs); else select(s);
+      }
+      function zs(p){ return (p.items || []).map(function(it){ return it.z || 2; }); }
+      function add(it, keep){
+        var pi = tp(), p = PAGES[pi];
+        if (p.kind === 'cover' || p.kind === 'back') { msg('Pasa a una página interior para agregar cosas'); return; }
+        p.items = p.items || [];
+        it.z = Math.max.apply(null, zs(p).concat([2])) + 1;
+        p.items.push(it); save();
+        sel = {pi:pi, j:p.items.length - 1};
+        if (!keep) rebuild();
+      }
+
+      // fotos: se ven al instante; para que sigan después de recargar deben estar en img/forfun/fotos/ (o en una subcarpeta, elegida con "+ Carpeta")
+      function addFiles(input){
+        var files = Array.prototype.slice.call(input.files).filter(function(f){ return /^image\//.test(f.type) || /\.(jpe?g|png|webp|gif|avif)$/i.test(f.name); });
+        var n = files.length, done = 0, cols = n > 9 ? 4 : 3; input.value = '';
+        if (!n) { msg('No encontré fotos ahí'); return; }
+        if (n > 12 && !window.confirm('Vas a poner ' + n + ' fotos en esta página. ¿Seguir?')) return;
+        files.forEach(function(file, k){
+          var url = URL.createObjectURL(file), im = new Image();
+          // con "+ Carpeta" el navegador da la ruta desde la carpeta elegida (ej. Viajes/foto.jpg)
+          var rel = (file.webkitRelativePath || file.name).replace(/^fotos\//, '');
+          im.onload = im.onerror = function(){
+            var src = 'img/forfun/fotos/' + rel; URLS[src] = url;
+            add({t:'photo', src:src, ar:(im.naturalWidth || 4) + '/' + (im.naturalHeight || 3), title:file.name.replace(/\.[^.]+$/, '').replace(/[-_]+/g, ' '), meta:'',
+              x:6 + (k % cols) * (88 / cols), y:10 + Math.floor(k / cols) % 4 * 21, w:n === 1 ? 60 : n < 5 ? 42 : n < 10 ? 28 : 21, r:+(Math.random() * 6 - 3).toFixed(1), tape:k % 2 ? 0 : 1}, true);
+            if (++done === n) { rebuild(); msg(n + (n > 1 ? ' fotos agregadas' : ' foto agregada') + '. Deben estar guardadas en img/forfun/fotos/'); }
+          };
+          im.src = url;
+        });
+      }
+      panel.querySelectorAll('input[type=file]').forEach(function(inp){ inp.addEventListener('change', function(){ addFiles(inp); }); });
+
+      panel.addEventListener('change', function(e){
+        var s = e.target, a = s.dataset.a; if (s.tagName !== 'SELECT' || !s.value) return;
+        if (a === 'style') { var it = cur(); if (it && it.t === 'note') {
+          if (s.value === 'note') delete it.st;
+          else { it.st = s.value; it.html = esc(it.html.replace(/<\/b>/, ' ').replace(/<[^>]+>/g, '').replace(/&lt;/g, '<').replace(/&quot;/g, '"').replace(/&amp;/g, '&').trim()); }
+          save(); rebuild(); } return; }
+        if (a === 'text') {
+          var ask = {sub:'Subtítulo (ej. Viajes, Retratos, Bogotá)', cat:'Categoría (ej. Fotografía análoga · 2024)', note:'Nota (para una etiqueta morada arriba escribe: Etiqueta | texto)'}[s.value];
+          var t = window.prompt(ask), kind = s.value; s.value = '';
+          if (t) add(kind === 'note' ? {t:'note', html:noteHTML(t), x:10, y:40, w:40, r:0} : {t:'note', st:kind, html:esc(t), x:10, y:40, w:kind === 'sub' ? 60 : 50, r:0});
+          return;
+        }
+        if (a === 'doodle') add({t:'doodle', k:s.value, x:40, y:40, w:s.value === 'underline' ? 40 : 16, r:0});
+        else add({t:'sticker', k:s.value, x:40, y:40, w:/mora|hola/.test(s.value) ? 0 : 18, r:0});
+        s.value = '';
+      });
+      panel.addEventListener('click', function(e){
+        var b = e.target.closest('[data-a]'); if (!b || b.tagName === 'SELECT') return;
+        var a = b.dataset.a, it = cur();
+        if ((a === 'smaller' || a === 'bigger') && (it || hsel > -1)) {
+          var o = it && it.t === 'note' ? it : hsel > -1 ? PAGES[hsel].head : null; if (!o) return;
+          o.s = +Math.max(0.4, Math.min(5, (o.s || 1) * (a === 'bigger' ? 1.12 : 1 / 1.12))).toFixed(2);
+          if (o.s === 1) delete o.s;
+          save(); rebuild();
+        }
+        else if (a === 'front' && it) { it.z = Math.max.apply(null, zs(PAGES[sel.pi])) + 1; save(); rebuild(); }
+        else if (a === 'back' && it) { PAGES[sel.pi].items.forEach(function(o){ o.z = (o.z || 2) + 1; }); it.z = 2; save(); rebuild(); }
+        else if (a === 'straight' && it) { it.r = 0; apply(elOf(sel), it); save(); }
+        else if (a === 'edit' && it) editItem(it);
+        else if (a === 'lock' && it && it.t === 'photo') { if (it.lock) delete it.lock; else it.lock = 1; save(); rebuild(); msg(it.lock ? 'Foto con candado: no se podrá ampliar' : 'Candado quitado: la foto se puede ampliar'); }
+        else if (a === 'tape' && it) { it.tape = it.tape ? 0 : 1; save(); rebuild(); }
+        else if (a === 'del' && it) { PAGES[sel.pi].items.splice(sel.j, 1); sel = null; save(); rebuild(); }
+        else if (a === 'del' && hsel > -1) { delHead(hsel); }
+        else if (a === 'title') { editHead(hsel > -1 ? hsel : tp()); }
+        else if (a === 'hsize' && hsel > -1) { var hh = PAGES[hsel].head; if (hh.sm) delete hh.sm; else hh.sm = 1; save(); rebuild(); }
+        else if (a === 'pages') {
+          var end = PAGES.findIndex(function(p){ return p.kind === 'end'; }); if (end < 0) end = N - 1;
+          PAGES.splice(end, 0, {items:[]}, {items:[]});
+          PAGES.forEach(function(p){ (p.toc || []).forEach(function(t){ if (t.page >= end) t.page += 2; }); });
+          save(); sel = null; rebuild(); goPage(end); target = end; refresh(); msg('Páginas ' + pad2(end) + ' y ' + pad2(end + 1) + ' agregadas');
+        }
+        else if (a === 'save') {
+          var u = URL.createObjectURL(new Blob([data()], {type:'application/json'})), l = document.createElement('a');
+          l.href = u; l.download = 'libreta-diseno.json'; document.body.appendChild(l); l.click(); l.remove();
+          setTimeout(function(){ URL.revokeObjectURL(u); }, 1000);
+          msg('Listo: libreta-diseno.json quedó en Descargas. Avísale a Claude');
+        }
+        else if (a === 'copy') {
+          var txt = data();
+          (navigator.clipboard ? navigator.clipboard.writeText(txt) : Promise.reject()).then(function(){ msg('Diseño copiado'); }, function(){
+            var ta = panel.querySelector('.ed-out') || panel.appendChild(Object.assign(document.createElement('textarea'), {className:'ed-out'}));
+            ta.value = txt; ta.select(); msg('Copia el texto del recuadro');
+          });
+        }
+        else if (a === 'reset') {
+          if (window.confirm('¿Descartar todos los cambios y volver a la libreta publicada?')) { try { localStorage.removeItem(DRAFT); } catch (er) {} location.reload(); }
+        }
+      });
+      function noteHTML(t){
+        var parts = t.split('|');
+        return parts.length > 1 ? '<b>' + esc(parts[0].trim()) + '</b>' + esc(parts.slice(1).join('|').trim()) : esc(t);
+      }
+
+      // mover, cambiar tamaño y girar
+      book.addEventListener('pointerdown', function(e){
+        var f = e.target.closest('.face'); if (!f || !f.classList.contains('is-live')) return;
+        var fi = faces.indexOf(f); if (fi > -1) target = fi;
+        var hd = e.target.closest('.nb-head[data-head]');
+        if (hd) { e.preventDefault(); selectHead(+hd.dataset.head); return; }
+        var el = e.target.closest('.nb-it[data-ix]');
+        if (!el) { select(null); return; }
+        e.preventDefault(); e.stopPropagation();
+        var ix = el.dataset.ix.split(':'), s = {pi:+ix[0], j:+ix[1]}, it = PAGES[s.pi].items[s.j];
+        if (!sel || sel.pi !== s.pi || sel.j !== s.j) select(s);
+        var h = e.target.closest('.ed-h'), mode = !h ? 'move' : h.classList.contains('ed-rot') ? 'rot' : 'size';
+        var fr = f.getBoundingClientRect(), er = el.getBoundingClientRect(), cx = er.left + er.width / 2, cy = er.top + er.height / 2;
+        var sx = e.clientX, sy = e.clientY, o = {x:+it.x, y:+it.y, w:+(it.w || el.offsetWidth / f.offsetWidth * 100), r:+(it.r || 0), s:+(it.s || 1)};
+        el.setPointerCapture(e.pointerId);
+        function mv(ev){
+          var dx = ev.clientX - sx, dy = ev.clientY - sy;
+          if (mode === 'move') { it.x = +(o.x + dx / fr.width * 100).toFixed(1); it.y = +(o.y + dy / fr.height * 100).toFixed(1); }
+          else if (mode === 'size') { var a = o.r * Math.PI / 180; it.w = +Math.max(4, Math.min(130, o.w + (dx * Math.cos(a) + dy * Math.sin(a)) / fr.width * 100)).toFixed(1);
+            // en los textos la esquina agranda la letra junto con la caja
+            if (it.t === 'note') it.s = +Math.max(0.4, Math.min(5, o.s * it.w / o.w)).toFixed(2); }
+          else { var r = Math.atan2(ev.clientY - cy, ev.clientX - cx) * 180 / Math.PI + 90; if (r > 180) r -= 360; if (Math.abs(r) < 1.5) r = 0; it.r = +r.toFixed(1); }
+          apply(el, it);
+        }
+        function up(){ el.removeEventListener('pointermove', mv); el.removeEventListener('pointerup', up); el.removeEventListener('pointercancel', up); save(); }
+        el.addEventListener('pointermove', mv); el.addEventListener('pointerup', up); el.addEventListener('pointercancel', up);
+      });
+
+      // doble clic: título y año de una foto, o el texto de una nota
+      book.addEventListener('dblclick', function(e){
+        var hd = e.target.closest('.face.is-live .nb-head[data-head]');
+        if (hd) { editHead(+hd.dataset.head); return; }
+        var el = e.target.closest('.face.is-live .nb-it[data-ix]'); if (!el) return;
+        var ix = el.dataset.ix.split(':'); editItem(PAGES[+ix[0]].items[+ix[1]]);
+      });
+      // foto: título, año y nota del visor · subtítulo y categoría: su texto · nota: "Etiqueta | texto"
+      function editItem(it){
+        var v;
+        if (it.t === 'photo') {
+          v = window.prompt('Título de la foto', it.title || ''); if (v === null) return; it.title = v;
+          v = window.prompt('Año o dato corto (ej. 2025)', it.meta || ''); if (v !== null) it.meta = v;
+          v = window.prompt('Nota para el visor (opcional)', it.note || ''); if (v !== null) it.note = v;
+        } else if (it.t === 'note' && it.st) {
+          var txt0 = it.html.replace(/<[^>]+>/g, '').replace(/&lt;/g, '<').replace(/&quot;/g, '"').replace(/&amp;/g, '&');
+          v = window.prompt(it.st === 'sub' ? 'Subtítulo' : 'Categoría', txt0); if (v === null) return; it.html = esc(v);
+        } else if (it.t === 'note') {
+          var plain = it.html.replace(/<b>(.*?)<\/b>/, '$1 | ').replace(/<[^>]+>/g, '').replace(/&lt;/g, '<').replace(/&quot;/g, '"').replace(/&amp;/g, '&');
+          v = window.prompt('Texto (Etiqueta | texto)', plain); if (v === null) return; it.html = noteHTML(v);
+        } else return;
+        save(); rebuild();
+      }
+
+      // teclado: con algo seleccionado las flechas lo mueven (Shift = más), Supr lo borra, Esc suelta
+      document.addEventListener('keydown', function(e){
+        if (e.target.closest && e.target.closest('input, textarea, select')) return;
+        if (hsel > -1 && !sel) {
+          if (e.key === 'Delete' || e.key === 'Backspace') delHead(hsel);
+          else if (e.key === 'Enter') editHead(hsel);
+          else if (e.key === 'Escape') select(null);
+          else return;
+          e.preventDefault(); e.stopPropagation(); return;
+        }
+        var it = cur(); if (!it) return;
+        var st = e.shiftKey ? 2 : 0.4, k = e.key;
+        if (k === 'Escape') { select(null); }
+        else if (k === 'Delete' || k === 'Backspace') { PAGES[sel.pi].items.splice(sel.j, 1); sel = null; save(); rebuild(); }
+        else if (/^Arrow/.test(k)) {
+          if (k === 'ArrowLeft') it.x = +(it.x - st).toFixed(1); if (k === 'ArrowRight') it.x = +(it.x + st).toFixed(1);
+          if (k === 'ArrowUp') it.y = +(it.y - st).toFixed(1); if (k === 'ArrowDown') it.y = +(it.y + st).toFixed(1);
+          apply(elOf(sel), it); save();
+        } else return;
+        e.preventDefault(); e.stopPropagation();
+      }, true);
+
+      // orden de las páginas: se arrastra un punto de abajo y el pliego entero (o la página, en celular) cambia de lugar
+      var skipClick = 0;
+      // las rutas encontradas en subcarpetas quedan guardadas en el borrador
+      edFixed = function(){ clearTimeout(edFixed.t); edFixed.t = setTimeout(function(){ save(); msg('Encontré tus fotos en sus carpetas y corregí las rutas'); }, 400); };
+      function groups(){ var g = []; for (var s = 0; s <= maxState; s++) g.push(visible(s)); return g; }
+      function fixedG(g){ return g.indexOf(0) > -1 || g.indexOf(N - 1) > -1; }
+      function movePages(from, to){
+        var g = groups(), mv = g.splice(from, 1)[0]; g.splice(to, 0, mv);
+        var order = [].concat.apply([], g), map = {}, old = PAGES.slice();
+        order.forEach(function(o, n){ map[o] = n; });
+        PAGES.length = 0; order.forEach(function(o){ PAGES.push(old[o]); });
+        // el índice sigue apuntando a la misma página aunque cambie de número
+        PAGES.forEach(function(p){ (p.toc || []).forEach(function(t){ if (map[t.page] != null) t.page = map[t.page]; }); });
+        select(null); save(); rebuild(); goPage(map[mv[0]]);
+        msg(mv.length > 1 ? 'Páginas movidas: ahora son la ' + pad2(map[mv[0]]) + ' y la ' + pad2(map[mv[1]]) : 'Página movida: ahora es la ' + pad2(map[mv[0]]));
+      }
+      dotsEl.addEventListener('click', function(e){ if (Date.now() < skipClick) { e.preventDefault(); e.stopPropagation(); } }, true);
+      dotsEl.addEventListener('pointerdown', function(e){
+        var d = e.target.closest('.nb-dot'); if (!d || d.classList.contains('is-fixed')) return;
+        var dots = Array.prototype.slice.call(dotsEl.children), from = dots.indexOf(d), to = from, on = false, sx = e.clientX, sy = e.clientY;
+        // posiciones de antes de arrastrar (el punto que se mueve no cuenta donde va, sino donde estaba)
+        var rects = dots.map(function(o){ return o.getBoundingClientRect(); });
+        d.setPointerCapture(e.pointerId);
+        function mv(ev){
+          if (!on && Math.abs(ev.clientX - sx) + Math.abs(ev.clientY - sy) < 6) return;
+          on = true; d.classList.add('is-drag'); d.style.translate = (ev.clientX - sx) + 'px ' + (ev.clientY - sy) + 'px';
+          var best = Infinity; to = from;
+          dots.forEach(function(o, k){
+            if (o.classList.contains('is-fixed')) return;
+            var r = rects[k], dd =Math.hypot(ev.clientX - (r.left + r.width / 2), ev.clientY - (r.top + r.height / 2));
+            if (dd < best) { best = dd; to = k; }
+          });
+          dots.forEach(function(o, k){ o.classList.toggle('is-drop-l', k === to && to < from); o.classList.toggle('is-drop-r', k === to && to > from); });
+        }
+        function up(){
+          d.removeEventListener('pointermove', mv); d.removeEventListener('pointerup', up); d.removeEventListener('pointercancel', up);
+          d.style.translate = ''; d.classList.remove('is-drag');
+          dots.forEach(function(o){ o.classList.remove('is-drop-l', 'is-drop-r'); });
+          if (!on) return;
+          skipClick = Date.now() + 400;
+          if (to !== from) movePages(from, to);
+        }
+        d.addEventListener('pointermove', mv); d.addEventListener('pointerup', up); d.addEventListener('pointercancel', up);
+      });
+      refresh();
+    }
+
+    if (!hasFinePointer) hint.textContent = 'Desliza o toca una página para pasarla';
+    build();
+    if (EDIT) initEditor();
+  })();
+
+  // === botones magnéticos ===
+  (function(){
+    if (!hasFinePointer || reduceMotion) return;
+    document.querySelectorAll('.btn-fill[data-strength]').forEach(function(btn){
+      var label = btn.querySelector('.btn-fill-label');
+      var strength = parseFloat(btn.dataset.strength || 25) / 100;
+      var strengthText = label ? parseFloat(label.dataset.strengthText || 15) / 100 : 0;
+      var keep = ', opacity 320ms ease, border-color 420ms ease';
+      btn.addEventListener('mouseenter', function(){ btn.style.transition = 'transform 120ms ease' + keep; if (label) label.style.transition = 'transform 120ms ease, color 380ms ease 40ms'; });
+      btn.addEventListener('mousemove', function(e){
+        var r = btn.getBoundingClientRect();
+        var dx = e.clientX - (r.left + r.width/2), dy = e.clientY - (r.top + r.height/2);
+        btn.style.transform = 'translate(' + (dx*strength) + 'px,' + (dy*strength) + 'px)';
+        if (label) label.style.transform = 'translate(' + (dx*strengthText) + 'px,' + (dy*strengthText) + 'px)';
+      });
+      btn.addEventListener('mouseleave', function(){
+        btn.style.transition = 'transform 500ms cubic-bezier(.2,1,.3,1)' + keep; btn.style.transform = 'translate(0px,0px)';
+        if (label){ label.style.transition = 'transform 500ms cubic-bezier(.2,1,.3,1), color 380ms ease 40ms'; label.style.transform = 'translate(0px,0px)'; }
+      });
+    });
+  })();
+
+  // === cursor custom + ripple ===
+  (function(){
+    var dot = document.querySelector('.cursor-dot'), ring = document.querySelector('.cursor-ring');
+    if (hasFinePointer && !reduceMotion) {
+      var ringX = 0, ringY = 0, targetX = 0, targetY = 0, started = false;
+      document.addEventListener('mousemove', function(e){
+        if (!started) { started = true; ringX = e.clientX; ringY = e.clientY; dot.classList.remove('is-hidden'); ring.classList.remove('is-hidden'); }
+        targetX = e.clientX; targetY = e.clientY;
+        dot.style.left = targetX + 'px'; dot.style.top = targetY + 'px';
+      });
+      (function tick(){
+        ringX += (targetX - ringX) * 0.18; ringY += (targetY - ringY) * 0.18;
+        ring.style.left = ringX + 'px'; ring.style.top = ringY + 'px';
+        requestAnimationFrame(tick);
+      })();
+      document.addEventListener('mouseover', function(e){ if (e.target.closest && e.target.closest('a, button')) ring.classList.add('is-hover'); });
+      document.addEventListener('mouseout', function(e){ if (e.target.closest && e.target.closest('a, button')) ring.classList.remove('is-hover'); });
+    }
+    if (!reduceMotion) {
+      document.addEventListener('pointerdown', function(e){
+        var rp = document.createElement('div');
+        rp.className = 'click-ripple'; rp.style.left = e.clientX + 'px'; rp.style.top = e.clientY + 'px';
+        document.body.appendChild(rp); setTimeout(function(){ rp.remove(); }, 600);
+      });
+    }
+  })();
+
+  // === menú mobile ===
+  (function(){
+    var drawer = document.getElementById('mobile-drawer'), backdrop = document.getElementById('drawer-backdrop');
+    var openBtn = document.getElementById('hamburger'), closeBtn = document.getElementById('drawer-close');
+    function open(){ drawer.classList.add('is-open'); backdrop.classList.add('is-open'); openBtn.setAttribute('aria-expanded','true'); document.body.classList.add('modal-open'); closeBtn.focus(); }
+    function close(){
+      if (!drawer.classList.contains('is-open')) return;
+      drawer.classList.remove('is-open'); backdrop.classList.remove('is-open'); openBtn.setAttribute('aria-expanded','false'); document.body.classList.remove('modal-open'); openBtn.focus();
+    }
+    openBtn.addEventListener('click', open); closeBtn.addEventListener('click', close); backdrop.addEventListener('click', close);
+    drawer.querySelectorAll('.drawer-link').forEach(function(a){ a.addEventListener('click', close); });
+    document.addEventListener('keydown', function(e){ if (drawer.classList.contains('is-open') && e.key === 'Escape') close(); });
+  })();
+</script>
+<script>
+  // logo: separa las letras para el efecto rodillo (el lector de pantalla lee el nombre completo)
+  (function(){
+    var logo = document.querySelector('.nav-logo'); if (!logo) return;
+    var html = '', i = 0;
+    Array.prototype.forEach.call(logo.childNodes, function(n){
+      var accent = n.nodeType === 1 && n.classList.contains('logo-accent');
+      Array.prototype.forEach.call(n.textContent, function(c){
+        html += '<span class="lt' + (accent ? ' logo-accent' : '') + '" style="--i:' + (i++) + '"><span>' + (c === ' ' ? '&nbsp;' : c) + '</span></span>';
+      });
+    });
+    logo.innerHTML = '<span aria-hidden="true">' + html + '</span><span class="sr">Andrés Mora</span>';
+  })();
+</script>
+<script>
+  // === header: la pill de arriba; cuando sale de pantalla aparece la de abajo. Logo con "Mora" seleccionado ===
+  (function(){
+    var top = document.getElementById('top-nav'), dock = document.getElementById('dock');
+    if (top && dock) {
+      if ('IntersectionObserver' in window) new IntersectionObserver(function(en){ dock.classList.toggle('is-shown', !en[0].isIntersecting); }).observe(top);
+      else window.addEventListener('scroll', function(){ dock.classList.toggle('is-shown', window.scrollY > top.offsetHeight); }, {passive:true});
+    }
+    var logo = document.querySelector('.top-logo'); if (!logo) return;
+    var acc = logo.querySelectorAll('.lt.logo-accent'); if (!acc.length) return;
+    var box = document.createElement('span'); box.className = 'logo-sel';
+    acc[0].parentNode.insertBefore(box, acc[0]);
+    Array.prototype.forEach.call(acc, function(l){ box.appendChild(l); });
+    for (var i = 0; i < 4; i++) box.appendChild(document.createElement('i'));
+  })();
+</script>
+<script>
+  // === footer de semitono: port en JS puro del componente "Halftone Wordmark Footer" ===
+  (function(){
+    var root = document.getElementById('site-footer'); if (!root) return;
+    var canvas = root.querySelector('.hwf-canvas'), ctx = canvas.getContext('2d'); if (!ctx) return;
+    var top = root.querySelector('.hwf-top'), rule = root.querySelector('.hwf-rule');
+    var reduced = window.matchMedia && window.matchMedia('(prefers-reduced-motion:reduce)').matches;
+    var WORD = 'mora', GAP = window.innerWidth < 720 ? 4 : 6, RADIUS = window.innerWidth < 720 ? 56 : 80, CROP = 0.2;
+    var w = 0, h = 0, dpr = 1, px = -1e5, py = -1e5, raf = 0, visible = true, awake = true;
+    var ring = {x:0, y:0, t:-1}, dots = new Float32Array(0), count = 0, col = {};
+
+    function hex(c){ var m = /^#?([0-9a-f]{6})$/i.exec((c || '').trim()); if (!m) return [73, 15, 229]; return [parseInt(m[1].slice(0,2),16), parseInt(m[1].slice(2,4),16), parseInt(m[1].slice(4,6),16)]; }
+    function colors(){
+      var cs = getComputedStyle(root);
+      col = {bg:cs.getPropertyValue('--hwf-bg').trim(), ink:cs.getPropertyValue('--hwf-ink').trim(), inkRGB:hex(cs.getPropertyValue('--hwf-ink')), warmRGB:hex(cs.getPropertyValue('--hwf-warm'))};
+    }
+    function face(){ return getComputedStyle(document.documentElement).getPropertyValue('--font-display').trim() || 'sans-serif'; }
+
+    function layout(){
+      colors();
+      w = Math.max(1, Math.round(root.clientWidth));
+      // la altura se ajusta para que la palabra nunca tape los enlaces
+      var m0 = document.createElement('canvas').getContext('2d');
+      m0.font = '700 100px ' + face();
+      var fit = (w * 1.02) / Math.max(1, m0.measureText(WORD).width) * 100;
+      m0.font = '700 ' + fit + 'px ' + face();
+      var cap = m0.measureText(WORD).actualBoundingBoxAscent || fit * 0.72;
+      var need = Math.round(top.offsetHeight + rule.offsetHeight + 40 + cap * (1 - CROP) + 24);
+      if (Math.abs(root.offsetHeight - need) > 2) root.style.height = need + 'px';
+      h = Math.max(1, Math.round(root.clientHeight));
+      dpr = Math.min(window.devicePixelRatio || 1, 2);
+      canvas.width = Math.round(w * dpr); canvas.height = Math.round(h * dpr);
+
+      var mask = document.createElement('canvas'); mask.width = w; mask.height = h;
+      var m = mask.getContext('2d', {willReadFrequently:true});
+      m.font = '700 ' + fit + 'px ' + face();
+      var box = m.measureText(WORD);
+      m.fillStyle = '#000'; m.textBaseline = 'alphabetic';
+      m.fillText(WORD, (w - box.width) / 2, h + cap * CROP);
+      var img = m.getImageData(0, 0, w, h).data;
+      var cols = Math.ceil(w / GAP), rows = Math.ceil(h / GAP), tmp = [];
+      for (var gy = 0; gy < rows; gy++) for (var gx = 0; gx < cols; gx++) {
+        var sum = 0;
+        for (var sy = 0; sy < 3; sy++) for (var sx = 0; sx < 3; sx++) {
+          var x = Math.min(w - 1, Math.floor(gx * GAP + (sx + 0.5) * GAP / 3)), y = Math.min(h - 1, Math.floor(gy * GAP + (sy + 0.5) * GAP / 3));
+          sum += img[(y * w + x) * 4 + 3];
+        }
+        var cov = sum / (9 * 255); if (cov < 0.06) continue;
+        var hx = gx * GAP + GAP / 2, hy = gy * GAP + GAP / 2;
+        tmp.push(hx, hy, 0, 0, hx, hy, Math.sqrt(cov) * GAP * 0.56);   // radio según cobertura: el tono se mantiene parejo
+      }
+      dots = new Float32Array(tmp); count = tmp.length / 7; awake = true;
+    }
+
+    function draw(now){
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+      ctx.fillStyle = col.bg; ctx.fillRect(0, 0, w, h);
+      var r = reduced ? 0 : RADIUS, age = ring.t < 0 ? 1e9 : now - ring.t, ringR = age * 0.9, moving = false;
+      var ink = col.inkRGB, warm = col.warmRGB;
+      for (var i = 0; i < count; i++) {
+        var j = i * 7, x = dots[j], y = dots[j+1], vx = dots[j+2], vy = dots[j+3], hx = dots[j+4], hy = dots[j+5];
+        if (!reduced) {
+          if (age < 900) {   // onda del clic
+            var ddx = hx - ring.x, ddy = hy - ring.y, dd = Math.sqrt(ddx * ddx + ddy * ddy) + 0.001;
+            var band = 1 - Math.min(1, Math.abs(dd - ringR) / 26);
+            if (band > 0) { var fr = band * 3.2 * (1 - age / 900); vx += ddx / dd * fr; vy += ddy / dd * fr; }
+          }
+          var dx = x - px, dy = y - py, d2 = dx * dx + dy * dy;   // empuje del cursor
+          if (r > 0 && d2 < r * r) { var d = Math.sqrt(d2) + 0.001, f = (1 - d / r) * 2.6; vx += dx / d * f; vy += dy / d * f; }
+          vx = (vx + (hx - x) * 0.05) * 0.84; vy = (vy + (hy - y) * 0.05) * 0.84;   // resorte de vuelta a casa
+          x += vx; y += vy;
+          if (Math.abs(vx) + Math.abs(vy) > 0.02 || Math.abs(x - hx) + Math.abs(y - hy) > 0.05) moving = true;
+          else { x = hx; y = hy; vx = 0; vy = 0; }
+          dots[j] = x; dots[j+1] = y; dots[j+2] = vx; dots[j+3] = vy;
+        }
+        var k = Math.min(1, Math.hypot(x - hx, y - hy) / 28);
+        ctx.fillStyle = k > 0.02 ? 'rgb(' + Math.round(ink[0] + (warm[0] - ink[0]) * k) + ',' + Math.round(ink[1] + (warm[1] - ink[1]) * k) + ',' + Math.round(ink[2] + (warm[2] - ink[2]) * k) + ')' : col.ink;
+        ctx.beginPath(); ctx.arc(x, y, dots[j+6], 0, 6.2832); ctx.fill();
+      }
+      awake = moving || age < 900 || px > -1e4;
+    }
+    function loop(now){ raf = 0; if (!visible) return; draw(now); if (awake) raf = requestAnimationFrame(loop); }
+    function wake(){ awake = true; if (!raf && visible) raf = requestAnimationFrame(loop); }
+    function local(e){ var b = canvas.getBoundingClientRect(); return [e.clientX - b.left, e.clientY - b.top]; }
+
+    root.addEventListener('pointermove', function(e){ var p = local(e); px = p[0]; py = p[1]; wake(); });
+    root.addEventListener('pointerleave', function(){ px = py = -1e5; wake(); });
+    root.addEventListener('pointerdown', function(e){
+      if (reduced || e.target.closest('a, button')) return;
+      var p = local(e); ring = {x:p[0], y:p[1], t:performance.now()}; wake();
+    });
+    root.querySelector('.hwf-up').addEventListener('click', function(){ window.scrollTo({top:0, behavior: reduced ? 'auto' : 'smooth'}); });
+
+    layout(); draw(performance.now()); wake();
+    var lw = w;
+    if ('ResizeObserver' in window) new ResizeObserver(function(){ if (Math.round(root.clientWidth) !== lw) { lw = Math.round(root.clientWidth); layout(); wake(); } }).observe(root);
+    if ('IntersectionObserver' in window) new IntersectionObserver(function(en){ visible = en[0].isIntersecting; if (visible) wake(); }).observe(root);
+    if (document.fonts && document.fonts.ready) document.fonts.ready.then(function(){ layout(); wake(); });
+    // con el footer a la vista, la pill de abajo se retira para no tapar la palabra (el footer ya tiene los enlaces)
+    var dock = document.getElementById('dock');
+    if (dock && 'IntersectionObserver' in window) new IntersectionObserver(function(en){ dock.classList.toggle('is-footer', en[0].isIntersecting); }, {rootMargin:'0px 0px -35% 0px'}).observe(root);
+    // al cambiar el tema, los puntos toman los colores nuevos
+    new MutationObserver(function(){ colors(); awake = true; draw(performance.now()); }).observe(document.documentElement, {attributes:true, attributeFilter:['data-theme']});
+  })();
+</script>
+<script>
+  // === nav-hover: magnetismo elástico en los enlaces de la barra (como los botones pill) ===
+  (function(){
+    if (!window.matchMedia('(pointer:fine)').matches || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    document.querySelectorAll('.top-pill a, .dock a').forEach(function(a){
+      var cta = a.classList.contains('dock-cta');
+      if (!cta && !a.querySelector('.nl')) { var t = document.createElement('span'); t.className = 'nl'; while (a.firstChild) t.appendChild(a.firstChild); a.appendChild(t); }
+      var label = a.querySelector('.nl') || {style:{}}, keep = ', color 380ms ease 40ms';
+      a.addEventListener('mouseenter', function(){ a.style.transition = 'transform 120ms ease' + keep; label.style.transition = 'transform 120ms ease'; });
+      a.addEventListener('mousemove', function(e){
+        var r = a.getBoundingClientRect(), dx = e.clientX - (r.left + r.width / 2), dy = e.clientY - (r.top + r.height / 2);
+        if (cta) a.style.transform = 'translate(' + dx * .22 + 'px,' + dy * .3 + 'px)';
+        label.style.transform = 'translate(' + dx * .3 + 'px,' + dy * .4 + 'px)';
+      });
+      a.addEventListener('mouseleave', function(){
+        a.style.transition = 'transform 500ms cubic-bezier(.2,1,.3,1)' + keep; a.style.transform = 'translate(0px,0px)';
+        label.style.transition = 'transform 500ms cubic-bezier(.2,1,.3,1)'; label.style.transform = 'translate(0px,0px)';
+      });
+    });
+  })();
+</script>
+<script>
+  // === scroll-reveal: entrada suave de los bloques al hacer scroll ===
+  (function(){
+    if (!('IntersectionObserver' in window) || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    var els = [].slice.call(document.querySelectorAll('.nb-hint')).filter(function(el){ return !el.closest('#modal-root, .modal'); });
+    if (!els.length) return;
+    var io = new IntersectionObserver(function(entries){
+      // los que entran juntos salen escalonados, de arriba a abajo
+      var on = entries.filter(function(e){ return e.isIntersecting; }).sort(function(a, b){ return a.boundingClientRect.top - b.boundingClientRect.top || a.boundingClientRect.left - b.boundingClientRect.left; });
+      on.forEach(function(e, i){
+        var el = e.target, d = Math.min(i, 5) * 90;
+        io.unobserve(el); el.style.setProperty('--rv-d', d + 'ms'); el.classList.add('is-in');
+        // al terminar se quitan las clases para que el bloque vuelva a sus propias transiciones (hover, tilt, etc.)
+        setTimeout(function(){ el.classList.remove('rv', 'is-in'); el.style.removeProperty('--rv-d'); }, d + 1150);
+      });
+    }, {rootMargin:'0px 0px -8% 0px', threshold:0});
+    function start(){ els.forEach(function(el){ el.classList.add('rv'); io.observe(el); }); }
+    // en el Inicio se espera a que se vaya la cortinilla
+    var B = document.body;
+    if (B.classList.contains('is-loading')) {
+      els.forEach(function(el){ el.classList.add('rv'); });
+      var mo = new MutationObserver(function(){ if (!B.classList.contains('is-loading')) { mo.disconnect(); setTimeout(start, 250); } });
+      mo.observe(B, {attributes:true, attributeFilter:['class']});
+    } else start();
+  })();
+</script>
+<script>
+  // === lang-btn: en el sitio publicado lleva a la misma página en /en; en el prototipo avisa ===
+  (function(){
+    var b = document.getElementById('lang-btn'); if (!b) return;
+    var tip = b.querySelector('.lang-tip'), t;
+    b.addEventListener('click', function(){
+      tip.textContent = 'English version coming soon';
+      b.classList.add('is-tip'); clearTimeout(t); t = setTimeout(function(){ b.classList.remove('is-tip'); }, 2400);
+    });
+  })();
+</script>
+</body>
+</html>
