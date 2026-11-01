@@ -6,23 +6,23 @@ Contacto: andres.mora.sar@gmail.com · Cundinamarca, Colombia. Acepta proyectos 
 
 ## Páginas
 
-- [Inicio](/): presentación y proyectos destacados.
-- [Trabajo](/trabajo): todos los casos de estudio, filtrables por UX/UI y diseño web, branding y video, y 3D.
-- [Sobre mí](/#sobre-mi): presentación, forma de trabajar (Design Thinking) y herramientas, dentro del Inicio.
-- [For fun](/for-fun): cuaderno digital con fotografía por hobby y proyectos personales.
-- [Contacto](/contacto): formulario para contar un proyecto.
+- [Inicio](https://www.andresmorado.com/): presentación y proyectos destacados.
+- [Trabajo](https://www.andresmorado.com/trabajo): todos los casos de estudio, filtrables por UX/UI y diseño web, branding y video, y 3D.
+- [Sobre mí](https://www.andresmorado.com/#sobre-mi): presentación, forma de trabajar (Design Thinking) y herramientas, dentro del Inicio.
+- [For fun](https://www.andresmorado.com/for-fun): cuaderno digital con fotografía por hobby y proyectos personales.
+- [Contacto](https://www.andresmorado.com/contacto): formulario para contar un proyecto.
 
 ## Casos de estudio
 
-- [Café Pacundí](/trabajo#cafe-pacundi): rediseño web end to end (research, arquitectura de información, design system en Figma y desarrollo en WordPress). Sitio en línea. 2026.
-- [Rediseño Dafiti](/trabajo#rediseno-dafiti): proyecto académico de UX/UI (CoderHouse) para un e-commerce de moda: encuesta a 22 personas, tree testing y pruebas moderadas. 2025.
-- [Museo de Anatomía UMNG](/trabajo#museo-anatomia-umng): explorador 3D y recorrido virtual para la colección anatómica de la Universidad Militar Nueva Granada. 2024.
-- [Pinauto](/trabajo#pinauto): nueva identidad para un taller de pintura automotriz en Zipaquirá: imagotipo, manual de marca, papelería y redes. 2024.
-- [Transdipacho](/trabajo#transdipacho): nuevo logotipo y pintura de las busetas de la primera empresa de transporte urbano de Pacho, Cundinamarca (2026), en implementación en toda la flota.
-- [Portfolio Web Design 2026](/trabajo#portafolio-web): el caso de este mismo sitio (2026): objetivos, dirección estética, arquitectura, marca, design system, movimiento, microinteracciones e iteraciones.
-- [Motion graphics y video](/trabajo#motion-graphics): piezas animadas en After Effects e Illustrator. 2025.
-- [Modelado 3D](/trabajo#modelado-3d): patrimonio colombiano, escenarios y personajes en Maya y Substance Painter.
-- [Diseño para redes sociales](/trabajo#diseno-redes-sociales): posts, historias y campañas para AVACOM, AIESEC, Creatividad Digital y una marca confidencial.
+- [Café Pacundí](https://www.andresmorado.com/trabajo#cafe-pacundi): rediseño web end to end (research, arquitectura de información, design system en Figma y desarrollo en WordPress). Sitio en línea. 2026.
+- [Rediseño Dafiti](https://www.andresmorado.com/trabajo#rediseno-dafiti): proyecto académico de UX/UI (CoderHouse) para un e-commerce de moda: encuesta a 22 personas, tree testing y pruebas moderadas. 2025.
+- [Museo de Anatomía UMNG](https://www.andresmorado.com/trabajo#museo-anatomia-umng): explorador 3D y recorrido virtual para la colección anatómica de la Universidad Militar Nueva Granada. 2024.
+- [Pinauto](https://www.andresmorado.com/trabajo#pinauto): nueva identidad para un taller de pintura automotriz en Zipaquirá: imagotipo, manual de marca, papelería y redes. 2024.
+- [Transdipacho](https://www.andresmorado.com/trabajo#transdipacho): nuevo logotipo y pintura de las busetas de la primera empresa de transporte urbano de Pacho, Cundinamarca (2026), en implementación en toda la flota.
+- [Portfolio Web Design 2026](https://www.andresmorado.com/trabajo#portafolio-web): el caso de este mismo sitio (2026): objetivos, dirección estética, arquitectura, marca, design system, movimiento, microinteracciones e iteraciones.
+- [Motion graphics y video](https://www.andresmorado.com/trabajo#motion-graphics): piezas animadas en After Effects e Illustrator. 2025.
+- [Modelado 3D](https://www.andresmorado.com/trabajo#modelado-3d): patrimonio colombiano, escenarios y personajes en Maya y Substance Painter.
+- [Diseño para redes sociales](https://www.andresmorado.com/trabajo#diseno-redes-sociales): posts, historias y campañas para AVACOM, AIESEC, Creatividad Digital y una marca confidencial.
 
 ## Perfiles
 
