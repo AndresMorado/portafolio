@@ -2412,6 +2412,18 @@
   @media (hover:hover){ .modal-top:hover{background:var(--accent); color:var(--on-accent, #fff); border-color:var(--accent);} }
   @media (max-width:640px){ .modal-top{right:28px; bottom:calc(28px + env(safe-area-inset-bottom, 0px)); width:46px; height:46px;} }
   @media (prefers-reduced-motion:reduce){ .modal-top{transition:none;} }
+  /* mora-flechas: pasar de etapa en "Cómo trabajo" con flechas (celular y tablet) */
+  .pp-nav{display:none; grid-column:1 / -1; align-items:center; justify-content:flex-end; gap:var(--space-3); margin-top:0; padding-top:var(--space-4); border-top:1px solid var(--line);}
+  .pp-count{font-family:var(--font-mono); font-size:12px; color:var(--text-muted);}
+  .pp-count b{color:var(--accent); font-weight:500;}
+  .pp-arrows{display:flex; gap:var(--space-2);}
+  .pp-arrow{width:46px; height:46px; display:grid; place-items:center; border:1px solid var(--line-strong); border-radius:50%; background:var(--surface); color:var(--accent); cursor:pointer;
+    transition:background 220ms ease, color 220ms ease, border-color 220ms ease, opacity 220ms ease;}
+  .pp-arrow svg{width:20px; height:20px; fill:none; stroke:currentColor; stroke-width:2.2; stroke-linecap:round; stroke-linejoin:round;}
+  .pp-arrow:disabled{opacity:.3; cursor:default;}
+  .pp-arrow:focus-visible{outline:2px solid var(--accent); outline-offset:3px;}
+  .pp-arrow:not(:disabled):active{background:var(--accent); border-color:var(--accent); color:var(--on-accent, #fff);}
+  @media (max-width:900px){ .pp-nav{display:flex;} }
 </style>
 <script>window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };</script>
 <script defer src="/_vercel/insights/script.js"></script>
@@ -6006,8 +6018,19 @@
       track.appendChild(b); buttons.push(b);
     });
 
+    // flechas de etapa (mora-flechas): se ven en celular y tablet, donde no hay hover
+    var nav = document.createElement('div'); nav.className = 'pp-nav';
+    nav.innerHTML = '<span class="pp-arrows">' +
+      '<button type="button" class="pp-arrow" aria-label="Etapa anterior"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 12H5M11 18l-6-6 6-6"/></svg></button>' +
+      '<button type="button" class="pp-arrow" aria-label="Etapa siguiente"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button></span>';
+    panel.appendChild(nav);
+    var navBtns = nav.querySelectorAll('.pp-arrow');
+    navBtns[0].addEventListener('click', function(){ if (current > 0) go(current - 1); });
+    navBtns[1].addEventListener('click', function(){ if (current < STEPS.length - 1) go(current + 1); });
     function go(i){
       if (i === current) return;
+      navBtns[0].disabled = i === 0; navBtns[1].disabled = i === STEPS.length - 1;
+
       var dir = i > current ? 1 : -1;
       current = i;
       buttons.forEach(function(b, j){
