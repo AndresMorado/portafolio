@@ -47,7 +47,6 @@
   };
 </script>
 <!-- /case-links -->
-<script>try{if(sessionStorage.getItem("mora-intro"))document.documentElement.classList.add("no-intro")}catch(e){}</script>
 <style>
   :root{
     --g-0:#FFFFFF; --g-50:#F8F8F8; --g-100:#EEEEF1; --g-200:#E3E3E8; --g-300:#C9C9D1;
@@ -2432,19 +2431,9 @@
 <script>window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };</script>
 <script defer src="/_vercel/insights/script.js"></script>
 </head>
-<body class="is-loading">
+<body>
 <div class="grain" aria-hidden="true"></div>
 
-<div class="loader-screen" id="loader-screen">
-  <div class="loader-content">
-    <p class="loader-text">Hey, I'm Andrés<br>Multimedia Eng. · <span class="accent">Product Designer</span></p>
-    <button type="button" id="loader-enter" class="btn-fill" data-strength="25">
-      <span class="btn-fill-bg"></span>
-      <span class="btn-fill-label" data-strength-text="15">Enter</span>
-    </button>
-  </div>
-</div>
-<div class="reveal-circle" id="reveal-circle"></div>
 
 <div class="page-bg" id="page-bg" aria-hidden="true"><canvas class="crayon" id="crayon"></canvas><svg class="sparks" id="sparks"><defs><filter id="crayon-grain" x="-20%" y="-20%" width="140%" height="140%"><feTurbulence type="fractalNoise" baseFrequency="1.1" numOctaves="2" seed="4" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="2.6" result="d"/><feColorMatrix in="n" type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 -1.5 1.35" result="m"/><feComposite in="d" in2="m" operator="in"/></filter></defs></svg></div>
 
@@ -2538,7 +2527,7 @@
   
   <a class="rail-link" href="https://www.linkedin.com/in/andres-felipe-mora-sarmiento/" target="_blank" rel="noopener" aria-label="LinkedIn"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M8 10v7M8 7v.01M12 17v-4a2 2 0 0 1 4 0v4M12 10v7"/></svg></a>
   <a class="rail-link" href="https://www.behance.net/andrsmora15" target="_blank" rel="noopener" aria-label="Behance"><span class="ico" style="--icon:url(https://cdn.jsdelivr.net/npm/simple-icons@13.21.0/icons/behance.svg)"></span></a>
-  <a class="rail-link" href="mailto:andres.mora.sar@gmail.com" aria-label="Email"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 8l9 6 9-6"/></svg></a>
+  <a class="rail-link" href="/en/contact" aria-label="Let&#x27;s work together"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 8l9 6 9-6"/></svg></a>
 </nav>
   </div>
   <p class="crayon-hint" id="crayon-hint"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20l4.5-1 10-10a2.1 2.1 0 0 0-3-3l-10 10z"/><path d="M14 7l3 3"/></svg>Click and hold on the grid to draw on it</p>
@@ -4590,93 +4579,14 @@
     applyTheme(); resize(); start();
   })();
 
-  // === cortinilla de carga ===
-  // El cursor se convierte en un círculo que crece hasta cubrir la pantalla, se detiene
-  // un instante y sale hacia arriba mientras el Home entra desde abajo. Todo con transform
-  // en una sola animación para que no haya saltos entre fases.
+  // === llegada al Inicio (la cortinilla de bienvenida se quitó el 1 nov. 2026) ===
   (function(){
-    var screen = document.getElementById('loader-screen');
-    var enterBtn = document.getElementById('loader-enter');
-    var circle = document.getElementById('reveal-circle');
-    var dot = document.querySelector('.cursor-dot');
-    var ring = document.querySelector('.cursor-ring');
-    var done = false;
-
-    function finish(){ document.body.classList.remove('is-loading'); }
-
-    // si se llega a una sección del Inicio (ej. "About me" desde otra página) no hay cortinilla: se baja directo
+    // si se llega a una sección del Inicio (ej. "About me" desde otra página) se baja directo
     var jump = /^#[a-z][\w-]*$/.test(location.hash) && document.getElementById(location.hash.slice(1));
-    // al recargar, el navegador volvía a la posición del scroll de antes (quedaba en los proyectos detrás de la cortinilla)
+    // al recargar, el navegador volvía a la posición del scroll de antes
     if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
     if (!jump) window.scrollTo(0, 0);
-    // enlace a un caso (#cafe-pacundi): sin cortinilla, el caso se abre solo (case-links)
-    var caseLink = !jump && window.moraCaseFromHash && moraCaseFromHash();
-    if (caseLink) { done = true; screen.style.display = 'none'; finish(); }
-    // la cortinilla sale una sola vez por visita: al volver al Inicio ya no aparece
-    var seen = document.documentElement.classList.contains('no-intro');
-    try { sessionStorage.setItem('mora-intro', '1'); } catch (err) {}
-    if (seen && !done) { done = true; screen.style.display = 'none'; finish(); }
-    if (jump) {
-      done = true; screen.style.display = 'none'; finish();
-      requestAnimationFrame(function(){ jump.scrollIntoView({block:'start'}); });
-    }
-
-    enterBtn.addEventListener('click', function(e){
-      if (done) return;
-      done = true;
-
-      if (reduceMotion || !circle.animate) {
-        screen.classList.add('is-leaving');
-        setTimeout(function(){ screen.style.display = 'none'; finish(); }, 220);
-        return;
-      }
-
-      var cx = e.clientX, cy = e.clientY;
-      if (!e.detail || (cx === 0 && cy === 0)) {
-        var r = enterBtn.getBoundingClientRect();
-        cx = r.left + r.width / 2; cy = r.top + r.height / 2;
-      }
-      var vw = window.innerWidth, vh = window.innerHeight;
-      var R = Math.ceil(Math.hypot(Math.max(cx, vw - cx), Math.max(cy, vh - cy))) + 4;
-      var s0 = 12 / R;
-      var exitY = -(cy + R + 4);
-
-      circle.style.width = circle.style.height = (R * 2) + 'px';
-      circle.style.left = (cx - R) + 'px';
-      circle.style.top = (cy - R) + 'px';
-      circle.style.display = 'block';
-
-      screen.classList.add('is-leaving');
-      if (dot) dot.style.visibility = 'hidden';
-      if (ring) ring.style.visibility = 'hidden';
-
-      var TOTAL = 1900;
-      circle.animate([
-        { transform:'translateY(0) scale(' + s0 + ')', offset:0,    easing:'cubic-bezier(.76,0,.24,1)' },
-        { transform:'translateY(0) scale(1)',          offset:0.46, easing:'linear' },
-        { transform:'translateY(0) scale(1)',          offset:0.52, easing:'cubic-bezier(.76,0,.24,1)' },
-        { transform:'translateY(' + exitY + 'px) scale(1)', offset:1 }
-      ], { duration:TOTAL, fill:'forwards' }).onfinish = function(){
-        circle.style.display = 'none';
-        if (dot) dot.style.visibility = '';
-        if (ring) ring.style.visibility = '';
-        finish();
-      };
-
-      // el loader se retira justo cuando el círculo cubre toda la pantalla
-      setTimeout(function(){ screen.style.display = 'none'; }, TOTAL * 0.48);
-
-      // el Home entra desde abajo mientras el círculo sube
-      var items = document.querySelectorAll('.top-nav, .hf-tab, .hero > *, .hero-rail, .crayon-hint');
-      var bg = document.getElementById('rays-bg');
-      if (bg) bg.animate([{opacity:0},{opacity:1}], { duration:1400, delay:TOTAL * 0.55, easing:'ease-out', fill:'backwards' });
-      Array.prototype.forEach.call(items, function(el, i){
-        el.animate([
-          { opacity:0, transform:'translateY(36px)' },
-          { opacity:1, transform:'translateY(0)' }
-        ], { duration:900, delay:TOTAL * 0.55 + i * 70, easing:'cubic-bezier(.2,1,.3,1)', fill:'backwards' });
-      });
-    });
+    else requestAnimationFrame(function(){ jump.scrollIntoView({block:'start'}); });
   })();
 
   // === tilt 3D + magnetismo sutil + glare en las project cards ===
