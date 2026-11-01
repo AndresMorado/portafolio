@@ -1590,7 +1590,7 @@
       document.addEventListener('mouseout', function(e){ if (e.target.closest && e.target.closest('a, button')) ring.classList.remove('is-hover'); });
     }
     if (!reduceMotion) {
-      document.addEventListener('pointerdown', function(e){
+      document.addEventListener('pointerdown', function(e){ if (e.pointerType !== 'mouse') return;
         var rp = document.createElement('div');
         rp.className = 'click-ripple'; rp.style.left = e.clientX + 'px'; rp.style.top = e.clientY + 'px';
         document.body.appendChild(rp); setTimeout(function(){ rp.remove(); }, 600);

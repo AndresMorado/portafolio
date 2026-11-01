@@ -2425,6 +2425,9 @@
   .pp-arrow:focus-visible{outline:2px solid var(--accent); outline-offset:3px;}
   .pp-arrow:not(:disabled):active{background:var(--accent); border-color:var(--accent); color:var(--on-accent, #fff);}
   @media (max-width:900px){ .pp-nav{display:flex;} }
+  /* mora-rail: las redes de la carpeta reciben clics y quedan sobre el texto */
+  .hf .hero-rail{pointer-events:auto; z-index:6;}
+  .hf .hero-rail .rail-link{pointer-events:auto;}
 </style>
 <script>window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };</script>
 <script defer src="/_vercel/insights/script.js"></script>
@@ -4424,7 +4427,7 @@
       document.addEventListener('mouseout', function(e){ if (e.target.closest && e.target.closest(hoverTargets)) ring.classList.remove('is-hover'); });
     }
     if (!reduceMotion) {
-      document.addEventListener('pointerdown', function(e){
+      document.addEventListener('pointerdown', function(e){ if (e.pointerType !== 'mouse') return;
         var rp = document.createElement('div');
         rp.className = 'click-ripple';
         rp.style.left = e.clientX + 'px';
