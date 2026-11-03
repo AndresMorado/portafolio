@@ -1930,6 +1930,28 @@
   .team-names{display:block; margin-top:6px; font-size:12px; font-weight:400; line-height:1.4; color:var(--text-secondary);}
   @media (prefers-reduced-motion:reduce){ .team-av, .team-tip{transition:none;} .team-av:hover, .team-av:focus-visible{transform:none;} }
 </style>
+<style id="mora-portada">
+  /* mora-portada: la portada del caso ocupa la mitad derecha del hero y se difumina hacia el texto (solo escritorio) */
+  @media (min-width:901px){
+    .cs-hero:has(.cs-ph-cover) .cs-hero-inner, .cs-hero:has(.dz-cover) .cs-hero-inner, .cs-hero:has(.mo-cover) .cs-hero-inner, .cs-hero:has(.mu-hero-shot) .cs-hero-inner{position:static; grid-template-columns:minmax(0,1fr);}
+    .cs-hero .cs-hero-text{position:relative; z-index:2;}
+    .cs-hero:has(.cs-ph-cover) .cs-hero-text, .cs-hero:has(.dz-cover) .cs-hero-text, .cs-hero:has(.mo-cover) .cs-hero-text, .cs-hero:has(.mu-hero-shot) .cs-hero-text{max-width:min(520px, 36vw);}
+    .cs-hero .cs-ph-cover, .cs-hero .dz-cover, .cs-hero .mo-cover, .cs-hero .mu-hero-shot{position:absolute; top:0; right:0; bottom:0; width:55%; margin:0; padding:0; border:0; border-radius:0; box-shadow:none; background:none; aspect-ratio:auto; overflow:hidden; z-index:1;
+      -webkit-mask-image:linear-gradient(90deg, transparent 0, rgba(0,0,0,.35) 14%, rgba(0,0,0,.8) 30%, #000 46%); mask-image:linear-gradient(90deg, transparent 0, rgba(0,0,0,.35) 14%, rgba(0,0,0,.8) 30%, #000 46%);}
+    .cs-hero .cs-ph-cover img, .cs-hero .dz-cover img, .cs-hero .mo-cover img, .cs-hero .mu-hero-shot img{display:block; width:100%; height:100%; object-fit:cover; object-position:center;}
+    .cs-hero.is-pre .cs-ph-cover, .cs-hero.is-pre .dz-cover, .cs-hero.is-pre .mo-cover, .cs-hero.is-pre .mu-hero-shot{transform:none;}
+    .mu-hero-shot .cs-live-bar, .cs-hero .cs-ph-cover figcaption{display:none;}
+    .mu-hero .mu-hero-shot.cs-live{background:transparent;}
+    .mu-hero .mu-hero-shot img{object-fit:contain; background:transparent;}
+    .cs-hero .df-cover picture{display:block; height:100%;}
+    /* Pinauto, Portafolio y Transdipacho: alto completo de la card, pegada a la derecha, sin estirar, y un difuminado que llega cerca del texto */
+    .cs-hero .pa-cover, .cs-hero .mp-cover, .cs-hero .td-cover{width:58%; max-width:none;
+      -webkit-mask-image:linear-gradient(90deg, transparent 0, rgba(0,0,0,.25) 10%, rgba(0,0,0,.7) 24%, #000 40%); mask-image:linear-gradient(90deg, transparent 0, rgba(0,0,0,.25) 10%, rgba(0,0,0,.7) 24%, #000 40%);}
+    .cs-hero .pa-cover img, .cs-hero .mp-cover img, .cs-hero .td-cover img{object-fit:cover; object-position:right center; border-radius:0;}
+    .cs-hero .mp-cover img{object-position:65% center;}
+    .cs-hero .df-cover{background:#2D4A46;}
+  }
+</style>
 <script>window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };</script>
 <script defer src="/_vercel/insights/script.js"></script>
 </head>
@@ -2466,7 +2488,7 @@
           <h2 class="cs-hero-title"><span class="accent">Menos vueltas, más moda:</span> rediseño UX/UI de Dafiti</h2>
           <p class="cs-hero-sub">La plataforma de moda online más grande de América Latina tenía filtros confusos, tallas poco claras y un carrito que generaba dudas. Escuché a 22 compradores, puse a prueba la navegación y llevé los hallazgos a un prototipo validado con usuarios.</p>
         </div>
-        <figure class="dz-hero-shot dz-cover"><img loading="lazy" decoding="async" src="img/dafiti/portada.jpg" alt="Propuesta de rediseño web de Dafiti: el prototipo en un portátil sobre fondo verde"></figure>
+        <figure class="dz-hero-shot dz-cover df-cover"><picture><source media="(min-width:901px)" srcset="img/dafiti/cover-home.jpg"><img loading="lazy" decoding="async" src="img/dafiti/portada.jpg" alt="Propuesta de rediseño web de Dafiti: el prototipo en un portátil sobre fondo verde"></picture></figure>
       </div>
     </div>
     <div class="modal-body">
@@ -3009,7 +3031,7 @@
             <div><dt>Duración</dt><dd>15 semanas, de febrero a mayo de 2024</dd></div>
             <div><dt>Estado</dt><dd>Prototipo entregado, en transición a producción</dd></div>
           </dl>
-          <div class="cs-sum"><div><h3>Mi rol</h3><p>Director de proyecto y diseñador UX/UI: lideré a un equipo de ocho personas y diseñé el sistema de interfaces.</p><div class="cs-chips"><span>Figma</span><span>Unity</span><span>Needle Engine</span><span>Three.js</span><span>React</span><span>Maya</span></div></div><div><h3>Alcance</h3><ul class="cs-checks"><li>Explorador de piezas con modelos 3D</li><li>Recorrido virtual navegable</li><li>Sistema de interfaces responsive en Figma</li><li>5 piezas digitalizadas con fotogrametría</li><li>2 rondas de pruebas con usuarios</li></ul></div><div><h3>Impacto</h3><p>Una colección que solo se podía ver en Cajicá ahora se recorre desde cualquier dispositivo. La universidad recibió un prototipo funcional, pensado para seguir sumando piezas.</p></div></div>
+          <div class="cs-sum"><div><h3>Mi rol</h3><p>Director de proyecto y diseñador UX/UI: lideré a un equipo de ocho personas y diseñé el sistema de interfaces.</p><div class="cs-chips"><span>Figma</span><span>Unity</span><span>Needle Engine</span><span>Three.js</span><span>React</span><span>Maya</span></div></div><div><h3>Alcance</h3><ul class="cs-checks"><li>Explorador de piezas con modelos 3D</li><li>Recorrido virtual navegable</li><li>Sistema de interfaces responsive en Figma</li><li>Piezas digitalizadas con fotogrametría</li><li>Infografías y levantamiento de información de cada pieza</li><li>2 rondas de pruebas con usuarios</li></ul></div><div><h3>Impacto</h3><p>Una colección que solo se podía ver en Cajicá ahora se recorre desde cualquier dispositivo. La universidad recibió un prototipo funcional, pensado para seguir sumando piezas.</p></div></div>
         </section>
 
         <!-- ===== PROBLEMA ===== -->
@@ -3206,7 +3228,7 @@
           <ol class="cs-board">
             <li><span class="pb-n">1 · Acceso</span><span class="pb-ok" aria-label="Resuelto"></span><p>El museo se recorre desde un computador o un celular, sin ir a Cajicá</p></li>
             <li><span class="pb-n">2 · Visibilidad</span><span class="pb-ok" aria-label="Resuelto"></span><p>La colección deja de depender de una sala que casi nadie conocía</p></li>
-            <li><span class="pb-n">3 · Contenido</span><span class="pb-ok" aria-label="Resuelto"></span><p>5 piezas en 3D con información en capas y dos formas de visitarlas</p></li>
+            <li><span class="pb-n">3 · Contenido</span><span class="pb-ok" aria-label="Resuelto"></span><p>Piezas en 3D con infografías, información en capas y un levantamiento de datos para cada una</p></li>
           </ol>
         </section>
 

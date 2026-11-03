@@ -1930,6 +1930,28 @@
   .team-names{display:block; margin-top:6px; font-size:12px; font-weight:400; line-height:1.4; color:var(--text-secondary);}
   @media (prefers-reduced-motion:reduce){ .team-av, .team-tip{transition:none;} .team-av:hover, .team-av:focus-visible{transform:none;} }
 </style>
+<style id="mora-portada">
+  /* mora-portada: la portada del caso ocupa la mitad derecha del hero y se difumina hacia el texto (solo escritorio) */
+  @media (min-width:901px){
+    .cs-hero:has(.cs-ph-cover) .cs-hero-inner, .cs-hero:has(.dz-cover) .cs-hero-inner, .cs-hero:has(.mo-cover) .cs-hero-inner, .cs-hero:has(.mu-hero-shot) .cs-hero-inner{position:static; grid-template-columns:minmax(0,1fr);}
+    .cs-hero .cs-hero-text{position:relative; z-index:2;}
+    .cs-hero:has(.cs-ph-cover) .cs-hero-text, .cs-hero:has(.dz-cover) .cs-hero-text, .cs-hero:has(.mo-cover) .cs-hero-text, .cs-hero:has(.mu-hero-shot) .cs-hero-text{max-width:min(520px, 36vw);}
+    .cs-hero .cs-ph-cover, .cs-hero .dz-cover, .cs-hero .mo-cover, .cs-hero .mu-hero-shot{position:absolute; top:0; right:0; bottom:0; width:55%; margin:0; padding:0; border:0; border-radius:0; box-shadow:none; background:none; aspect-ratio:auto; overflow:hidden; z-index:1;
+      -webkit-mask-image:linear-gradient(90deg, transparent 0, rgba(0,0,0,.35) 14%, rgba(0,0,0,.8) 30%, #000 46%); mask-image:linear-gradient(90deg, transparent 0, rgba(0,0,0,.35) 14%, rgba(0,0,0,.8) 30%, #000 46%);}
+    .cs-hero .cs-ph-cover img, .cs-hero .dz-cover img, .cs-hero .mo-cover img, .cs-hero .mu-hero-shot img{display:block; width:100%; height:100%; object-fit:cover; object-position:center;}
+    .cs-hero.is-pre .cs-ph-cover, .cs-hero.is-pre .dz-cover, .cs-hero.is-pre .mo-cover, .cs-hero.is-pre .mu-hero-shot{transform:none;}
+    .mu-hero-shot .cs-live-bar, .cs-hero .cs-ph-cover figcaption{display:none;}
+    .mu-hero .mu-hero-shot.cs-live{background:transparent;}
+    .mu-hero .mu-hero-shot img{object-fit:contain; background:transparent;}
+    .cs-hero .df-cover picture{display:block; height:100%;}
+    /* Pinauto, Portafolio y Transdipacho: alto completo de la card, pegada a la derecha, sin estirar, y un difuminado que llega cerca del texto */
+    .cs-hero .pa-cover, .cs-hero .mp-cover, .cs-hero .td-cover{width:58%; max-width:none;
+      -webkit-mask-image:linear-gradient(90deg, transparent 0, rgba(0,0,0,.25) 10%, rgba(0,0,0,.7) 24%, #000 40%); mask-image:linear-gradient(90deg, transparent 0, rgba(0,0,0,.25) 10%, rgba(0,0,0,.7) 24%, #000 40%);}
+    .cs-hero .pa-cover img, .cs-hero .mp-cover img, .cs-hero .td-cover img{object-fit:cover; object-position:right center; border-radius:0;}
+    .cs-hero .mp-cover img{object-position:65% center;}
+    .cs-hero .df-cover{background:#2D4A46;}
+  }
+</style>
 <script>window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };</script>
 <script defer src="/_vercel/insights/script.js"></script>
 </head>
@@ -2466,7 +2488,7 @@
           <h2 class="cs-hero-title"><span class="accent">Less wandering, more fashion:</span> a UX/UI redesign of Dafiti</h2>
           <p class="cs-hero-sub">The largest online fashion platform in Latin America had confusing filters, unclear sizes and a cart that raised doubts. I listened to 22 shoppers, tested the navigation and turned the findings into a prototype validated with users.</p>
         </div>
-        <figure class="dz-hero-shot dz-cover"><img loading="lazy" decoding="async" src="/img/dafiti/portada.jpg" alt="Dafiti web redesign proposal: the prototype on a laptop over a green background"></figure>
+        <figure class="dz-hero-shot dz-cover df-cover"><picture><source media="(min-width:901px)" srcset="/img/dafiti/cover-home.jpg"><img loading="lazy" decoding="async" src="/img/dafiti/portada.jpg" alt="Dafiti web redesign proposal: the prototype on a laptop over a green background"></picture></figure>
       </div>
     </div>
     <div class="modal-body">
@@ -3009,7 +3031,7 @@
             <div><dt>Duration</dt><dd>15 weeks, February to May 2024</dd></div>
             <div><dt>Status</dt><dd>Prototype delivered, transitioning to production</dd></div>
           </dl>
-          <div class="cs-sum"><div><h3>My role</h3><p>Project lead and UX/UI designer: I led a team of eight people and designed the interface system.</p><div class="cs-chips"><span>Figma</span><span>Unity</span><span>Needle Engine</span><span>Three.js</span><span>React</span><span>Maya</span></div></div><div><h3>Scope</h3><ul class="cs-checks"><li>Piece explorer with 3D models</li><li>Navigable virtual tour</li><li>Responsive interface system in Figma</li><li>5 pieces digitized with photogrammetry</li><li>2 rounds of user testing</li></ul></div><div><h3>Impact</h3><p>A collection you could only see in Cajicá can now be explored from any device. The university received a working prototype, built to keep adding pieces.</p></div></div>
+          <div class="cs-sum"><div><h3>My role</h3><p>Project lead and UX/UI designer: I led a team of eight people and designed the interface system.</p><div class="cs-chips"><span>Figma</span><span>Unity</span><span>Needle Engine</span><span>Three.js</span><span>React</span><span>Maya</span></div></div><div><h3>Scope</h3><ul class="cs-checks"><li>Piece explorer with 3D models</li><li>Navigable virtual tour</li><li>Responsive interface system in Figma</li><li>Pieces digitized with photogrammetry</li><li>Infographics and research on each piece</li><li>2 rounds of user testing</li></ul></div><div><h3>Impact</h3><p>A collection you could only see in Cajicá can now be explored from any device. The university received a working prototype, built to keep adding pieces.</p></div></div>
         </section>
 
         <!-- ===== PROBLEMA ===== -->
@@ -3206,7 +3228,7 @@
           <ol class="cs-board">
             <li><span class="pb-n">1 · Access</span><span class="pb-ok" aria-label="Solved"></span><p>The museum can be explored from a computer or a phone, without going to Cajicá</p></li>
             <li><span class="pb-n">2 · Visibility</span><span class="pb-ok" aria-label="Solved"></span><p>The collection no longer depends on a room almost nobody knew about</p></li>
-            <li><span class="pb-n">3 · Content</span><span class="pb-ok" aria-label="Solved"></span><p>5 pieces in 3D with layered information and two ways to visit them</p></li>
+            <li><span class="pb-n">3 · Content</span><span class="pb-ok" aria-label="Solved"></span><p>3D pieces with infographics, layered information and research for each one</p></li>
           </ol>
         </section>
 
