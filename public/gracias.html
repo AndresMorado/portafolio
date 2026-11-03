@@ -447,7 +447,7 @@
     display:flex; align-items:center; justify-content:center; background:var(--accent); color:#fff; font-family:var(--font-accent); font-weight:700; font-size:24px;
     box-shadow:0 0 0 4px color-mix(in srgb, var(--accent) 30%, transparent), 0 8px 18px -6px rgba(16,16,20,.45); transform:scale(0) rotate(-30deg); transition:transform 420ms cubic-bezier(.3,1.6,.5,1);}
   /* secuencia al enviar: la hoja entra, la solapa se cierra, el sello cae y el sobre sale */
-  .env.is-in .letter{transform:translateY(calc(100% + 24px));}
+  .env.is-tucked .letter{transform:translateY(calc(100% + 24px));}
   .env.is-closed .env-flap{transform:rotateX(180deg); background:var(--env-flap); z-index:4;}
   .env.is-sealed .env-seal{transform:none;}
   .env.is-gone{transform:translate(60px,-30px) rotate(5deg); opacity:0;}
@@ -703,7 +703,7 @@
         dot.classList.toggle('is-hidden', typing); ring.classList.toggle('is-hidden', typing);
       });
       (function tick(){
-        ringX += (targetX - ringX) * 0.18; ringY += (targetY - ringY) * 0.18;
+        ringX = targetX; ringY = targetY;
         ring.style.left = ringX + 'px'; ring.style.top = ringY + 'px';
         requestAnimationFrame(tick);
       })();

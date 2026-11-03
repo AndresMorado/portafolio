@@ -1900,6 +1900,36 @@
   @media (max-width:640px){ .modal-top{right:28px; bottom:calc(28px + env(safe-area-inset-bottom, 0px)); width:46px; height:46px;} }
   @media (prefers-reduced-motion:reduce){ .modal-top{transition:none;} }
 </style>
+<style id="mora-historia">
+  /* mora-historia: cards de rol, alcance e impacto; punto de partida; equipo en la ficha */
+  @media (min-width:641px){ .cs-ficha:has(> div:nth-child(3):last-child){grid-template-columns:repeat(3,minmax(0,1fr));} }
+  .cs-sum{display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:var(--space-3); margin:0 0 var(--space-7);}
+  .cs-sum > div{background:var(--surface); border:1px solid var(--line); border-radius:var(--radius-lg); padding:var(--space-5) var(--space-5) var(--space-6);}
+  .cs-sum h3{margin:0 0 var(--space-3); font-family:var(--font-accent); font-weight:700; font-size:26px; line-height:1.1; color:var(--accent);}
+  .case-cs .cs-sum p{margin:0; font-size:14px; line-height:1.55; color:var(--text-secondary);}
+  .cs-sum .cs-chips{margin-top:var(--space-4);}
+  .cs-sum .cs-checks{gap:8px;}
+  .cs-sum .cs-checks li{font-size:14px; line-height:1.5;}
+  @media (max-width:1100px){ .cs-sum{grid-template-columns:minmax(0,1fr);} }
+  @media (max-width:520px){ .cs-sum h3{font-size:22px;} }
+  .cs-was b{color:var(--text-primary); font-weight:600;}
+  .cs-was{list-style:none; display:flex; flex-direction:column; gap:10px; margin:var(--space-4) 0 var(--space-6);}
+  .cs-was li{position:relative; padding-left:30px; font-size:15px; line-height:1.55; color:var(--text-secondary);}
+  .cs-was li::before{content:''; position:absolute; left:0; top:1px; width:20px; height:20px; border-radius:50%; border:1.5px solid var(--line-strong);}
+  .cs-was li::after{content:''; position:absolute; left:6px; top:10px; width:8px; height:1.5px; background:var(--text-muted);}
+  .team-group{display:flex; padding:12px 0 2px 10px;}
+  .team-av{position:relative; width:40px; height:40px; margin-left:-10px; border-radius:50%; border:2px solid var(--surface); background:var(--accent-soft); color:var(--accent); display:grid; place-items:center; font-family:var(--font-display); font-weight:600; font-size:13px; text-decoration:none; transition:transform 300ms cubic-bezier(.4,0,.2,1), margin 300ms cubic-bezier(.4,0,.2,1);}
+  .team-av:nth-child(even){background:var(--accent); color:var(--on-accent);}
+  .team-av:hover, .team-av:focus-visible{transform:translateY(-6px); z-index:5; outline:none;}
+  .team-av:focus-visible{box-shadow:0 0 0 2px var(--accent);}
+  .team-group:hover .team-av, .team-group:focus-within .team-av{margin-left:-2px;}
+  .team-tip{position:absolute; bottom:calc(100% + 8px); left:50%; transform:translate(-50%,8px) scale(.8); opacity:0; padding:5px 9px; border-radius:6px; background:var(--accent); color:var(--on-accent); font-family:var(--font-sans); font-style:normal; font-size:12px; font-weight:600; white-space:nowrap; pointer-events:none; transition:opacity 180ms ease, transform 280ms cubic-bezier(.34,1.56,.64,1);}
+  .team-av:hover .team-tip, .team-av:focus-visible .team-tip{opacity:1; transform:translate(-50%,0) scale(1);}
+  .team-av:first-child .team-tip{left:-2px; transform:translate(0,8px) scale(.8); transform-origin:left bottom;}
+  .team-av:first-child:hover .team-tip, .team-av:first-child:focus-visible .team-tip{transform:translate(0,0) scale(1);}
+  .team-names{display:block; margin-top:6px; font-size:12px; font-weight:400; line-height:1.4; color:var(--text-secondary);}
+  @media (prefers-reduced-motion:reduce){ .team-av, .team-tip{transition:none;} .team-av:hover, .team-av:focus-visible{transform:none;} }
+</style>
 <script>window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };</script>
 <script defer src="/_vercel/insights/script.js"></script>
 </head>
@@ -2148,7 +2178,6 @@
       <nav class="modal-sidebar" aria-label="Secciones del proyecto">
         <div class="modal-sidebar-title">En esta página</div>
         <button type="button" class="sidebar-item" data-target="cs-overview">Overview<svg class="si-arrow" viewBox="0 0 24 24"><path d="M9 6l6 6-6 6"/></svg></button>
-        <button type="button" class="sidebar-item" data-target="cs-alcance">Alcance<svg class="si-arrow" viewBox="0 0 24 24"><path d="M9 6l6 6-6 6"/></svg></button>
         <button type="button" class="sidebar-item" data-target="cs-problema">Problema<svg class="si-arrow" viewBox="0 0 24 24"><path d="M9 6l6 6-6 6"/></svg></button>
         <button type="button" class="sidebar-item" data-target="cs-research">Research<svg class="si-arrow" viewBox="0 0 24 24"><path d="M9 6l6 6-6 6"/></svg></button>
         <button type="button" class="sidebar-item" data-target="cs-ideacion">Ideación<svg class="si-arrow" viewBox="0 0 24 24"><path d="M9 6l6 6-6 6"/></svg></button>
@@ -2165,41 +2194,19 @@
         <section class="modal-section" id="cs-overview" aria-labelledby="cs-h-overview">
           <div class="modal-eyebrow">Rediseño web · UX/UI · 2026</div>
           <h2 id="cs-h-overview">Overview</h2>
-          <p class="cs-lead">Rediseñé de punta a punta el sitio de Café Pacundí: de la auditoría UX al sitio en producción en septiembre de 2026, con una nueva arquitectura de 9 páginas, un sistema de diseño propio y componentes a la medida sobre WordPress y Elementor gratuito.</p>
+          <p class="cs-lead">Café Pacundí es un café de origen de Pacho, con 15 años de trayectoria y 300 familias caficultoras detrás. Su sitio seguía en 2019: no mostraba sus tres cafés, ni su agua, ni dónde comprar. Lo rediseñé de punta a punta, de la auditoría UX al sitio en producción, para que la web contara todo lo que la marca es.</p>
           <dl class="cs-ficha">
             <div><dt>Cliente</dt><dd>Café Pacundí · “Deleite de Altura”</dd></div>
-            <div><dt>Rol</dt><dd>Product Designer / UX Engineer</dd></div>
             <div><dt>Periodo</dt><dd>Julio a septiembre 2026</dd></div>
             <div><dt>Resultado</dt><dd><a class="cs-link" href="https://cafepacundi.co" target="_blank" rel="noopener">Sitio en línea: cafepacundi.co</a></dd></div>
           </dl>
-          <div class="cs-stats">
-            <div><b data-count="15">15</b><span>hallazgos de UX resueltos</span></div>
-            <div><b data-count="9">9</b><span>páginas nuevas</span></div>
-            <div><b data-count="5">5</b><span>retos de negocio atendidos</span></div>
-            <div><b>$0</b><span>en licencias nuevas</span></div>
-          </div>
+          <div class="cs-sum"><div><h3>Mi rol</h3><p>Product Designer y UX Engineer de principio a fin: investigué, diseñé y desarrollé el sitio.</p><div class="cs-chips"><span>WordPress</span><span>Elementor gratuito</span><span>Child theme propio</span><span>HTML/CSS/JS a la medida</span><span>Leaflet.js</span><span>Figma</span></div></div><div><h3>Alcance</h3><ul class="cs-checks"><li>Auditoría UX con informe formal</li><li>Arquitectura de información</li><li>Sistema de diseño documentado</li><li>9 páginas en producción</li><li>Componentes reutilizables</li></ul></div><div><h3>Impacto</h3><p>Cada producto tiene su lugar: los tres cafés y Agua Pacundí con página propia. Y cualquier visitante sabe dónde comprar: por WhatsApp o en uno de los 26 puntos de venta.</p></div></div>
         </section>
 
-        <!-- ===== ALCANCE ===== -->
-        <section class="modal-section" id="cs-alcance" aria-labelledby="cs-h-alcance">
-          <h2 id="cs-h-alcance">Alcance</h2>
-          <div class="cs-scope">
-            <div class="cs-scope-col">
-              <h3>Mi rol</h3>
-              <p>Product Designer / UX Engineer, de principio a fin: auditoría, arquitectura, sistema de diseño y desarrollo front end en WordPress.</p>
-              <div class="cs-chips"><span>WordPress 7.0.2</span><span>PHP 8.1</span><span>Elementor gratuito</span><span>Child theme propio</span><span>HTML/CSS/JS a la medida</span><span>Leaflet.js</span><span>Figma</span></div>
-            </div>
-            <div class="cs-scope-col">
-              <h3>Lo que entregué</h3>
-              <ul class="cs-checks">
-                <li>Auditoría UX/UI con informe formal</li>
-                <li>Arquitectura de información</li>
-                <li>Design system documentado</li>
-                <li>9 páginas en producción</li>
-                <li>Componentes reutilizables</li>
-              </ul>
-            </div>
-          </div>
+        <!-- ===== PROBLEMA ===== -->
+        <section class="modal-section" id="cs-problema" aria-labelledby="cs-h-problema">
+          <h2 id="cs-h-problema">El punto de partida</h2>
+          <p>Pacundí vende en tiendas y por WhatsApp, pero su sitio de 2019 se presentaba como una tienda en línea. Y la marca es mucho más que un café: tiene cuatro frentes que la web debía contar.</p>
           <h3 class="cs-h3">Lo que el sitio tenía que contar</h3>
           <div class="cs-lines">
             <div><span class="cs-line-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 9h13v5a5 5 0 0 1-5 5H9a5 5 0 0 1-5-5z"/><path d="M17 11h1.5a2.5 2.5 0 0 1 0 5H16"/><path d="M8 3v3M12 3v3"/></svg></span><b>Café Pacundí</b><small>Excelso, Tradicional y Típica Silvestre</small></div>
@@ -2207,12 +2214,8 @@
             <div><span class="cs-line-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M3 21V10l6 4V10l6 4V6h6v15z"/><path d="M7 18h2M12 18h2M17 18h2"/></svg></span><b>Maquila B2B</b><small>Trilla, tostión, empaque y marca propia</small></div>
             <div><span class="cs-line-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="7" cy="9" r="1.8"/><circle cx="12" cy="6.5" r="1.8"/><circle cx="17" cy="9" r="1.8"/><path d="M12 12c-3 0-5.5 3.5-5.5 5.5 0 1.7 1.6 2.5 3 2 1-.3 1.6-.5 2.5-.5s1.5.2 2.5.5c1.4.5 3-.3 3-2 0-2-2.5-5.5-5.5-5.5z"/></svg></span><b>Fundamigos</b><small>Alianza con una fundación animal de Pacho</small></div>
           </div>
-        </section>
-
-        <!-- ===== PROBLEMA ===== -->
-        <section class="modal-section" id="cs-problema" aria-labelledby="cs-h-problema">
-          <h2 id="cs-h-problema">El punto de partida</h2>
-          <p>Detrás de Pacundí hay 15 años, 300 familias caficultoras del Río Negro y un pueblo, Pacho. Nada de eso se veía en su web: un sitio de 2019 que prometía compra online en una marca que vende por WhatsApp y en tiendas.</p>
+          <h3 class="cs-h3">Así estaba el sitio</h3>
+          <ul class="cs-was"><li><b>Un solo café a la vista.</b> Las tres variedades no tenían página propia y en el slider las bolsas se veían iguales.</li><li><b>Agua Pacundí no existía en la web.</b> Una de sus líneas de negocio no aparecía en ningún lado.</li><li><b>No decía dónde comprar.</b> Prometía compra en línea, pero no mostraba ni un punto de venta.</li><li><b>Fundamigos, desactualizada.</b> La alianza con la fundación estaba escondida y con información vieja.</li><li><b>Una imagen de 2019.</b> Un diseño que no contaba el origen, sobre WordPress 5.2 y un header que se rompía con lo nuevo.</li></ul>
 
           <div class="cs-compare" id="cs-compare" style="--pos:50%; aspect-ratio:16/9">
             <figure class="cs-ph cs-compare-after">
@@ -2420,13 +2423,13 @@
         <!-- ===== RESULTADOS ===== -->
         <section class="modal-section" id="cs-resultados" aria-labelledby="cs-h-res">
           <h2 id="cs-h-res">Resultados</h2>
-          <p>Desde septiembre de 2026 el sitio está en línea, completo y funcionando.</p>
+          <p>Desde septiembre de 2026 el sitio está en línea, completo y funcionando. Cada punto de partida tiene hoy su respuesta:</p>
           <ol class="cs-board">
-            <li><span class="pb-n">1 · Actualizar</span><span class="pb-ok" aria-label="Resuelto"></span><p>Plataforma moderna y segura, sin costos nuevos</p></li>
-            <li><span class="pb-n">2 · Portafolio</span><span class="pb-ok" aria-label="Resuelto"></span><p>Cafés comparables de un vistazo; Agua con identidad propia</p></li>
-            <li><span class="pb-n">3 · Origen</span><span class="pb-ok" aria-label="Resuelto"></span><p>Pacho y el Río Negro como hilo del sitio</p></li>
-            <li><span class="pb-n">4 · Digital + físico</span><span class="pb-ok" aria-label="Resuelto"></span><p>Siempre dos salidas: WhatsApp o un punto cercano</p></li>
-            <li><span class="pb-n">5 · Social</span><span class="pb-ok" aria-label="Resuelto"></span><p>Fundamigos visible y contada con honestidad</p></li>
+            <li><span class="pb-n">1 · Cafés</span><span class="pb-ok" aria-label="Resuelto"></span><p>Las tres variedades con ficha propia y comparables de un vistazo</p></li>
+            <li><span class="pb-n">2 · Agua</span><span class="pb-ok" aria-label="Resuelto"></span><p>Agua Pacundí con página, presentaciones y su propio color</p></li>
+            <li><span class="pb-n">3 · Dónde comprar</span><span class="pb-ok" aria-label="Resuelto"></span><p>26 puntos de venta en un mapa y WhatsApp en cada producto</p></li>
+            <li><span class="pb-n">4 · Fundamigos</span><span class="pb-ok" aria-label="Resuelto"></span><p>Visible en el menú, al día y contada con honestidad</p></li>
+            <li><span class="pb-n">5 · Imagen</span><span class="pb-ok" aria-label="Resuelto"></span><p>Un sitio de 2026 con sistema de diseño propio, sin costos nuevos de licencias</p></li>
           </ol>
         </section>
 
@@ -2478,6 +2481,7 @@
         <button type="button" class="sidebar-item" data-target="dz-sistema">Design System<svg class="si-arrow" viewBox="0 0 24 24"><path d="M9 6l6 6-6 6"/></svg></button>
         <button type="button" class="sidebar-item" data-target="dz-prototipo">Prototipo<svg class="si-arrow" viewBox="0 0 24 24"><path d="M9 6l6 6-6 6"/></svg></button>
         <button type="button" class="sidebar-item" data-target="dz-testing">Testing<svg class="si-arrow" viewBox="0 0 24 24"><path d="M9 6l6 6-6 6"/></svg></button>
+        <button type="button" class="sidebar-item" data-target="dz-resultados">Resultados<svg class="si-arrow" viewBox="0 0 24 24"><path d="M9 6l6 6-6 6"/></svg></button>
         <button type="button" class="sidebar-item" data-target="dz-aprendizajes">Aprendizajes<svg class="si-arrow" viewBox="0 0 24 24"><path d="M9 6l6 6-6 6"/></svg></button>
       </nav>
 
@@ -2487,20 +2491,14 @@
         <section class="modal-section" id="dz-overview" aria-labelledby="dz-h-overview">
           <div class="modal-eyebrow">UX/UI · Retail de moda · 2025</div>
           <h2 id="dz-h-overview">Overview</h2>
-          <p class="cs-lead">Rediseñé la experiencia de compra web de Dafiti de punta a punta: research con usuarios reales, arquitectura de información, design system propio y un prototipo de alta fidelidad en Figma que pasó por dos versiones gracias a las pruebas de usabilidad.</p>
+          <p class="cs-lead">Buscar, filtrar y revisar el carrito en Dafiti generaba confusión, y eso hacía que la gente abandonara la compra. Combiné una encuesta, tree testing y pruebas moderadas para encontrar dónde se perdía la gente, y rediseñé la navegación, la ficha de producto y el carrito en un prototipo navegable.</p>
           <p class="dz-note"><span>Proyecto académico</span> Desarrollado en el curso Diseño UX/UI Avanzado de CoderHouse. No fue un encargo de Dafiti.</p>
           <dl class="cs-ficha">
             <div><dt>Contexto</dt><dd>Diseño UX/UI Avanzado · CoderHouse</dd></div>
-            <div><dt>Mi rol</dt><dd>Product Designer UX/UI</dd></div>
             <div><dt>Periodo</dt><dd>Agosto a noviembre de 2025</dd></div>
-            <div><dt>Entregable</dt><dd>Prototipo navegable en Figma (V1 y V2)</dd></div>
+            <div><dt>Resultado</dt><dd><a class="cs-link" href="https://www.figma.com/proto/fKnkhR6MLHbnFBwnmwA036/Redise%C3%B1o-Web-Dafiti-Real?node-id=818-2251&amp;p=f&amp;viewport=316%2C530%2C0.06&amp;t=9YJGk5j5mK1TKTLO-1&amp;scaling=scale-down-width&amp;content-scaling=fixed&amp;starting-point-node-id=818%3A2251&amp;page-id=818%3A2243" target="_blank" rel="noopener">Prototipo en Figma ↗</a></dd></div>
           </dl>
-          <div class="cs-stats">
-            <div><b data-count="22">22</b><span>personas respondieron la encuesta</span></div>
-            <div><b data-count="10">10</b><span>participantes en el tree testing</span></div>
-            <div><b data-count="3">3</b><span>pruebas moderadas con el prototipo</span></div>
-            <div><b data-count="2">2</b><span>versiones del prototipo, V1 y V2</span></div>
-          </div>
+          <div class="cs-sum"><div><h3>Mi rol</h3><p>Product Designer UX/UI de principio a fin: research, arquitectura de información, diseño visual y pruebas con usuarios.</p><div class="cs-chips"><span>Figma</span><span>Google Forms</span><span>Tree testing</span><span>Lean UX Canvas</span></div></div><div><h3>Alcance</h3><ul class="cs-checks"><li>Encuesta a 22 compradores</li><li>Tree testing con 10 participantes</li><li>Arquitectura de información nueva</li><li>Design system en Figma</li><li>Prototipo V1 y V2, probado con 3 usuarios</li></ul></div><div><h3>Impacto</h3><p>La tarea que más costaba se volvió la más rápida: antes 4 de cada 10 no encontraban su pedido; con el prototipo, los 3 usuarios lo encontraron en 10 a 12 segundos.</p></div></div>
 
           <h3 class="cs-h3">Qué es Dafiti</h3>
           <p>Tienda online de moda, calzado y accesorios para hombres, mujeres y niños, con filtros de búsqueda, varios medios de pago, envíos y devoluciones. Su experiencia está pensada para convertir visitas en ventas.</p>
@@ -2941,6 +2939,18 @@
           </div>
         </section>
 
+        <!-- ===== RESULTADOS ===== -->
+        <section class="modal-section" id="dz-resultados" aria-labelledby="dz-h-res">
+          <div class="modal-eyebrow">Resultados</div>
+          <h2 id="dz-h-res">Lo que cambió en la compra</h2>
+          <p>Cada dolor del punto de partida tiene su respuesta en el prototipo. Es un proyecto académico: lo que se midió viene de las pruebas con usuarios, no de ventas reales.</p>
+          <ol class="cs-board">
+            <li><span class="pb-n">1 · Claridad</span><span class="pb-ok" aria-label="Resuelto"></span><p>Tallas a la vista en la ficha y confirmación antes de eliminar un producto</p></li>
+            <li><span class="pb-n">2 · Navegación</span><span class="pb-ok" aria-label="Resuelto"></span><p>Atajo “Sigue tu pedido”, de 4 a 3 clics, y 15 secciones repetidas menos</p></li>
+            <li><span class="pb-n">3 · Carrito</span><span class="pb-ok" aria-label="Resuelto"></span><p>Productos separados, jerarquía clara y una vista que confirma la compra</p></li>
+          </ol>
+        </section>
+
         <!-- ===== APRENDIZAJES ===== -->
         <section class="modal-section" id="dz-aprendizajes" aria-labelledby="dz-h-aprendizajes">
           <div class="modal-eyebrow">09 · Cierre</div>
@@ -2992,16 +3002,14 @@
         <section class="modal-section" id="mu-overview" aria-labelledby="mu-h-overview">
           <div class="modal-eyebrow">UX/UI · AR, VR y 3D · 2024</div>
           <h2 id="mu-h-overview">Overview</h2>
-          <p class="cs-lead">La Universidad Militar Nueva Granada conserva una colección de piezas anatómicas reales con un alto valor científico y educativo. El problema es que vivían en formol, en una sala aislada del campus de Cajicá, y la mayoría de la comunidad universitaria ni siquiera sabía que el museo existía.</p>
-          <p>La División de Museos nos planteó un reto concreto: darle visibilidad a esa colección. Lideré a un equipo de ocho personas para convertir el museo en una experiencia digital que cualquiera pudiera recorrer desde su computador o su celular.</p>
+          <p class="cs-lead">La Universidad Militar Nueva Granada conserva una colección de piezas anatómicas reales, pero vivían en una sala aislada del campus de Cajicá y casi nadie sabía que el museo existía. Con un equipo de ocho personas la convertimos en una experiencia digital: un explorador 3D y un recorrido virtual que cualquiera puede visitar desde su computador o su celular.</p>
           <p class="dz-note"><span>Proyecto académico con cliente real</span> Ingeniería Multimedia, asignatura Integración Multimedia: Aplicaciones 3D.</p>
           <dl class="cs-ficha">
             <div><dt>Cliente</dt><dd>División de Museos, UMNG</dd></div>
-            <div><dt>Mi rol</dt><dd>Director de proyecto · Diseñador UX/UI</dd></div>
             <div><dt>Duración</dt><dd>15 semanas, de febrero a mayo de 2024</dd></div>
             <div><dt>Estado</dt><dd>Prototipo entregado, en transición a producción</dd></div>
           </dl>
-          <div class="mu-tools"><span class="mu-tools-label">Herramientas</span><div class="cs-chips"><span>Figma</span><span>Unity</span><span>Needle Engine</span><span>Three.js</span><span>React</span><span>Maya</span></div></div>
+          <div class="cs-sum"><div><h3>Mi rol</h3><p>Director de proyecto y diseñador UX/UI: lideré a un equipo de ocho personas y diseñé el sistema de interfaces.</p><div class="cs-chips"><span>Figma</span><span>Unity</span><span>Needle Engine</span><span>Three.js</span><span>React</span><span>Maya</span></div></div><div><h3>Alcance</h3><ul class="cs-checks"><li>Explorador de piezas con modelos 3D</li><li>Recorrido virtual navegable</li><li>Sistema de interfaces responsive en Figma</li><li>5 piezas digitalizadas con fotogrametría</li><li>2 rondas de pruebas con usuarios</li></ul></div><div><h3>Impacto</h3><p>Una colección que solo se podía ver en Cajicá ahora se recorre desde cualquier dispositivo. La universidad recibió un prototipo funcional, pensado para seguir sumando piezas.</p></div></div>
         </section>
 
         <!-- ===== PROBLEMA ===== -->
@@ -3194,13 +3202,12 @@
         <section class="modal-section" id="mu-resultado" aria-labelledby="mu-h-resultado">
           <div class="modal-eyebrow">08 · Resultado</div>
           <h2 id="mu-h-resultado">Un prototipo listo para pasar a producción</h2>
-          <p>Entregamos a la universidad un prototipo funcional, con la página y el recorrido en versión demo, junto con el sistema de interfaces completo en Figma. La arquitectura quedó pensada para que el museo pueda seguir sumando piezas a su colección digital.</p>
-          <div class="cs-stats">
-            <div><b data-count="5">5</b><span>piezas digitalizadas</span></div>
-            <div><b data-count="2">2</b><span>caminos de experiencia</span></div>
-            <div><b data-count="2">2</b><span>rondas de prueba</span></div>
-            <div><b data-count="7">7</b><span>personas en el equipo</span></div>
-          </div>
+          <p>Entregamos a la universidad un prototipo funcional, con la página y el recorrido en versión demo, junto con el sistema de interfaces completo en Figma. La arquitectura quedó pensada para que el museo pueda seguir sumando piezas a su colección digital. Así responde a las tres barreras del punto de partida:</p>
+          <ol class="cs-board">
+            <li><span class="pb-n">1 · Acceso</span><span class="pb-ok" aria-label="Resuelto"></span><p>El museo se recorre desde un computador o un celular, sin ir a Cajicá</p></li>
+            <li><span class="pb-n">2 · Visibilidad</span><span class="pb-ok" aria-label="Resuelto"></span><p>La colección deja de depender de una sala que casi nadie conocía</p></li>
+            <li><span class="pb-n">3 · Contenido</span><span class="pb-ok" aria-label="Resuelto"></span><p>5 piezas en 3D con información en capas y dos formas de visitarlas</p></li>
+          </ol>
         </section>
 
         <!-- ===== APRENDIZAJES ===== -->
@@ -3327,7 +3334,7 @@
         <div class="cs-hero-text">
           <p class="cs-hero-kicker">Caso de estudio · Pinauto · Rediseño de marca</p>
           <h2 class="cs-hero-title"><span class="accent">Pinauto:</span> La nueva imagen en pintura automotriz</h2>
-          <p class="cs-hero-sub">Pinauto es un taller de latonería y pintura en Zipaquirá. Su imagen no estaba a la altura de su trabajo. Diseñé una identidad nueva, el manual de marca, la papelería, el brochure de servicios y la línea gráfica de sus redes.</p>
+          <p class="cs-hero-sub">Pinauto es un taller de latonería y pintura en Zipaquirá. Su imagen no estaba a la altura de su trabajo. En equipo diseñamos una identidad nueva, el manual de marca, la papelería, el brochure de servicios y la línea gráfica de sus redes.</p>
         </div>
         <figure class="dz-hero-shot dz-cover pa-cover"><img loading="lazy" decoding="async" src="img/Pinauto/web/portada.jpg" alt="Imagotipo de Pinauto en blanco sobre rojo con el claim La nueva imagen en pintura automotriz"></figure>
       </div>
@@ -3342,6 +3349,7 @@
         <button type="button" class="sidebar-item" data-target="pa-sistema">Sistema visual<svg class="si-arrow" viewBox="0 0 24 24"><path d="M9 6l6 6-6 6"/></svg></button>
         <button type="button" class="sidebar-item" data-target="pa-aplicaciones">Aplicaciones<svg class="si-arrow" viewBox="0 0 24 24"><path d="M9 6l6 6-6 6"/></svg></button>
         <button type="button" class="sidebar-item" data-target="pa-redes">Redes sociales<svg class="si-arrow" viewBox="0 0 24 24"><path d="M9 6l6 6-6 6"/></svg></button>
+        <button type="button" class="sidebar-item" data-target="pa-resultados">Resultados<svg class="si-arrow" viewBox="0 0 24 24"><path d="M9 6l6 6-6 6"/></svg></button>
       </nav>
 
       <div class="modal-content case-cs case-pa">
@@ -3350,14 +3358,13 @@
         <section class="modal-section" id="pa-overview" aria-labelledby="pa-h-overview">
           <div class="modal-eyebrow">Branding · Pintura automotriz · 2024</div>
           <h2 id="pa-h-overview">Overview</h2>
-          <p class="cs-lead">Rediseñé la identidad de Pinauto de principio a fin: un imagotipo nuevo, su manual de marca, la papelería, la dotación del taller, un brochure con los servicios y las piezas para Instagram y TikTok.</p>
-          <p class="dz-note"><span>De lo académico a lo real</span> Empezó como proyecto académico y terminó con Pinauto como cliente real.</p>
+          <p class="cs-lead">Pinauto es un taller de latonería y pintura en Zipaquirá con un trabajo de calidad y una imagen dispersa: dos logos distintos y piezas que no se parecían entre sí. En equipo rediseñamos su identidad de principio a fin, para que la marca transmitiera la misma confianza que el taller entrega en cada vehículo.</p>
           <dl class="cs-ficha">
             <div><dt>Cliente</dt><dd>Pinauto, taller de pintura automotriz (cliente real)</dd></div>
             <div><dt>Ubicación</dt><dd>Portachuelo, Zipaquirá</dd></div>
-            <div><dt>Año</dt><dd>2024</dd></div>
-            <div><dt>Entregables</dt><dd>Manual de marca, papelería y redes</dd></div>
+            <div><dt>Equipo</dt><dd><span class="team-group"><a class="team-av" href="https://www.behance.net/lorenabernal6" target="_blank" rel="noopener" aria-label="Portafolio de Thania Bernal"><span aria-hidden="true">TB</span><em class="team-tip">Thania Bernal</em></a><a class="team-av" href="https://deibymorenoart.wixstudio.com/portfolio" target="_blank" rel="noopener" aria-label="Portafolio de Deiby Moreno"><span aria-hidden="true">DM</span><em class="team-tip">Deiby Moreno</em></a><a class="team-av" href="https://www.behance.net/davidmahecha4" target="_blank" rel="noopener" aria-label="Portafolio de David Mahecha"><span aria-hidden="true">DM</span><em class="team-tip">David Mahecha</em></a><a class="team-av" href="https://www.behance.net/rogergcidval" target="_blank" rel="noopener" aria-label="Portafolio de Roger Cid Valero"><span aria-hidden="true">RC</span><em class="team-tip">Roger Cid Valero</em></a></span><span class="team-names">Thania Bernal, Deiby Moreno, David Mahecha y Roger Cid Valero</span></dd></div>
           </dl>
+          <div class="cs-sum"><div><h3>Mi rol</h3><p>Diseño de marca dentro de un equipo de cinco personas. Empezó como proyecto académico y terminó con un cliente real.</p></div><div><h3>Alcance</h3><ul class="cs-checks"><li>Imagotipo, versiones y monograma</li><li>Manual de marca</li><li>Papelería, dotación y aviso del local</li><li>Brochure de servicios</li><li>Línea gráfica para Instagram y TikTok</li></ul></div><div><h3>Impacto</h3><p>Una sola marca, igual en la tarjeta, el overol y las redes. Pinauto la adoptó como su imagen oficial.</p></div></div>
           <h3 class="cs-h3">Qué hace Pinauto</h3>
           <p>Repara carrocerías, aplica pintura automotriz de alta calidad y hace tratamientos de pulido y porcelanizado. Atiende a clientes de Zipaquirá y de la región.</p>
           <div class="cs-chips"><span>Latonería</span><span>Pintura</span><span>Pulido</span><span>Porcelanizado</span><span>Restauración</span></div>
@@ -3469,6 +3476,19 @@
           <p>En formato vertical, frases cortas sobre la foto: «Pintando ando», «Esta semana en el taller», «Personal de calidad».</p>
           <figure class="cs-ph" style="--ar:16/9"><img src="img/Pinauto/manual/29.jpg" alt="Historias y reels para Instagram" loading="lazy" onload="this.parentNode.classList.add('is-loaded')"><figcaption>📌 Página 29 del Canva: historias y reels</figcaption></figure>
           <figure class="cs-ph" style="--ar:16/9"><img src="img/Pinauto/manual/30.jpg" alt="Historias de Instagram sobre el equipo" loading="lazy" onload="this.parentNode.classList.add('is-loaded')"><figcaption>📌 Página 30 del Canva: historias</figcaption></figure>
+        </section>
+
+        <!-- ===== RESULTADOS ===== -->
+        <section class="modal-section" id="pa-resultados" aria-labelledby="pa-h-res">
+          <div class="modal-eyebrow">Resultados</div>
+          <h2 id="pa-h-res">Lo que cambió para Pinauto</h2>
+          <p>La identidad responde a las cuatro necesidades del punto de partida:</p>
+          <ol class="cs-board">
+            <li><span class="pb-n">1 · Posicionamiento</span><span class="pb-ok" aria-label="Resuelto"></span><p>Una identidad propia que se distingue en un mercado competitivo</p></li>
+            <li><span class="pb-n">2 · Visibilidad</span><span class="pb-ok" aria-label="Resuelto"></span><p>Una línea gráfica constante en Instagram y TikTok</p></li>
+            <li><span class="pb-n">3 · Valores</span><span class="pb-ok" aria-label="Resuelto"></span><p>Calidad, profesionalismo y confianza en cada pieza, de la tarjeta al overol</p></li>
+            <li><span class="pb-n">4 · Servicios</span><span class="pb-ok" aria-label="Resuelto"></span><p>Servicios y precios claros en el brochure</p></li>
+          </ol>
         </section>
       </div>
     </div>
@@ -3684,6 +3704,7 @@
         <button type="button" class="sidebar-item" data-target="mp-interacciones">Microinteracciones<svg class="si-arrow" viewBox="0 0 24 24"><path d="M9 6l6 6-6 6"/></svg></button>
         <button type="button" class="sidebar-item" data-target="mp-menus">Navegación<svg class="si-arrow" viewBox="0 0 24 24"><path d="M9 6l6 6-6 6"/></svg></button>
         <button type="button" class="sidebar-item" data-target="mp-versiones">Iteraciones<svg class="si-arrow" viewBox="0 0 24 24"><path d="M9 6l6 6-6 6"/></svg></button>
+        <button type="button" class="sidebar-item" data-target="mp-resultados">Resultados<svg class="si-arrow" viewBox="0 0 24 24"><path d="M9 6l6 6-6 6"/></svg></button>
         <button type="button" class="sidebar-item" data-target="mp-sigue">Aprendizajes<svg class="si-arrow" viewBox="0 0 24 24"><path d="M9 6l6 6-6 6"/></svg></button>
       </nav>
 
@@ -3693,19 +3714,13 @@
         <section class="modal-section" id="mp-overview" aria-labelledby="mp-h-overview">
           <div class="modal-eyebrow">UX/UI · Diseño web · 2026</div>
           <h2 id="mp-h-overview">Overview</h2>
-          <p class="cs-lead">Diseñé este portafolio para expresar mi creatividad y reunir mis pasiones en un solo lugar: el diseño de producto, el 3D, el render, la fotografía y todo lo que disfruto crear. También fue la excusa perfecta para darle vida a Mora, mi marca personal, en un sitio interactivo que invita a descubrirme por partes, faceta por faceta.</p>
+          <p class="cs-lead">Mi portafolio vivía en Behance: imágenes estáticas que no dejaban mostrar el proceso ni la personalidad detrás de cada proyecto. Diseñé y desarrollé este sitio como un producto, para reunir todo lo que hago en un solo lugar y darle vida a Mora, mi marca personal.</p>
           <dl class="cs-ficha">
             <div><dt>Cliente</dt><dd>Proyecto propio</dd></div>
-            <div><dt>Mi rol</dt><dd>Diseño de producto, UX/UI y desarrollo</dd></div>
             <div><dt>Año</dt><dd>2026</dd></div>
-            <div><dt>Herramientas</dt><dd>Figma, Astro, JavaScript y Claude</dd></div>
+            <div><dt>Resultado</dt><dd><a class="cs-link" href="https://www.andresmorado.com" target="_blank" rel="noopener">Sitio en línea: andresmorado.com</a></dd></div>
           </dl>
-          <div class="cs-stats mp-stats">
-            <div><b data-mp-count="4">4</b><span>páginas principales</span></div>
-            <div><b data-mp-count="9">9</b><span>casos y colecciones</span></div>
-            <div><b data-mp-count="11">11</b><span>microinteracciones</span></div>
-            <div><b data-mp-count="2">2</b><span>temas, claro y oscuro</span></div>
-          </div>
+          <div class="cs-sum"><div><h3>Mi rol</h3><p>Diseño de producto, UX/UI y desarrollo: del concepto al sitio publicado.</p><div class="cs-chips"><span>Figma</span><span>Astro</span><span>JavaScript</span><span>Claude</span></div></div><div><h3>Alcance</h3><ul class="cs-checks"><li>Arquitectura de 4 páginas</li><li>Marca Mora y design system propio</li><li>9 casos y colecciones</li><li>11 microinteracciones</li><li>Español e inglés, tema claro y oscuro</li></ul></div><div><h3>Impacto</h3><p>Todo lo que hago, en un solo lugar y contado desde el proceso, con el contacto a un clic desde cualquier página.</p></div></div>
         </section>
 
         <!-- ===== OBJETIVOS ===== -->
@@ -3917,6 +3932,18 @@
           </div>
         </section>
 
+        <!-- ===== RESULTADOS ===== -->
+        <section class="modal-section" id="mp-resultados" aria-labelledby="mp-h-res">
+          <div class="modal-eyebrow">Resultados</div>
+          <h2 id="mp-h-res">Lo que logré</h2>
+          <p>El sitio cumple las tres ideas con las que nació:</p>
+          <ol class="cs-board">
+            <li><span class="pb-n">1 · Mis pasiones</span><span class="pb-ok" aria-label="Resuelto"></span><p>UX/UI, web, 3D, render, fotografía, motion y gráfico en un mismo sitio</p></li>
+            <li><span class="pb-n">2 · Para descubrir</span><span class="pb-ok" aria-label="Resuelto"></span><p>Una grilla para rayar, una libreta que se abre y detalles que invitan a jugar</p></li>
+            <li><span class="pb-n">3 · Mi marca</span><span class="pb-ok" aria-label="Resuelto"></span><p>Mora en cada página y el contacto siempre a un clic</p></li>
+          </ol>
+        </section>
+
         <!-- ===== APRENDIZAJES ===== -->
         <section class="modal-section" id="mp-sigue" aria-labelledby="mp-h-sigue">
           <div class="modal-eyebrow">11 · Aprendizajes</div>
@@ -4065,7 +4092,7 @@
         dot.style.left = targetX + 'px'; dot.style.top = targetY + 'px';
       });
       (function tick(){
-        ringX += (targetX - ringX) * 0.18; ringY += (targetY - ringY) * 0.18;
+        ringX = targetX; ringY = targetY;
         ring.style.left = ringX + 'px'; ring.style.top = ringY + 'px';
         requestAnimationFrame(tick);
       })();

@@ -452,7 +452,7 @@
     display:flex; align-items:center; justify-content:center; background:var(--accent); color:#fff; font-family:var(--font-accent); font-weight:700; font-size:24px;
     box-shadow:0 0 0 4px color-mix(in srgb, var(--accent) 30%, transparent), 0 8px 18px -6px rgba(16,16,20,.45); transform:scale(0) rotate(-30deg); transition:transform 420ms cubic-bezier(.3,1.6,.5,1);}
   /* secuencia al enviar: la hoja entra, la solapa se cierra, el sello cae y el sobre sale */
-  .env.is-in .letter{transform:translateY(calc(100% + 24px));}
+  .env.is-tucked .letter{transform:translateY(calc(100% + 24px));}
   .env.is-closed .env-flap{transform:rotateX(180deg); background:var(--env-flap); z-index:4;}
   .env.is-sealed .env-seal{transform:none;}
   .env.is-gone{transform:translate(60px,-30px) rotate(5deg); opacity:0;}
@@ -871,7 +871,7 @@
       if (reduceMotion) return done();
       var lift = card.getBoundingClientRect().bottom - window.innerHeight * .86;
       window.scrollTo({top:window.scrollY + lift, behavior:'smooth'});
-      [['is-in', 250], ['is-closed', 1300], ['is-sealed', 2000], ['is-gone', 2600]].forEach(function(st){
+      [['is-tucked', 250], ['is-closed', 1300], ['is-sealed', 2000], ['is-gone', 2600]].forEach(function(st){
         setTimeout(function(){ card.classList.add(st[0]); }, st[1]);
       });
       setTimeout(done, 3200);
@@ -879,7 +879,7 @@
     // si vuelven con "back" desde la página de gracias, el sobre aparece abierto otra vez y el formulario vacío
     window.addEventListener('pageshow', function(e){
       if (!e.persisted) return;
-      card.classList.remove('is-in', 'is-closed', 'is-sealed', 'is-gone');
+      card.classList.remove('is-tucked', 'is-closed', 'is-sealed', 'is-gone');
       form.reset(); topic.reset(); count.textContent = '0 / 1200';
       submit.disabled = false; submitText.textContent = 'Send message';
     });
@@ -941,7 +941,7 @@
         dot.classList.toggle('is-hidden', typing); ring.classList.toggle('is-hidden', typing);
       });
       (function tick(){
-        ringX += (targetX - ringX) * 0.18; ringY += (targetY - ringY) * 0.18;
+        ringX = targetX; ringY = targetY;
         ring.style.left = ringX + 'px'; ring.style.top = ringY + 'px';
         requestAnimationFrame(tick);
       })();

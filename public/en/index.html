@@ -2428,6 +2428,36 @@
   .hf .hero-rail{pointer-events:auto; z-index:6;}
   .hf .hero-rail .rail-link{pointer-events:auto;}
 </style>
+<style id="mora-historia">
+  /* mora-historia: cards de rol, alcance e impacto; punto de partida; equipo en la ficha */
+  @media (min-width:641px){ .cs-ficha:has(> div:nth-child(3):last-child){grid-template-columns:repeat(3,minmax(0,1fr));} }
+  .cs-sum{display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:var(--space-3); margin:0 0 var(--space-7);}
+  .cs-sum > div{background:var(--surface); border:1px solid var(--line); border-radius:var(--radius-lg); padding:var(--space-5) var(--space-5) var(--space-6);}
+  .cs-sum h3{margin:0 0 var(--space-3); font-family:var(--font-accent); font-weight:700; font-size:26px; line-height:1.1; color:var(--accent);}
+  .case-cs .cs-sum p{margin:0; font-size:14px; line-height:1.55; color:var(--text-secondary);}
+  .cs-sum .cs-chips{margin-top:var(--space-4);}
+  .cs-sum .cs-checks{gap:8px;}
+  .cs-sum .cs-checks li{font-size:14px; line-height:1.5;}
+  @media (max-width:1100px){ .cs-sum{grid-template-columns:minmax(0,1fr);} }
+  @media (max-width:520px){ .cs-sum h3{font-size:22px;} }
+  .cs-was b{color:var(--text-primary); font-weight:600;}
+  .cs-was{list-style:none; display:flex; flex-direction:column; gap:10px; margin:var(--space-4) 0 var(--space-6);}
+  .cs-was li{position:relative; padding-left:30px; font-size:15px; line-height:1.55; color:var(--text-secondary);}
+  .cs-was li::before{content:''; position:absolute; left:0; top:1px; width:20px; height:20px; border-radius:50%; border:1.5px solid var(--line-strong);}
+  .cs-was li::after{content:''; position:absolute; left:6px; top:10px; width:8px; height:1.5px; background:var(--text-muted);}
+  .team-group{display:flex; padding:12px 0 2px 10px;}
+  .team-av{position:relative; width:40px; height:40px; margin-left:-10px; border-radius:50%; border:2px solid var(--surface); background:var(--accent-soft); color:var(--accent); display:grid; place-items:center; font-family:var(--font-display); font-weight:600; font-size:13px; text-decoration:none; transition:transform 300ms cubic-bezier(.4,0,.2,1), margin 300ms cubic-bezier(.4,0,.2,1);}
+  .team-av:nth-child(even){background:var(--accent); color:var(--on-accent);}
+  .team-av:hover, .team-av:focus-visible{transform:translateY(-6px); z-index:5; outline:none;}
+  .team-av:focus-visible{box-shadow:0 0 0 2px var(--accent);}
+  .team-group:hover .team-av, .team-group:focus-within .team-av{margin-left:-2px;}
+  .team-tip{position:absolute; bottom:calc(100% + 8px); left:50%; transform:translate(-50%,8px) scale(.8); opacity:0; padding:5px 9px; border-radius:6px; background:var(--accent); color:var(--on-accent); font-family:var(--font-sans); font-style:normal; font-size:12px; font-weight:600; white-space:nowrap; pointer-events:none; transition:opacity 180ms ease, transform 280ms cubic-bezier(.34,1.56,.64,1);}
+  .team-av:hover .team-tip, .team-av:focus-visible .team-tip{opacity:1; transform:translate(-50%,0) scale(1);}
+  .team-av:first-child .team-tip{left:-2px; transform:translate(0,8px) scale(.8); transform-origin:left bottom;}
+  .team-av:first-child:hover .team-tip, .team-av:first-child:focus-visible .team-tip{transform:translate(0,0) scale(1);}
+  .team-names{display:block; margin-top:6px; font-size:12px; font-weight:400; line-height:1.4; color:var(--text-secondary);}
+  @media (prefers-reduced-motion:reduce){ .team-av, .team-tip{transition:none;} .team-av:hover, .team-av:focus-visible{transform:none;} }
+</style>
 <script>window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };</script>
 <script defer src="/_vercel/insights/script.js"></script>
 </head>
@@ -2484,7 +2514,7 @@
     <div class="hf-content">
       <section class="hero">
         <h1 class="hero-name">Andrés <span class="name-sel">Mora<i></i><i></i><i></i><i></i></span></h1>
-        <p class="subtitle">Product Designer UX/UI · Motion &amp; Multimedia Engineer, based in Cundinamarca, Colombia.</p>
+        <p class="subtitle">Product Designer UX/UI · Motion &amp; Multimedia Engineer, living in Cundinamarca, Colombia.</p>
         <div class="hero-ctas">
           <a href="/en/work" class="btn-fill is-solid" data-strength="25"><span class="btn-fill-bg"></span><span class="btn-fill-label" data-strength-text="15">See my work</span></a>
           <a href="/en/contact" class="btn-fill is-ghost" data-strength="25"><span class="btn-fill-bg"></span><span class="btn-fill-label" data-strength-text="15">Let's talk</span></a>
@@ -2514,7 +2544,7 @@
     <div class="hf-content">
       <section class="hero">
         <h2 class="hero-claim">Design, creativity and execution of digital products. <span class="accent-line">Beyond the ordinary.</span></h2>
-        <p class="subtitle">Product Designer UX/UI · Motion &amp; Multimedia Engineer, based in Cundinamarca, Colombia.</p>
+        <p class="subtitle">Product Designer UX/UI · Motion &amp; Multimedia Engineer, living in Cundinamarca, Colombia.</p>
         <div class="hero-ctas">
           <a href="/en/work" class="btn-fill is-solid" data-strength="25"><span class="btn-fill-bg"></span><span class="btn-fill-label" data-strength-text="15">See my work</span></a>
           <a href="/en/contact" class="btn-fill is-ghost" data-strength="25"><span class="btn-fill-bg"></span><span class="btn-fill-label" data-strength-text="15">Let's talk</span></a>
@@ -2720,7 +2750,6 @@
       <nav class="modal-sidebar" aria-label="Project sections">
         <div class="modal-sidebar-title">On this page</div>
         <button type="button" class="sidebar-item" data-target="cs-overview">Overview<svg class="si-arrow" viewBox="0 0 24 24"><path d="M9 6l6 6-6 6"/></svg></button>
-        <button type="button" class="sidebar-item" data-target="cs-alcance">Scope<svg class="si-arrow" viewBox="0 0 24 24"><path d="M9 6l6 6-6 6"/></svg></button>
         <button type="button" class="sidebar-item" data-target="cs-problema">Problem<svg class="si-arrow" viewBox="0 0 24 24"><path d="M9 6l6 6-6 6"/></svg></button>
         <button type="button" class="sidebar-item" data-target="cs-research">Research<svg class="si-arrow" viewBox="0 0 24 24"><path d="M9 6l6 6-6 6"/></svg></button>
         <button type="button" class="sidebar-item" data-target="cs-ideacion">Ideation<svg class="si-arrow" viewBox="0 0 24 24"><path d="M9 6l6 6-6 6"/></svg></button>
@@ -2737,41 +2766,19 @@
         <section class="modal-section" id="cs-overview" aria-labelledby="cs-h-overview">
           <div class="modal-eyebrow">Web redesign · UX/UI · 2026</div>
           <h2 id="cs-h-overview">Overview</h2>
-          <p class="cs-lead">I redesigned the Café Pacundí site end to end: from the UX audit to the site going live in September 2026, with a new 9 page architecture, its own design system and custom components on WordPress and free Elementor.</p>
+          <p class="cs-lead">Café Pacundí is a single origin coffee from Pacho, with 15 years of history and 300 coffee growing families behind it. Its website was stuck in 2019: it didn't show its three coffees, its water or where to buy. I redesigned it end to end, from the UX audit to the live site, so the web could tell everything the brand is.</p>
           <dl class="cs-ficha">
             <div><dt>Client</dt><dd>Café Pacundí · “Deleite de Altura”</dd></div>
-            <div><dt>Role</dt><dd>Product Designer / UX Engineer</dd></div>
             <div><dt>Timeline</dt><dd>July to September 2026</dd></div>
             <div><dt>Outcome</dt><dd><a class="cs-link" href="https://cafepacundi.co" target="_blank" rel="noopener">Live site: cafepacundi.co</a></dd></div>
           </dl>
-          <div class="cs-stats">
-            <div><b data-count="15">15</b><span>UX findings solved</span></div>
-            <div><b data-count="9">9</b><span>new pages</span></div>
-            <div><b data-count="5">5</b><span>business challenges addressed</span></div>
-            <div><b>$0</b><span>in new licenses</span></div>
-          </div>
+          <div class="cs-sum"><div><h3>My role</h3><p>Product Designer and UX Engineer from start to finish: I researched, designed and built the site.</p><div class="cs-chips"><span>WordPress</span><span>Free Elementor</span><span>Custom child theme</span><span>Custom HTML/CSS/JS</span><span>Leaflet.js</span><span>Figma</span></div></div><div><h3>Scope</h3><ul class="cs-checks"><li>UX audit with a formal report</li><li>Information architecture</li><li>Documented design system</li><li>9 pages in production</li><li>Reusable components</li></ul></div><div><h3>Impact</h3><p>Every product has its place: the three coffees and Agua Pacundí each have their own page. And any visitor knows where to buy: on WhatsApp or at one of the 26 points of sale.</p></div></div>
         </section>
 
-        <!-- ===== ALCANCE ===== -->
-        <section class="modal-section" id="cs-alcance" aria-labelledby="cs-h-alcance">
-          <h2 id="cs-h-alcance">Scope</h2>
-          <div class="cs-scope">
-            <div class="cs-scope-col">
-              <h3>My role</h3>
-              <p>Product Designer / UX Engineer, from start to finish: audit, architecture, design system and front end development in WordPress.</p>
-              <div class="cs-chips"><span>WordPress 7.0.2</span><span>PHP 8.1</span><span>Free Elementor</span><span>Custom child theme</span><span>Custom HTML/CSS/JS</span><span>Leaflet.js</span><span>Figma</span></div>
-            </div>
-            <div class="cs-scope-col">
-              <h3>What I delivered</h3>
-              <ul class="cs-checks">
-                <li>UX/UI audit with a formal report</li>
-                <li>Information architecture</li>
-                <li>Documented design system</li>
-                <li>9 pages in production</li>
-                <li>Reusable components</li>
-              </ul>
-            </div>
-          </div>
+        <!-- ===== PROBLEMA ===== -->
+        <section class="modal-section" id="cs-problema" aria-labelledby="cs-h-problema">
+          <h2 id="cs-h-problema">The starting point</h2>
+          <p>Pacundí sells in stores and on WhatsApp, but its 2019 site presented itself as an online store. And the brand is much more than a coffee: it has four lines the website needed to tell.</p>
           <h3 class="cs-h3">What the site had to tell</h3>
           <div class="cs-lines">
             <div><span class="cs-line-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 9h13v5a5 5 0 0 1-5 5H9a5 5 0 0 1-5-5z"/><path d="M17 11h1.5a2.5 2.5 0 0 1 0 5H16"/><path d="M8 3v3M12 3v3"/></svg></span><b>Café Pacundí</b><small>Excelso, Tradicional and Típica Silvestre</small></div>
@@ -2779,12 +2786,8 @@
             <div><span class="cs-line-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M3 21V10l6 4V10l6 4V6h6v15z"/><path d="M7 18h2M12 18h2M17 18h2"/></svg></span><b>Maquila B2B</b><small>Hulling, roasting, packaging and private label</small></div>
             <div><span class="cs-line-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="7" cy="9" r="1.8"/><circle cx="12" cy="6.5" r="1.8"/><circle cx="17" cy="9" r="1.8"/><path d="M12 12c-3 0-5.5 3.5-5.5 5.5 0 1.7 1.6 2.5 3 2 1-.3 1.6-.5 2.5-.5s1.5.2 2.5.5c1.4.5 3-.3 3-2 0-2-2.5-5.5-5.5-5.5z"/></svg></span><b>Fundamigos</b><small>Partnership with an animal foundation in Pacho</small></div>
           </div>
-        </section>
-
-        <!-- ===== PROBLEMA ===== -->
-        <section class="modal-section" id="cs-problema" aria-labelledby="cs-h-problema">
-          <h2 id="cs-h-problema">The starting point</h2>
-          <p>Behind Pacundí there are 15 years, 300 coffee growing families from the Río Negro and a town, Pacho. None of that showed on its website: a 2019 site that promised online shopping for a brand that sells through WhatsApp and in stores.</p>
+          <h3 class="cs-h3">How the site looked</h3>
+          <ul class="cs-was"><li><b>Only one coffee in sight.</b> The three varieties had no page of their own, and in the slider the bags all looked the same.</li><li><b>Agua Pacundí didn't exist online.</b> One of its business lines didn't appear anywhere.</li><li><b>It didn't say where to buy.</b> It promised online shopping, but didn't show a single point of sale.</li><li><b>Fundamigos, out of date.</b> The partnership with the foundation was hidden and had old information.</li><li><b>A 2019 look.</b> A design that didn't tell the origin story, on WordPress 5.2 and with a header that broke with anything new.</li></ul>
 
           <div class="cs-compare" id="cs-compare" style="--pos:50%; aspect-ratio:16/9">
             <figure class="cs-ph cs-compare-after">
@@ -2992,13 +2995,13 @@
         <!-- ===== RESULTADOS ===== -->
         <section class="modal-section" id="cs-resultados" aria-labelledby="cs-h-res">
           <h2 id="cs-h-res">Results</h2>
-          <p>Since September 2026 the site is live, complete and working.</p>
+          <p>Since September 2026 the site has been live, complete and working. Every starting point now has an answer:</p>
           <ol class="cs-board">
-            <li><span class="pb-n">1 · Update</span><span class="pb-ok" aria-label="Solved"></span><p>A modern, secure platform with no new costs</p></li>
-            <li><span class="pb-n">2 · Product range</span><span class="pb-ok" aria-label="Solved"></span><p>Coffees you can compare at a glance; Water with its own identity</p></li>
-            <li><span class="pb-n">3 · Origin</span><span class="pb-ok" aria-label="Solved"></span><p>Pacho and the Río Negro as the thread of the site</p></li>
-            <li><span class="pb-n">4 · Digital + physical</span><span class="pb-ok" aria-label="Solved"></span><p>Always two ways out: WhatsApp or a nearby store</p></li>
-            <li><span class="pb-n">5 · Social</span><span class="pb-ok" aria-label="Solved"></span><p>Fundamigos visible and told honestly</p></li>
+            <li><span class="pb-n">1 · Coffees</span><span class="pb-ok" aria-label="Solved"></span><p>The three varieties with their own page, easy to compare at a glance</p></li>
+            <li><span class="pb-n">2 · Water</span><span class="pb-ok" aria-label="Solved"></span><p>Agua Pacundí with its own page, sizes and color</p></li>
+            <li><span class="pb-n">3 · Where to buy</span><span class="pb-ok" aria-label="Solved"></span><p>26 points of sale on a map and WhatsApp on every product</p></li>
+            <li><span class="pb-n">4 · Fundamigos</span><span class="pb-ok" aria-label="Solved"></span><p>Visible in the menu, up to date and told honestly</p></li>
+            <li><span class="pb-n">5 · Look</span><span class="pb-ok" aria-label="Solved"></span><p>A 2026 site with its own design system, with no new license costs</p></li>
           </ol>
         </section>
 
@@ -3051,6 +3054,7 @@
         <button type="button" class="sidebar-item" data-target="dz-sistema">Design System<svg class="si-arrow" viewBox="0 0 24 24"><path d="M9 6l6 6-6 6"/></svg></button>
         <button type="button" class="sidebar-item" data-target="dz-prototipo">Prototype<svg class="si-arrow" viewBox="0 0 24 24"><path d="M9 6l6 6-6 6"/></svg></button>
         <button type="button" class="sidebar-item" data-target="dz-testing">Testing<svg class="si-arrow" viewBox="0 0 24 24"><path d="M9 6l6 6-6 6"/></svg></button>
+        <button type="button" class="sidebar-item" data-target="dz-resultados">Results<svg class="si-arrow" viewBox="0 0 24 24"><path d="M9 6l6 6-6 6"/></svg></button>
         <button type="button" class="sidebar-item" data-target="dz-aprendizajes">Learnings<svg class="si-arrow" viewBox="0 0 24 24"><path d="M9 6l6 6-6 6"/></svg></button>
       </nav>
 
@@ -3060,20 +3064,14 @@
         <section class="modal-section" id="dz-overview" aria-labelledby="dz-h-overview">
           <div class="modal-eyebrow">UX/UI · Fashion retail · 2025</div>
           <h2 id="dz-h-overview">Overview</h2>
-          <p class="cs-lead">I redesigned the Dafiti web shopping experience end to end: research with real users, information architecture, its own design system and a high fidelity prototype in Figma that went through two versions thanks to usability testing.</p>
+          <p class="cs-lead">Searching, filtering and reviewing the cart on Dafiti was confusing, and that made people abandon their purchase. I combined a survey, tree testing and moderated tests to find where people got lost, and redesigned the navigation, the product page and the cart in a clickable prototype.</p>
           <p class="dz-note"><span>Academic project</span> Developed in the Advanced UX/UI Design course at CoderHouse. It wasn't commissioned by Dafiti.</p>
           <dl class="cs-ficha">
             <div><dt>Context</dt><dd>Advanced UX/UI Design · CoderHouse</dd></div>
-            <div><dt>My role</dt><dd>Product Designer UX/UI</dd></div>
             <div><dt>Timeline</dt><dd>August to November 2025</dd></div>
-            <div><dt>Deliverable</dt><dd>Clickable prototype in Figma (V1 and V2)</dd></div>
+            <div><dt>Outcome</dt><dd><a class="cs-link" href="https://www.figma.com/proto/fKnkhR6MLHbnFBwnmwA036/Redise%C3%B1o-Web-Dafiti-Real?node-id=818-2251&amp;p=f&amp;viewport=316%2C530%2C0.06&amp;t=9YJGk5j5mK1TKTLO-1&amp;scaling=scale-down-width&amp;content-scaling=fixed&amp;starting-point-node-id=818%3A2251&amp;page-id=818%3A2243" target="_blank" rel="noopener">Prototype in Figma ↗</a></dd></div>
           </dl>
-          <div class="cs-stats">
-            <div><b data-count="22">22</b><span>people answered the survey</span></div>
-            <div><b data-count="10">10</b><span>tree testing participants</span></div>
-            <div><b data-count="3">3</b><span>moderated tests with the prototype</span></div>
-            <div><b data-count="2">2</b><span>prototype versions, V1 and V2</span></div>
-          </div>
+          <div class="cs-sum"><div><h3>My role</h3><p>Product Designer UX/UI from start to finish: research, information architecture, visual design and user testing.</p><div class="cs-chips"><span>Figma</span><span>Google Forms</span><span>Tree testing</span><span>Lean UX Canvas</span></div></div><div><h3>Scope</h3><ul class="cs-checks"><li>Survey of 22 shoppers</li><li>Tree testing with 10 participants</li><li>New information architecture</li><li>Design system in Figma</li><li>Prototype V1 and V2, tested with 3 users</li></ul></div><div><h3>Impact</h3><p>The hardest task became the fastest: before, 4 out of 10 couldn't find their order; with the prototype, all 3 users found it in 10 to 12 seconds.</p></div></div>
 
           <h3 class="cs-h3">What Dafiti is</h3>
           <p>An online store for fashion, footwear and accessories for men, women and kids, with search filters, several payment methods, shipping and returns. Its experience is built to turn visits into sales.</p>
@@ -3514,6 +3512,18 @@
           </div>
         </section>
 
+        <!-- ===== RESULTADOS ===== -->
+        <section class="modal-section" id="dz-resultados" aria-labelledby="dz-h-res">
+          <div class="modal-eyebrow">Results</div>
+          <h2 id="dz-h-res">What changed when shopping</h2>
+          <p>Every pain point from the start has an answer in the prototype. It's an academic project: what was measured comes from user testing, not real sales.</p>
+          <ol class="cs-board">
+            <li><span class="pb-n">1 · Clarity</span><span class="pb-ok" aria-label="Solved"></span><p>Sizes visible on the product page and a confirmation before removing a product</p></li>
+            <li><span class="pb-n">2 · Navigation</span><span class="pb-ok" aria-label="Solved"></span><p>A “Track your order” shortcut, from 4 to 3 clicks, and 15 fewer repeated sections</p></li>
+            <li><span class="pb-n">3 · Cart</span><span class="pb-ok" aria-label="Solved"></span><p>Separated products, clear hierarchy and a screen that confirms the purchase</p></li>
+          </ol>
+        </section>
+
         <!-- ===== APRENDIZAJES ===== -->
         <section class="modal-section" id="dz-aprendizajes" aria-labelledby="dz-h-aprendizajes">
           <div class="modal-eyebrow">09 · Wrap up</div>
@@ -3565,16 +3575,14 @@
         <section class="modal-section" id="mu-overview" aria-labelledby="mu-h-overview">
           <div class="modal-eyebrow">UX/UI · AR, VR and 3D · 2024</div>
           <h2 id="mu-h-overview">Overview</h2>
-          <p class="cs-lead">The Universidad Militar Nueva Granada holds a collection of real anatomical specimens with high scientific and educational value. The problem was that they lived in formaldehyde, in an isolated room on the Cajicá campus, and most of the university community didn't even know the museum existed.</p>
-          <p>The Museums Division gave us a concrete challenge: give that collection visibility. I led a team of eight people to turn the museum into a digital experience anyone could explore from their computer or phone.</p>
+          <p class="cs-lead">Universidad Militar Nueva Granada keeps a collection of real anatomical pieces, but they lived in an isolated room on the Cajicá campus and almost nobody knew the museum existed. With a team of eight people we turned it into a digital experience: a 3D explorer and a virtual tour anyone can visit from a computer or a phone.</p>
           <p class="dz-note"><span>Academic project with a real client</span> Multimedia Engineering, Multimedia Integration course: 3D Applications.</p>
           <dl class="cs-ficha">
             <div><dt>Client</dt><dd>Museums Division, UMNG</dd></div>
-            <div><dt>My role</dt><dd>Project director · UX/UI designer</dd></div>
             <div><dt>Duration</dt><dd>15 weeks, February to May 2024</dd></div>
             <div><dt>Status</dt><dd>Prototype delivered, transitioning to production</dd></div>
           </dl>
-          <div class="mu-tools"><span class="mu-tools-label">Tools</span><div class="cs-chips"><span>Figma</span><span>Unity</span><span>Needle Engine</span><span>Three.js</span><span>React</span><span>Maya</span></div></div>
+          <div class="cs-sum"><div><h3>My role</h3><p>Project lead and UX/UI designer: I led a team of eight people and designed the interface system.</p><div class="cs-chips"><span>Figma</span><span>Unity</span><span>Needle Engine</span><span>Three.js</span><span>React</span><span>Maya</span></div></div><div><h3>Scope</h3><ul class="cs-checks"><li>Piece explorer with 3D models</li><li>Navigable virtual tour</li><li>Responsive interface system in Figma</li><li>5 pieces digitized with photogrammetry</li><li>2 rounds of user testing</li></ul></div><div><h3>Impact</h3><p>A collection you could only see in Cajicá can now be explored from any device. The university received a working prototype, built to keep adding pieces.</p></div></div>
         </section>
 
         <!-- ===== PROBLEMA ===== -->
@@ -3767,13 +3775,12 @@
         <section class="modal-section" id="mu-resultado" aria-labelledby="mu-h-resultado">
           <div class="modal-eyebrow">08 · Outcome</div>
           <h2 id="mu-h-resultado">A prototype ready to move into production</h2>
-          <p>We delivered to the university a working prototype, with the page and the tour as a demo, along with the complete interface system in Figma. The architecture was designed so the museum can keep adding specimens to its digital collection.</p>
-          <div class="cs-stats">
-            <div><b data-count="5">5</b><span>digitized specimens</span></div>
-            <div><b data-count="2">2</b><span>experience paths</span></div>
-            <div><b data-count="2">2</b><span>testing rounds</span></div>
-            <div><b data-count="7">7</b><span>people on the team</span></div>
-          </div>
+          <p>We delivered a working prototype to the university, with the website and the tour as a demo, along with the complete interface system in Figma. The architecture was planned so the museum can keep adding pieces to its digital collection. This is how it answers the three barriers from the start:</p>
+          <ol class="cs-board">
+            <li><span class="pb-n">1 · Access</span><span class="pb-ok" aria-label="Solved"></span><p>The museum can be explored from a computer or a phone, without going to Cajicá</p></li>
+            <li><span class="pb-n">2 · Visibility</span><span class="pb-ok" aria-label="Solved"></span><p>The collection no longer depends on a room almost nobody knew about</p></li>
+            <li><span class="pb-n">3 · Content</span><span class="pb-ok" aria-label="Solved"></span><p>5 pieces in 3D with layered information and two ways to visit them</p></li>
+          </ol>
         </section>
 
         <!-- ===== APRENDIZAJES ===== -->
@@ -3852,7 +3859,7 @@
         <div class="cs-hero-text">
           <p class="cs-hero-kicker">Case study · Pinauto · Brand redesign</p>
           <h2 class="cs-hero-title"><span class="accent">Pinauto:</span> The new image in automotive paint</h2>
-          <p class="cs-hero-sub">Pinauto is a body and paint shop in Zipaquirá. Its image didn't live up to its work. I designed a new identity, the brand manual, the stationery, the services brochure and the visual line for its social media.</p>
+          <p class="cs-hero-sub">Pinauto is a body and paint shop in Zipaquirá. Its image didn't live up to its work. As a team we designed a new identity, the brand manual, the stationery, the services brochure and the visual line for its social media.</p>
         </div>
         <figure class="dz-hero-shot dz-cover pa-cover"><img loading="lazy" decoding="async" src="/img/Pinauto/web/portada.jpg" alt="Pinauto logo in white on red with the tagline The new image in automotive paint"></figure>
       </div>
@@ -3867,6 +3874,7 @@
         <button type="button" class="sidebar-item" data-target="pa-sistema">Visual system<svg class="si-arrow" viewBox="0 0 24 24"><path d="M9 6l6 6-6 6"/></svg></button>
         <button type="button" class="sidebar-item" data-target="pa-aplicaciones">Applications<svg class="si-arrow" viewBox="0 0 24 24"><path d="M9 6l6 6-6 6"/></svg></button>
         <button type="button" class="sidebar-item" data-target="pa-redes">Social media<svg class="si-arrow" viewBox="0 0 24 24"><path d="M9 6l6 6-6 6"/></svg></button>
+        <button type="button" class="sidebar-item" data-target="pa-resultados">Results<svg class="si-arrow" viewBox="0 0 24 24"><path d="M9 6l6 6-6 6"/></svg></button>
       </nav>
 
       <div class="modal-content case-cs case-pa">
@@ -3875,14 +3883,13 @@
         <section class="modal-section" id="pa-overview" aria-labelledby="pa-h-overview">
           <div class="modal-eyebrow">Branding · Automotive paint · 2024</div>
           <h2 id="pa-h-overview">Overview</h2>
-          <p class="cs-lead">I redesigned Pinauto's identity from start to finish: a new logo, its brand manual, the stationery, the shop's uniforms, a brochure with its services and the pieces for Instagram and TikTok.</p>
-          <p class="dz-note"><span>From academic to real</span> It started as an academic project and ended with Pinauto as a real client.</p>
+          <p class="cs-lead">Pinauto is a body and paint shop in Zipaquirá with quality work and a scattered image: two different logos and pieces that looked nothing alike. As a team we redesigned its identity from start to finish, so the brand would convey the same trust the shop delivers on every vehicle.</p>
           <dl class="cs-ficha">
             <div><dt>Client</dt><dd>Pinauto, automotive paint shop (real client)</dd></div>
             <div><dt>Location</dt><dd>Portachuelo, Zipaquirá</dd></div>
-            <div><dt>Year</dt><dd>2024</dd></div>
-            <div><dt>Deliverables</dt><dd>Brand manual, stationery and social media</dd></div>
+            <div><dt>Team</dt><dd><span class="team-group"><a class="team-av" href="https://www.behance.net/lorenabernal6" target="_blank" rel="noopener" aria-label="Thania Bernal&#x27;s portfolio"><span aria-hidden="true">TB</span><em class="team-tip">Thania Bernal</em></a><a class="team-av" href="https://deibymorenoart.wixstudio.com/portfolio" target="_blank" rel="noopener" aria-label="Deiby Moreno&#x27;s portfolio"><span aria-hidden="true">DM</span><em class="team-tip">Deiby Moreno</em></a><a class="team-av" href="https://www.behance.net/davidmahecha4" target="_blank" rel="noopener" aria-label="David Mahecha&#x27;s portfolio"><span aria-hidden="true">DM</span><em class="team-tip">David Mahecha</em></a><a class="team-av" href="https://www.behance.net/rogergcidval" target="_blank" rel="noopener" aria-label="Roger Cid Valero&#x27;s portfolio"><span aria-hidden="true">RC</span><em class="team-tip">Roger Cid Valero</em></a></span><span class="team-names">Thania Bernal, Deiby Moreno, David Mahecha and Roger Cid Valero</span></dd></div>
           </dl>
+          <div class="cs-sum"><div><h3>My role</h3><p>Brand design within a team of five people. It started as an academic project and ended with a real client.</p></div><div><h3>Scope</h3><ul class="cs-checks"><li>Logo, versions and monogram</li><li>Brand manual</li><li>Stationery, uniforms and shop sign</li><li>Services brochure</li><li>Visual line for Instagram and TikTok</li></ul></div><div><h3>Impact</h3><p>One single brand, the same on the business card, the overalls and social media. Pinauto adopted it as its official image.</p></div></div>
           <h3 class="cs-h3">What Pinauto does</h3>
           <p>It repairs car bodies, applies high quality automotive paint and does polishing and ceramic coating treatments. It serves customers in Zipaquirá and the region.</p>
           <div class="cs-chips"><span>Bodywork</span><span>Paint</span><span>Polishing</span><span>Ceramic coating</span><span>Restoration</span></div>
@@ -3995,6 +4002,19 @@
           <figure class="cs-ph" style="--ar:16/9"><img src="/img/Pinauto/manual/29.jpg" alt="Stories and reels for Instagram" loading="lazy" onload="this.parentNode.classList.add('is-loaded')"><figcaption>📌 Canva page 29: stories and reels</figcaption></figure>
           <figure class="cs-ph" style="--ar:16/9"><img src="/img/Pinauto/manual/30.jpg" alt="Instagram stories about the team" loading="lazy" onload="this.parentNode.classList.add('is-loaded')"><figcaption>📌 Canva page 30: stories</figcaption></figure>
         </section>
+
+        <!-- ===== RESULTADOS ===== -->
+        <section class="modal-section" id="pa-resultados" aria-labelledby="pa-h-res">
+          <div class="modal-eyebrow">Results</div>
+          <h2 id="pa-h-res">What changed for Pinauto</h2>
+          <p>The identity answers the four needs from the start:</p>
+          <ol class="cs-board">
+            <li><span class="pb-n">1 · Positioning</span><span class="pb-ok" aria-label="Solved"></span><p>A distinct identity that stands out in a competitive market</p></li>
+            <li><span class="pb-n">2 · Visibility</span><span class="pb-ok" aria-label="Solved"></span><p>A consistent visual line on Instagram and TikTok</p></li>
+            <li><span class="pb-n">3 · Values</span><span class="pb-ok" aria-label="Solved"></span><p>Quality, professionalism and trust in every piece, from the business card to the overalls</p></li>
+            <li><span class="pb-n">4 · Services</span><span class="pb-ok" aria-label="Solved"></span><p>Clear services and prices in the brochure</p></li>
+          </ol>
+        </section>
       </div>
     </div>
   </div>
@@ -4023,6 +4043,7 @@
         <button type="button" class="sidebar-item" data-target="mp-interacciones">Microinteractions<svg class="si-arrow" viewBox="0 0 24 24"><path d="M9 6l6 6-6 6"/></svg></button>
         <button type="button" class="sidebar-item" data-target="mp-menus">Navigation<svg class="si-arrow" viewBox="0 0 24 24"><path d="M9 6l6 6-6 6"/></svg></button>
         <button type="button" class="sidebar-item" data-target="mp-versiones">Iterations<svg class="si-arrow" viewBox="0 0 24 24"><path d="M9 6l6 6-6 6"/></svg></button>
+        <button type="button" class="sidebar-item" data-target="mp-resultados">Results<svg class="si-arrow" viewBox="0 0 24 24"><path d="M9 6l6 6-6 6"/></svg></button>
         <button type="button" class="sidebar-item" data-target="mp-sigue">Learnings<svg class="si-arrow" viewBox="0 0 24 24"><path d="M9 6l6 6-6 6"/></svg></button>
       </nav>
 
@@ -4032,19 +4053,13 @@
         <section class="modal-section" id="mp-overview" aria-labelledby="mp-h-overview">
           <div class="modal-eyebrow">UX/UI · Web design · 2026</div>
           <h2 id="mp-h-overview">Overview</h2>
-          <p class="cs-lead">I designed this portfolio to express my creativity and bring my passions together in one place: product design, 3D, rendering, photography and everything I enjoy creating. It was also the perfect excuse to bring Mora, my personal brand, to life in an interactive site that invites you to discover me piece by piece, one side at a time.</p>
+          <p class="cs-lead">My portfolio lived on Behance: static images that couldn't show the process or the personality behind each project. I designed and built this site as a product, to bring everything I do into one place and give life to Mora, my personal brand.</p>
           <dl class="cs-ficha">
             <div><dt>Client</dt><dd>Personal project</dd></div>
-            <div><dt>My role</dt><dd>Product design, UX/UI and development</dd></div>
             <div><dt>Year</dt><dd>2026</dd></div>
-            <div><dt>Tools</dt><dd>Figma, Astro, JavaScript and Claude</dd></div>
+            <div><dt>Outcome</dt><dd><a class="cs-link" href="https://www.andresmorado.com" target="_blank" rel="noopener">Live site: andresmorado.com</a></dd></div>
           </dl>
-          <div class="cs-stats mp-stats">
-            <div><b data-mp-count="4">4</b><span>main pages</span></div>
-            <div><b data-mp-count="9">9</b><span>cases and collections</span></div>
-            <div><b data-mp-count="11">11</b><span>microinteractions</span></div>
-            <div><b data-mp-count="2">2</b><span>themes, light and dark</span></div>
-          </div>
+          <div class="cs-sum"><div><h3>My role</h3><p>Product design, UX/UI and development: from concept to the published site.</p><div class="cs-chips"><span>Figma</span><span>Astro</span><span>JavaScript</span><span>Claude</span></div></div><div><h3>Scope</h3><ul class="cs-checks"><li>A 4 page architecture</li><li>Mora brand and its own design system</li><li>9 case studies and collections</li><li>11 microinteractions</li><li>Spanish and English, light and dark theme</li></ul></div><div><h3>Impact</h3><p>Everything I do, in one place and told through the process, with contact one click away from any page.</p></div></div>
         </section>
 
         <!-- ===== OBJETIVOS ===== -->
@@ -4256,6 +4271,18 @@
           </div>
         </section>
 
+        <!-- ===== RESULTADOS ===== -->
+        <section class="modal-section" id="mp-resultados" aria-labelledby="mp-h-res">
+          <div class="modal-eyebrow">Results</div>
+          <h2 id="mp-h-res">What I achieved</h2>
+          <p>The site delivers on the three ideas it was born with:</p>
+          <ol class="cs-board">
+            <li><span class="pb-n">1 · My passions</span><span class="pb-ok" aria-label="Solved"></span><p>UX/UI, web, 3D, rendering, photography, motion and graphic design on one site</p></li>
+            <li><span class="pb-n">2 · Made to explore</span><span class="pb-ok" aria-label="Solved"></span><p>A grid to doodle on, a notebook that opens and details that invite you to play</p></li>
+            <li><span class="pb-n">3 · My brand</span><span class="pb-ok" aria-label="Solved"></span><p>Mora on every page and contact always one click away</p></li>
+          </ol>
+        </section>
+
         <!-- ===== APRENDIZAJES ===== -->
         <section class="modal-section" id="mp-sigue" aria-labelledby="mp-h-sigue">
           <div class="modal-eyebrow">11 · Learnings</div>
@@ -4407,7 +4434,7 @@
         dot.style.left = targetX + 'px'; dot.style.top = targetY + 'px';
       });
       (function tick(){
-        ringX += (targetX - ringX) * 0.18; ringY += (targetY - ringY) * 0.18;
+        ringX = targetX; ringY = targetY;
         ring.style.left = ringX + 'px'; ring.style.top = ringY + 'px';
         requestAnimationFrame(tick);
       })();
